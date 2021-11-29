@@ -21,12 +21,10 @@ import time
 List_In_Memory = []
 amount = 0
 for link in letters:
-    url = "'https://tv.nrk.no/alle-programmer/' + link"
     driver = webdriver.Chrome("C:\chromedriver\chromedriver.exe")
     driver.get("https://tv.nrk.no/alle-programmer/" + link)
     # time.sleep(1)
     html_page = driver.page_source
-    print("Når")
     beautiful_html_page = BeautifulSoup(html_page, "html.parser")
     List_In_Memory = beautiful_html_page.find_all("a", class_="tv-cl-letter-element tv-text-styles-subhead")
     amount += 1
@@ -38,7 +36,7 @@ for link in letters:
         for item in List_In_Memory:
             array = [item.text,item['href']]
             json.dump(array, file_object, ensure_ascii=False)
-
+            file_object.write("\n")
 print(amount)
 # ["program", /serie/programlink]
     
