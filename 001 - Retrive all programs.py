@@ -6,18 +6,21 @@ import string
 # letters.extend(extra_letters)
 
 letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "ae", "oe", "aa", "0-9"]
-
+letters = ["ae", "oe", "aa", "0-9"]
 print(letters)
 import requests
 from bs4 import BeautifulSoup
 import json
 
 List_In_Memory = []
-
+amount = 0
 for link in letters:
+    print("https://tv.nrk.no/alle-programmer/" + link)
     html_page = requests.get("https://tv.nrk.no/alle-programmer/" + link)
     beautiful_html_page = BeautifulSoup(html_page.content, "html.parser")
+    BeautifulSoup(html_page.content, "html.parser")
     List_In_Memory = beautiful_html_page.find_all("a", class_="tv-cl-letter-element tv-text-styles-subhead")
+    amount += 1
 
 
 
@@ -27,6 +30,6 @@ for link in letters:
             array = [item.text,item['href']]
             json.dump(array, file_object, ensure_ascii=False)
 
-
+print(amount)
 # ["program", /serie/programlink]
     
