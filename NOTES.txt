@@ -8,5 +8,11 @@ Skaff en liste over alle programmer som NRK nett tv har. Enten via navn, eller p
 Program ID lagres i en div med id=series-program-id-container, og en egen greie som heter data-program-id="MSUI13000117" (for ape og snabel)
 
 
+Ting som må gjøres:
+i listen over programmer så må jeg ha [Navn, link programmet] for å kunne finne info om programmet
+    for å finne link må jeg fikse scriptet som scraper alle programmene fra listen, den sliter med ÆØÅ og 0-9
+        jeg må finne en måte å scrape etter browser har kjørt javascript, så nettsiden får fyllt inn programmene.
+
+
 https://psapi.nrk.no/documentation/redoc/programsider-tv/
 https://psapi.nrk.no/documentation/redoc/programsider-tv/#tag/Programs
