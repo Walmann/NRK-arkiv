@@ -1,0 +1,592 @@
+b'\n\n
+<!DOCTYPE html>\n<html lang="nb-NO">\n
+
+<head>\n
+    <meta charset="utf-8">\n
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">\n\n
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />\n
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />\n
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />\n
+    <link rel="manifest" href="/site.webmanifest" />\n
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2d505a" />\n\n
+    <meta name="msapplication-TileColor" content="#2d505a" />\n\n <script\n
+        src="https://browser.sentry-cdn.com/6.8.0/bundle.min.js" \n
+        integrity="sha384-a1zd+NHj/GIqnlXIHuEKFontqYxBdK9Zwslrvnhr1KfU9tBDzKbM55gQFXlHYDiD" \n crossorigin="anonymous"
+        \n>
+        </script>\n
+        <script>\n(function () {
+            \n      var ignoreErrors = [\n        /* Ludo */\n        \'AbortError\',\n        \'AutoplayError\',\n        \'Refusing to load unplayable video\',\n        \'getDuration\',\n        \'ResizeObserver loop limit exceeded\',\n        \n        /* Known errors */\n        // Dom exceptions\n        \'Failed to construct \\\'PresentationRequest\\\'\', \n        \'Failed to construct \\\'CustomElement\\\'\', \n        // Promise exceptions\n        \'Non-Error promise rejection captured with value:\',\n        // Unspecified error\n        \'Unspecified error\',\n        // Type error\n        \'Type error\',\n        // Ignore Dom Exception 11 (stackoverflow 53117698),\n        \'InvalidStateError:\',\n        // The operation is not supported, or Picture-in-Picture is not available\n        \'NotSupportedError\', \n        // Facebook browser, browser extensions such as Rave.io\n        \'Blocked a frame with origin "https://tv.nrk.no" from accessing a\',\n        // Instagram browser\n        \'Can\\\'t find variable: _AutofillCallbackHandler\',\n        // Googletag redefinition\n        \'Cannot redefine property: googletag\',\n        // Akamai noise\n        \'null is not an object (evaluating \\\'_0x26acx1d2\',\n        \'_0x26acx1d2 is null\',\n        \'Cannot read property \\\'log\\\' of null\',\n        // Illegal invocation\n        \'Illegal invocation\',\n        // Old Chrome Bug (590375)\n        \'__gCrWeb.autofill.extractForms\',\n        // Older firefox version <= 55 \n        /(closest|matches) is not a function/,\n        // Errors related to message handlers\n        \'undefined is not an object (evaluating \\\'window.webkit.messageHandlers\\\'\',\n        \'undefined is not an object (evaluating \\\'webkit.messageHandlers\\\'\',\n        // Browser triggers out of memory\n        \'Out of memory\',\n        // Wrong JSON payload data from server\n        /Unexpected token .+ in JSON/,\n        // Old Safari\n        \'Can\\\'t find variable: webkit\',\n        // Webkit\n        \'WebKit st\xc3\xb8tte p\xc3\xa5 en intern feil\',\n        // Facebook\n        \'connect.facebook.net\',\n        // Instagram, Apple Mail browsers\n        \'Can\\\'t find variable: metadata\',\n        // Unknown \n        \'require is not defined\',\n        // NotAllowedError\n        \'The play method is not allowed by the user agent or the platform in the current context\',\n        // Core Analytics and Safari 9\n        \'Const declarations are not supported in strict mode.\',\n\n        /* Not Sure why */\n        \'Unexpected token ,\',\n        \'Format string contains an unescaped latin alphabet character `l`\',\n\n        /* Know App Exceptions */\n        \'Cannot get season\', \n        \'live_hydrate\',      \n        \'Failed to fetch\',   \n        \'t is undefined\',    \n        \'Cannot read property \\\'target\\\' of undefined\', \n        \'Cannot read property \\\'style\\\' of undefined\', \n        \'400 for https://fargerik-psapi.nrk.no/tv/\',      \n        \'404 for https://fargerik-psapi.nrk.no/tv/\',      \n        \'404 for https://psapi.nrk.no/tv/sharelinks/se\',  \n        \'503 for https://psapi.nrk.no/programs/\',         \n        \'Request for "https://fargerik-psapi.nrk.no/tv/\', \n        \'Object doesn\\\'t support property or method \\\'render\\\'\', \n        \'null is not an object (evaluating \\\'performance.now\\\')\', \n        \'URI malformed\', \n        \'No matching url\', \n\n        // Some service is down\n        \'A server with the specified hostname could not be found.\',\n        \'A network error occurred\',\n        \'Failed to fetch\',\n        \'NetworkError when attempting to fetch resource\',\n        \'Network request failed\',\n        \'The Internet connection appears to be offline.\',\n        \'Fant ikke en tjener med det angitte vertsnavnet.\',\n        \'Det har oppst\xc3\xa5tt en SSL-feil, og det er ikke mulig \xc3\xa5 opprette en sikker forbindelse til tjeneren.\',\n        \'Internett ser ut til \xc3\xa5 v\xc3\xa6re frakoblet.\',\n        \'Kunne ikke koble til tjeneren.\',\n        \'Tidsavbrudd for foresp\xc3\xb8rselen.\',\n        \'Uspesifisert feil.\',\n        /cancelled|avbruten|annulleret|cancelado|abgebrochen|zru\xc5\xa1en\xc3\xa9/i,\n      ];\n\n      var ignorePatterns = [];\n      for (var i = 0, l = ignoreErrors.length; i < l; i++) {\n        var type = typeof ignoreErrors[i] === \'string\'\n          ? \'string\'\n          : \'re\';\n        \n        ignorePatterns.push(\n          { type: type, value: ignoreErrors[i] }\n        );\n      }\n\n      function isIgnoredExceptionStack(hint) {\n        var stack = hint.originalException.stack;\n        var exceptionString = hint.originalException.toString \n          ? hint.originalException.toString()\n          : \'\';        \n\n        try {\n          return ignorePatterns.some(pattern => {\n            if (pattern.type === \'string\') {\n              return stack.indexOf(pattern.value) > -1 || exceptionString.indexOf(pattern.value) > -1;\n            }\n\n            return pattern.value.test(stack) || pattern.value.test(exceptionString);\n          });\n        } catch (error) {\n          // some old browser with no support for some\n          return false;\n        }\n      }\n\n      function areCookiesEnabled() {\n        // read from navigator.cookieEnabled property if present\n        if (!(navigator && navigator.cookieEnabled == null)) {\n          return navigator.cookieEnabled;\n        }\n      \n        // use cached enabled property on function\n        if (!(this.enabled == null)) {\n          return this.enabled;\n        }\n        \n        this.enabled = true;\n        try {\n          // Create cookie\n          document.cookie = \'cookietest=1\';\n          this.enabled = document.cookie.indexOf(\'cookietest=\') !== -1;\n          \n          // Delete cookie\n          document.cookie = \'cookietest=1; expires=Thu, 01-Jan-1970 00:00:01 GMT\';\n        }\n        catch (e) {\n          this.enabled = false;\n        }\n        \n        return this.enabled;\n      }\n\n      Sentry.init({\n        dsn: \'https://c9e384939b1c4c6386a09656ab06b0d2@o124059.ingest.sentry.io/5179934\',\n        release: \'nrk-tv-web-core@0.0.239\',\n        environment: \'prod\',\n        sampleRate: 0.1,\n        ignoreErrors: ignoreErrors,\n        beforeSend: function(event, hint) {\n          // check that there is an original exception with stack available to test on\n          var hasHint = hint && hint.originalException && hint.originalException.stack && typeof hint.originalException.stack === \'string\';\n\n          // No ES6 Support, do not send the event.\n          if (window.Reflect == null) {\n            return null;\n          }\n\n          // Cookies are disabled remove them.\n          if (!areCookiesEnabled()) {\n            return null;\n          }\n\n          // Ignored exception stack \n          if (hasHint && isIgnoredExceptionStack(hint)) {\n            return null;\n          }\n\n          // Facebook\'s sharing crawler\n          if (/fbclid/.test(location.search)) {\n            return null;\n          }\n\n          event.tags = event.tags || {};\n\n          if (hasHint) {\n            // Tag as ludo\n            if (hint.originalException.stack.indexOf(\'ludo.js\') > -1) {\n              event.tags.module = \'ludo\';\n            }\n            // Tag as cast if it was not tagged as ludo first\n            else if (hint.originalException.stack.indexOf(\'cast_sender.js\') > -1) {\n              event.tags.module = \'cast-sender\';\n            }\n          }\n\n          return event;\n          }\n        }\n      );\n   })();\n  </script>
+        \n
+        <script>\n  window.nrk = {
+                    \n      config: {
+                    \n          statistics: {
+                    \n              aiInstrumentationKey: \'ff70c9d2-d463-4e98-acb2-b1862bbddde1\',\n              optimizeAccount: \'GTM-NRGCTW9\',\n              gaAccount: \'UA-3413696-38\'\n          }\n      },\n      login: {\n        autoLoginCookie: \'nrk_auto_logged_in\',\n        autoLogoutCookie: \'nrk_auto_logged_out\',\n        urls: {\n          profileUrl: \'https://innlogging.nrk.no/profil?exitUrl=https%3a%2f%2ftv.nrk.no%2fserie%2faargang-1882&amp;client=tv.nrk.no.web2\',\n          refreshPath: \'/auth/refreshuserandredirect?redirectUrl=\',\n          castInvitePath: \'/auth/chromecast/invitecode\'\n        },\n        state: {\n          authenticated: false,\n          segment: null\n        }\n      }\n  };\n  </script>
+        \n\n
+        <script>(function(c, a) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) } })(window, \'coreAnalytics\')</script>
+        \n
+        <script defer src="https://static.nrk.no/core-analytics/major/6/core-analytics.min.js"></script>\n \n
+        <script src="/_static/core/appShell-edb10df5985affc66e52.js"></script>\n\n \n
+        <script src="/_static/header-footer/header-footer-bundle-ef70c6013b97c627ba97.js" async></script>\n
+        <script src="/_static/header-footer/app-shell-b4cca6ade9e4c07393fb.js" async></script>\n \n
+        <link rel="stylesheet" href="/_static/header-footer/header-footer-bundle-c57481b793ec54d33be0.css" />\n
+        <link rel="stylesheet" href="/_static/header-footer/app-shell-2946a686a0317b95da35.css" />\n \n <style
+            id="B83p87">
+            \n \n .tv-theme {
+                \n --tv-theme-light: 162, 241, 255;
+                \n --tv-theme-medium-light-20: 62, 103, 114;
+                \n --tv-theme-medium-light-10: 54, 92, 103;
+                \n --tv-theme-medium: 45, 80, 90;
+                \n --tv-theme-dark: 26, 56, 65;
+                \n --tv-theme-transition: 2s cubic-bezier(0.12, 0, 0, 1);
+                \n
+            }
+
+            \n\n body {
+                \n background-color: #2d505a;
+                \n
+            }
+
+            \n\n @supports (--tv-theme-medium: #2d505a) {
+                \n body {
+                    \n background-color: #2d505a;
+                    \n transition: background-color 2s cubic-bezier(0.12, 0, 0, 1);
+                    \n
+                }
+
+                \n
+            }
+
+            \n \n
+        </style>\n
+        <script>\n      window.__tv_theme_page_palette__ = { "light": "#efc9a5", "mediumLight10": "#6c523a", "mediumLight20": "#775c43", "medium": "#5f462f", "dark": "#46301c" }; \n      window.__tv_theme_page_palette_url__ = "https://fargerik-psapi.nrk.no/tv/seriespage/series/aargang-1882"; \n      window.__tv_theme_animation__ = true; \n!function() { "use strict"; var e = { base: { light: "#a2f1ff", mediumLight10: "#365c67", mediumLight20: "#3e6772", medium: "#2d505a", dark: "#1a3841" }, myContent: { light: "#ffa2cb", mediumLight10: "#80445e", mediumLight20: "#8d4d69", medium: "#713951", dark: "#58233a" }, variants: [{ light: "#ffe5a2", mediumLight10: "#635534", mediumLight20: "#6f603c", medium: "#56492b", dark: "#3d3218" }, { light: "#b2ffa2", mediumLight10: "#3b6033", mediumLight20: "#436b3b", medium: "#31532a", dark: "#1d3a17" }, { light: "#a3ebff", mediumLight10: "#365c67", mediumLight20: "#3f6773", medium: "#2d505a", dark: "#1a3841" }, { light: "#caa2ff", mediumLight10: "#654a8b", mediumLight20: "#705398", medium: "#583e7c", dark: "#402762" }, { light: "#ffa2c1", mediumLight10: "#814457", mediumLight20: "#8e4e62", medium: "#72394b", dark: "#592334" }] }, t = "B83p87", i = "tv-theme-palette"; var n = { duration: { xs: .125, s: .25, m: .5, l: 1, xl: 2 }, easing: { in: { type: "cubic-bezier", points: [1, 0, 0, .12] }, out: { type: "cubic-bezier", points: [.12, 0, 0, 1] } } }, r = /^#?([a-f\\d]{2})([a-f\\d]{2})([a-f\\d]{2})$/i, a = function (e) { var t = r.exec(e); if (!t) throw new Error("Could not parse " + e); return [parseInt(t[1], 16), parseInt(t[2], 16), parseInt(t[3], 16)].join(",") }, m = n.duration.xl + "s " + n.easing.out.type + "(" + n.easing.out.points.join(", ") + ")", o = function (t, i) { void 0 === i && (i = !0); var n = function (e) { return { "--tv-theme-light": a(e.light), "--tv-theme-medium-light-20": a(e.mediumLight20), "--tv-theme-medium-light-10": a(e.mediumLight10), "--tv-theme-medium": a(e.medium), "--tv-theme-dark": a(e.dark) } }(t); return "\\n    .tv-theme {\\n      " + Object.keys(n).map((function (e) { return e + ": " + n[e] + ";" })).join("\\n      ") + "\\n      --tv-theme-transition: " + (i ? m : "0s") + ";\\n    }\\n\\n    body {\\n      background-color: " + e.base.medium + ";\\n    }\\n\\n    @supports (--tv-theme-medium: " + t.medium + ") {\\n      body {\\n        background-color: " + t.medium + ";\\n        " + (i ? "transition: background-color " + m + ";" : "") + "\\n      }\\n    }\\n  " }, d = document.getElementById(t), u = window.CSS && CSS.supports("color", "var(--fake-var)"), c = window.matchMedia("(prefers-reduced-motion: reduce)"); function h() { "" === d.innerHTML && (d.innerHTML = "\\n      body {\\n        background-color: " + e.base.medium + "\\n      }") } function f() { return function () { try { var e = sessionStorage.getItem(i); return e ? JSON.parse(e) : e } catch (e) { return null } }() } function s(e, n) { void 0 === n && (n = !0), function (e, i) { void 0 === i && (i = !0); var n = document.getElementById(t); if (!n) throw new Error("Could not locate tv-theme style tag with id B83p87"); n.innerHTML = o(e, i) }(e, n), function (e) { try { sessionStorage.setItem(i, JSON.stringify(e)) } catch (e) { } }(e) } try { !function () { var t = window.__tv_theme_page_palette__, i = window.__tv_theme_page_palette_url__, n = window.__tv_theme_animation__; if (u) if (n && !c.matches) { var r, a, m; if (r = window.__tv_theme_page_palette__ || e.base, s(f() || r), t) return m = t, void document.addEventListener("DOMContentLoaded", (function () { window.requestAnimationFrame((function () { window.requestAnimationFrame((function () { s(m) })) })) })); i && (a = i, fetch(a, { headers: { Accept: "application/vnd.nrk.fargerik.palette.1.0+json" } }).then((function (e) { if (e.ok) return e.json(); throw new Error("fetch failed " + a) })).then(s).catch((function () { return s(e.base) }))) } else s(t || f() || e.base, n); else h() }() } catch (e) { console.error(e) } finally { h() } } (); \n; \n</script>
+        \n \n
+        <link\n rel="preload" \n href="https://static.nrk.no/core-fonts/2.4.1/LFT_Etica_Book.woff2" \n as="font" \n
+            type="font/woff2" \n crossorigin\n />\n
+        <link\n rel="preload" \n href="https://static.nrk.no/core-fonts/2.4.1/LFT_Etica_Semibold.woff2" \n as="font" \n
+            type="font/woff2" \n crossorigin\n />\n \n
+        <script>\n      var transparentHeaderClassName = \'tv-absolute-header\';\n      var htmlTag = document.querySelector(\'html\');\n      if (htmlTag && !htmlTag.classList.contains(transparentHeaderClassName)) {\n        htmlTag.classList.add(\'tv-absolute-header\');\n        htmlTag.classList.add(\'tv-gradient-header\');\n      }\n    </script>
+        \n <title>Aargang 1882 \xe2\x80\x93 NRK TV</title>
+        <link rel="stylesheet" href="/_static/serie/tv-web-series-b45afec2a0fd8d6256d8.css" />
+        <link rel="canonical" href="https://tv.nrk.no/serie/aargang-1882" />
+        <script
+            type="application/ld+json">{"@context":"https:\\u002F\\u002Fschema.org","@type":"ItemList","itemListElement":[]}</script>
+        <meta property="nrk:tv-theme-url" content="https://fargerik-psapi.nrk.no/tv/seriespage/series/aargang-1882" />
+        <meta property="og:image" content="https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqgslFq1ssvVbT2HircfSVs7w" />
+        <meta property="og:site_name" content="NRK TV" />
+        <meta property="og:title" content="Aargang 1882" />
+        <meta property="og:type" content="video.tv_show" />
+        <meta property="og:url" content="https://tv.nrk.no/serie/aargang-1882" />
+        <meta property="twitter:card" content="summary" />\n\n
+        <meta property="fb:app_id" content="453813241327648" />\n
+        <meta name="google-site-verification" content="UAb4hedt4AJ-gdwdI3UPe-Jd1avYlHeKkRBc9RBqoz4" />\n
+        <meta name="google-site-verification" content="M83JqS5VyN7OBn9qY1jgPNKVYG8ufihkaUWa8RoVdQA" />\n\n
+        <script>(window.BOOMR_mq = window.BOOMR_mq || []).push(["addVar", { "rua.upush": "false", "rua.cpush": "false", "rua.upre": "false", "rua.cpre": "false", "rua.uprl": "false", "rua.cprl": "false", "rua.cprf": "false", "rua.trans": "", "rua.cook": "false", "rua.ims": "false", "rua.ufprl": "false", "rua.cfprl": "false", "rua.isuxp": "false", "rua.texp": "norulematch" }]);</script>
+        \n
+        <script>!function (a) {
+                var e = "https://s.go-mpulse.net/boomerang/", t = "addEventListener"; if ("False" == "True") a.BOOMR_config = a.BOOMR_config || {}, a.BOOMR_config.PageParams = a.BOOMR_config.PageParams || {}, a.BOOMR_config.PageParams.pci = !0, e = "https://s2.go-mpulse.net/boomerang/"; if (window.BOOMR_API_key = "2F6QX-G8Y9R-RT4DR-CMKCJ-GCUG7", function () {
+                    function n(e) { a.BOOMR_onload = e && e.timeStamp || (new Date).getTime() } if (!a.BOOMR || !a.BOOMR.version && !a.BOOMR.snippetExecuted) {
+                        a.BOOMR = a.BOOMR || {}, a.BOOMR.snippetExecuted = !0; var i, _, o, r = document.createElement("iframe"); if (a[t]) a[t]("load", n, !1); else if (a.attachEvent) a.attachEvent("onload", n); r.src = "javascript:void(0)", r.title = "", r.role = "presentation", (r.frameElement || r).style.cssText = "width:0;height:0;border:0;display:none;", o = document.getElementsByTagName("script")[0], o.parentNode.insertBefore(r, o); try { _ = r.contentWindow.document } catch (O) { i = document.domain, r.src = "javascript:var d=document.open();d.domain=\'" + i + "\';void(0);", _ = r.contentWindow.document } _.open()._l = function () { var a = this.createElement("script"); if (i) this.domain = i; a.id = "boomr-if-as", a.src = e + "2F6QX-G8Y9R-RT4DR-CMKCJ-GCUG7", BOOMR_lstart = (new Date).getTime(), this.body.appendChild(a) }, _.write("<bo" +\'dy onload="document._l();">\'),_.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e=""=="true"?1:0,t="",n="lbnbfhixergfsyngpyvq-f-7a08eb933-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,_={"ak.v":"32","ak.cp":"933927","ak.ai":parseInt("599139",10),"ak.ol":"0","ak.cr":31,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"6c4a7b8","ak.r":38060,"ak.a2":e,"ak.m":"dscr","ak.n":"ff","ak.bpcip":"88.90.18.0","ak.cport":60696,"ak.gh":"23.36.76.85","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"reno","ak.t":"1638301227","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==myKzNOxxLLMJMAteFBVl8ov2G3YtqMQM4p1b7wFRtDK8Newe7fJvWETpGnSox82/Yj1aRLVX4rO6AUTq7iS9ecX987dRjBwQT3LkOihK1d+L5btn62yRPPpE3H7SGpPkrGiCzEUAjdgEmE6crQkkrJC15fWOs7bjDQ3SBu62KkdN8XhZuiChY8heLUERJsi24czuuw2Wcs05Uep4wFm5SO/MLXXGPV0LaiX6oKD7ChH3IlRVcn9GO5MQLN6OeufKLel4+ZerB6vFUzm4iJ3RsvFnM7nxuUpnEGWVKSlGWiUVQKgIOJCnlwy5I25Ju3j7wG1Ru94L9qeYQa8gBe0vMUThOLc3oeRIsz2+RXk6q5SHvl8iGUy++XvTTUE4woA+rrQjPOQeM0VHeU+VFVeVkK2FuR5TcmYQ5qzVvnVchKM=","ak.pv":"53","ak.dpoabenc":"","ak.tf":i};if(""!==t)_["ak.ruds"]=t;var o={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))_["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(_)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:_,akDNSPreFetchDomain:n,init:function(){if(!o.i){var a=BOOMR.subscribe;a("before_beacon",o.av,null,null),a("onbeacon",o.rv,null,null),o.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script>
+</head>\n\n
+
+<body style="margin: 0;">\n <a href="#sfMain" accesskey="S"
+        style="position: absolute; width: 1px; height: 1px; padding: 0; border: 0; margin: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;">Hopp
+        til innhold</a>\n\n \n <header\n id="tv-header" \n class="tv-header tv-theme" \n
+        data-psapi-base-url="https://psapi.nrk.no" \n data-chromecast-app-id="3AEDF8D1" \n>\n <a\n
+            class="tv-header-external-nrkno-link tv-text-styles-caption2" \n href="https://www.nrk.no" \n tabindex="-1"
+            \n>NRK.no</a\n>\n <nav class="tv-header-navigation">\n <div\n
+                class="tv-header-navigation-item tv-header-navigation-item--nrk-tv-logo" \n>\n <a\n
+                    class="tv-text-styles-subhead tv-header-navigation-item__link" \n href="/" \n>\n <span
+                        class="tv-header-navigation__icon--nrk-tv-logo" \n><svg viewBox="0 0 58 14"
+                            class="nrk-logo-nrk-tv" width="3.625em" height="0.875em" aria-hidden="true"
+                            focusable="false">
+                            <path fill="currentColor"
+                                d="M38 1.00376904v1.40117634h3.725115V13.0037632h1.54630423V2.40494538H47V1.00376904m8.4477723 0L52.2164108 11.252467 49.0507902 1.00376904h-1.60078944L51.2946446 13.0037632h1.8205232l3.8897659-11.99999416M31.0878023 7.55918018c-.2517074-.42642875-.2661333-.68861697-.02338-1.10029556L34.399462 1h-4.6267395s-2.7797248 4.54205453-3.1597731 5.17316245c-.3764003.63027925-.3601505 1.02273292.0154208 1.67041405C27.0084185 8.49042897 29.7727225 13 29.7727225 13h4.6267395s-3.2751804-5.37353258-3.3116597-5.44081982M21.5941377 13h4.2077247V1h-4.2077247m-2.653584-.22989127c-1.3163763 0-2.3817762 1.07539896-2.3817762 2.40310754 0 1.32687533 1.0653999 2.4056073 2.3817762 2.4056073 1.3185428 0 2.3884423-1.07873197 2.3884423-2.4056073 0-1.32770858-1.0698995-2.40310754-2.3884423-2.40310754M12.0635332 13h4.2052375V1h-4.2052375M0 13h4.19744416V1H0m9.50872938 1.92796177C9.29333553 1.82832914 8.33144198 1 7.17852938 1H4.47507953l2.71654925 12h4.56969912L9.50872938 2.92796177z" />
+                        </svg></span\n>\n <span class="tv-screen-reader-only">NRK TV</span>\n </a>\n </div>\n <div
+                            class="tv-header-navigation-item tv-header-navigation-item--home">\n <a\n
+                                class="tv-text-styles-subhead tv-header-navigation-item__link" \n href="/" \n>\n <span
+                                    class="tv-header-navigation__icon"><svg viewBox="0 0 24 24" class="nrk-home"
+                                        width="1.500em" height="1.500em" aria-hidden="true" focusable="false">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M23 9.19459V6.92308L12 1 1 6.92308v2.27151l11-5.92308 11 5.92308zM5 11v10h14V11h2v12H3V11h2z" />
+                                    </svg></span>\n <span\n
+                                    class="tv-header-navigation__icon tv-header-navigation__icon--active" \n hidden\n>
+                                    <svg viewBox="0 0 24 24" class="nrk-home--active" width="1.500em" height="1.500em"
+                                        aria-hidden="true" focusable="false">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M23 9.19459V6.92308L12 1 1 6.92308v2.27151l11-5.92308 11 5.92308zM3 11l9-4.72998L21 11v12H3V11z" />
+                                    </svg></span\n>\n <span class="tv-header-navigation-item__label">Forsiden</span>\n
+                                </a>\n </div>\n <div\n
+                            class="tv-header-navigation-item tv-header-navigation-item--search-and-categories" \n>\n
+                            <button\n class="tv-text-styles-subhead tv-header-navigation-item__button" \n for="explore"
+                                \n>\n <span class="tv-header-navigation__icon"><svg viewBox="0 0 24 24"
+                                        class="nrk-search" width="1.500em" height="1.500em" aria-hidden="true"
+                                        focusable="false">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M10 19c4.9706 0 9-4.0294 9-9 0-4.97056-4.0294-9-9-9-4.97056 0-9 4.02944-9 9 0 4.9706 4.02944 9 9 9zm0-2.1176c-3.80102 0-6.88235-3.0814-6.88235-6.8824 0-3.80102 3.08133-6.88235 6.88235-6.88235 3.801 0 6.8824 3.08133 6.8824 6.88235 0 3.801-3.0814 6.8824-6.8824 6.8824zM15.8959 19l2.4263 4h2.3391l-2.4262-4h-2.3392z" />
+                                    </svg></span>\n <span\n
+                                    class="tv-header-navigation__icon tv-header-navigation__icon--active" \n><svg
+                                        viewBox="0 0 24 24" class="nrk-search--active" width="1.500em" height="1.500em"
+                                        aria-hidden="true" focusable="false">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M9.5 18c4.6944 0 8.5-3.8056 8.5-8.5C18 4.80558 14.1944 1 9.5 1 4.80558 1 1 4.80558 1 9.5 1 14.1944 4.80558 18 9.5 18zm0-3c3.0376 0 5.5-2.4624 5.5-5.5C15 6.46243 12.5376 4 9.5 4 6.46243 4 4 6.46243 4 9.5 4 12.5376 6.46243 15 9.5 15zm4.2047 3l3.0327 5h3.5088l-3.0328-5h-3.5087z" />
+                                    </svg></span\n>\n <span class="tv-header-navigation-item__label" \n>S\xc3\xb8k og
+                                    kategorier</span\n>\n </button>\n </div>\n \n <hf-core-dialog class="explore"
+                                        id="explore" hidden backdrop="false">\n \n <div class="searchFormWrapper"
+                                            autofocus>\n <form class="searchForm" name="search" action="/sok"
+                                                aria-labelledby="explore">\n <div class="searchForm__inputWrapper">\n
+                                                    <label class="searchForm__inputLabel tv-screen-reader-only"
+                                                        for="searchForm__input">S\xc3\xb8k i NRK TV</label>\n
+                                                    <input\n type="search" \n autocorrect="off" \n autocapitalize="off"
+                                                        \n spellcheck="false" \n name="q" \n id="searchForm__input" \n
+                                                        list="searchForm__suggest" \n
+                                                        class="tv-text-styles-body searchForm__input" \n
+                                                        placeholder="S\xc3\xb8k i NRK TV" \n />\n <button type="submit"
+                                                        class="tv-text-styles-body searchForm__submitButton"
+                                                        aria-label="S\xc3\xb8k">\n <svg viewBox="0 0 24 24"
+                                                            class="nrk-search" width="1.500em" height="1.500em"
+                                                            aria-hidden="true" focusable="false">
+                                                            <path fill="currentColor" fill-rule="evenodd"
+                                                                clip-rule="evenodd"
+                                                                d="M10 19c4.9706 0 9-4.0294 9-9 0-4.97056-4.0294-9-9-9-4.97056 0-9 4.02944-9 9 0 4.9706 4.02944 9 9 9zm0-2.1176c-3.80102 0-6.88235-3.0814-6.88235-6.8824 0-3.80102 3.08133-6.88235 6.88235-6.88235 3.801 0 6.8824 3.08133 6.8824 6.88235 0 3.801-3.0814 6.8824-6.8824 6.8824zM15.8959 19l2.4263 4h2.3391l-2.4262-4h-2.3392z" />
+                                                        </svg>\n </button>\n <hf-core-suggest id="searchForm__suggest"
+                                                        class="searchForm__suggest"></hf-core-suggest>\n
+                                                </div>\n </form>\n </div>\n <h2
+                                            class="tv-text-styles-headline categories__header">Utforsk v\xc3\xa5re
+                                            kategorier</h2>\n <div class="mainCategories">\n <div
+                                                class="mainCategories__itemContainer">\n \n <div
+                                                    class="scrollContainer">\n <hf-core-scroll id="mainCategories"
+                                                        items="[data-scroll-element]">\n <a
+                                                            href="/programmer/drama-serier"
+                                                            class="tv-theme mainCategoriesItem" data-scroll-element>\n
+                                                            <picture class="mainCategoriesItem__picture"
+                                                                aria-hidden="true">\n
+                                                                <source\n media="(min-width: 1024px)" \n
+                                                                    srcSet="https://gfx.nrk.no/FJl_MW-FuYLNc0-oAwv07Q3HyR1J_HFxOOAqY1v4jn1w 300w,https://gfx.nrk.no/FJl_MW-FuYLNc0-oAwv07QPIH-v1dBCgGOAqY1v4jn1w 600w,https://gfx.nrk.no/FJl_MW-FuYLNc0-oAwv07QAcm5iiQ4CvaOAqY1v4jn1w 960w,https://gfx.nrk.no/FJl_MW-FuYLNc0-oAwv07QOOX3BbzJ-amOAqY1v4jn1w 1920w,https://gfx.nrk.no/FJl_MW-FuYLNc0-oAwv07QV1WqgPaPkB2OAqY1v4jn1w 2560w"
+                                                                    \n
+                                                                    sizes="\n                (min-width: 1920px) 17vw,\n                22vw"
+                                                                    \n />\n
+                                                                <img\n class="mainCategoriesItem__image" \n
+                                                                    srcSet="https://gfx.nrk.no/T7wbqwMT4OJrjDVIphmXOwvmmyAs0BcS-431ptz81YIg 300w,https://gfx.nrk.no/T7wbqwMT4OJrjDVIphmXOwUTm3XQ2_eA6431ptz81YIg 600w,https://gfx.nrk.no/T7wbqwMT4OJrjDVIphmXOwthSeRGN2Khu431ptz81YIg 960w,https://gfx.nrk.no/T7wbqwMT4OJrjDVIphmXOwlOXc4P1pEWG431ptz81YIg 1920w,https://gfx.nrk.no/T7wbqwMT4OJrjDVIphmXOwbHDhU9-myky431ptz81YIg 2560w"
+                                                                    \n
+                                                                    sizes="\n                (min-width: 700px) 27vw,\n                40vw"
+                                                                    \n alt="Serier" \n />\n
+                                                            </picture>\n <div class="mainCategoriesItem__title-wrapper">
+                                                                \n <h3
+                                                                    class="tv-text-styles-callout mainCategoriesItem__title">
+                                                                    Serier</h3>\n </div>\n </a>\n \n <a
+                                                            href="/programmer/dokumentar"
+                                                            class="tv-theme mainCategoriesItem" data-scroll-element>\n
+                                                            <picture class="mainCategoriesItem__picture"
+                                                                aria-hidden="true">\n
+                                                                <source\n media="(min-width: 1024px)" \n
+                                                                    srcSet="https://gfx.nrk.no/9gl1UZn4LRsIzXs-iHyEkQ5s1ycwvtFNB83xEFiGBJyQ 300w,https://gfx.nrk.no/9gl1UZn4LRsIzXs-iHyEkQGi-HAExsiGd83xEFiGBJyQ 600w,https://gfx.nrk.no/9gl1UZn4LRsIzXs-iHyEkQ7LchiUChiIx83xEFiGBJyQ 960w,https://gfx.nrk.no/9gl1UZn4LRsIzXs-iHyEkQiKmOIsVuqUd83xEFiGBJyQ 1920w,https://gfx.nrk.no/9gl1UZn4LRsIzXs-iHyEkQOCMkITXskFp83xEFiGBJyQ 2560w"
+                                                                    \n
+                                                                    sizes="\n                (min-width: 1920px) 17vw,\n                22vw"
+                                                                    \n />\n
+                                                                <img\n class="mainCategoriesItem__image" \n
+                                                                    srcSet="https://gfx.nrk.no/0h_wUTJC0ZV_RUuP6r2d8AtJk_iBZjXd5E38CEgvClyw 300w,https://gfx.nrk.no/0h_wUTJC0ZV_RUuP6r2d8Ag22NOUtzAtFE38CEgvClyw 600w,https://gfx.nrk.no/0h_wUTJC0ZV_RUuP6r2d8ABI24skhMPFRE38CEgvClyw 960w,https://gfx.nrk.no/0h_wUTJC0ZV_RUuP6r2d8A0jghEms66xJE38CEgvClyw 1920w,https://gfx.nrk.no/0h_wUTJC0ZV_RUuP6r2d8AqD9Awnayuv9E38CEgvClyw 2560w"
+                                                                    \n
+                                                                    sizes="\n                (min-width: 700px) 27vw,\n                40vw"
+                                                                    \n alt="Dokumentar" \n />\n
+                                                            </picture>\n <div class="mainCategoriesItem__title-wrapper">
+                                                                \n <h3
+                                                                    class="tv-text-styles-callout mainCategoriesItem__title">
+                                                                    Dokumentar</h3>\n </div>\n </a>\n </hf-core-scroll>
+                                                    \n <div
+                                                        class="scrollContainer__navigationWrapper scrollContainer__navigationWrapper--prev">
+                                                        \n <button for="mainCategories" value="left"
+                                                            aria-label="Rull mot venstre"
+                                                            class="scrollContainer__navigationButton scrollContainer__navigationButton--prev">\n
+                                                            <svg viewBox="0 0 24 24" class="nrk-arrow-left"
+                                                                width="1.500em" height="1.500em" aria-hidden="true"
+                                                                focusable="false">
+                                                                <path fill="currentColor" fill-rule="evenodd"
+                                                                    clip-rule="evenodd"
+                                                                    d="M4 12l4.9-7h2.2723l-4.20001 6H20l-1 2H6.97229l4.20001 6H8.9L4 12z" />
+                                                            </svg>\n </button>\n </div>\n <div
+                                                        class="scrollContainer__navigationWrapper scrollContainer__navigationWrapper--next">
+                                                        \n <button \n for="mainCategories" \n value="right" \n
+                                                            aria-label="Rull mot h\xc3\xb8yre" \n
+                                                            class="tv-theme scrollContainer__navigationButton scrollContainer__navigationButton--next"
+                                                            \n>\n <svg viewBox="0 0 24 24" class="nrk-arrow-right"
+                                                                width="1.500em" height="1.500em" aria-hidden="true"
+                                                                focusable="false">
+                                                                <path fill="currentColor" fill-rule="evenodd"
+                                                                    clip-rule="evenodd"
+                                                                    d="M20.0023 12l-4.9-7H12.83l4.2 6H4.99999L4 13h13.03l-4.2 6h2.2723l4.9-7z" />
+                                                            </svg>\n </button>\n </div>\n </div>\n \n </div>\n </div>\n
+                                        \n <div class="categories">\n <div class="categories__items">\n <a
+                                                    href="/programmer/barn"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item">Barn</a><a
+                                                    href="/programmer/dyr"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item">Dyr</a><a
+                                                    href="/programmer/familie"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item">Familie</a><a
+                                                    href="/programmer/film"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item">Film</a><a
+                                                    href="/programmer/hjem-interior-og-design"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item">Hjem,
+                                                    interi\xc3\xb8r og design</a><a href="/programmer/humor"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item">Humor</a><a
+                                                    href="/programmer/klima-og-miljo"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item">Klima
+                                                    og milj\xc3\xb8</a><a href="/programmer/kropp-og-helse"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item">Kropp
+                                                    og helse</a><a href="/programmer/kunst-og-scene"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item">Kunst
+                                                    og scene</a><a href="/programmer/litteratur"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item">Litteratur</a><a
+                                                    href="/programmer/mat"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item">Mat</a><a
+                                                    href="/programmer/musikk"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item">Musikk</a><a
+                                                    href="/programmer/natur"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item">Natur</a><a
+                                                    href="/programmer/nrk-arkivet"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item">NRK-arkivet</a><a
+                                                    href="/programmer/nyheter"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item">Nyheter</a><a
+                                                    href="/programmer/konkurranser-og-reality-tv"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item">Reality
+                                                    og konkurranser</a><a href="/programmer/reise"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item">Reise</a><a
+                                                    href="/programmer/samisk"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item">Samisk</a><a
+                                                    href="/programmer/show-og-underholdning"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item">Show
+                                                    og underholdning</a><a href="/programmer/sport"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item">Sport</a><a
+                                                    href="/programmer/teknologi-og-vitenskap"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item">Teknologi
+                                                    og vitenskap</a>\n </div>\n <div class="categories__items">\n <a
+                                                    href="/programmer/synstolk-accessibility"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item--special">Synstolk</a><a
+                                                    href="/programmer/tegnspraak-accessibility"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item--special">Tegnspr\xc3\xa5k</a>\n
+                                                <a href="/alle-programmer"
+                                                    class="tv-theme tv-text-styles-callout categories__item categories__item--special">A-\xc3\x85</a>\n
+                                            </div>\n </div>\n </hf-core-dialog>\n \n <div
+                                        class="tv-header-navigation-item tv-header-navigation-item--live">\n <a\n
+                                            class="tv-text-styles-subhead tv-header-navigation-item__link" \n
+                                            href="/direkte/nrk1" \n>\n <span class="tv-header-navigation__icon"><svg
+                                                    viewBox="0 0 24 24" class="nrk-media-direktetv" width="1.500em"
+                                                    height="1.500em" aria-hidden="true" focusable="false">
+                                                    <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M1 3h22v16H1V3zm2 2v12h18V5H3zm13 18H8v-2h8v2zM8 8.5c0 .82843-.67157 1.5-1.5 1.5S5 9.32843 5 8.5 5.67157 7 6.5 7 8 7.67157 8 8.5z" />
+                                                </svg></span>\n <span\n
+                                                class="tv-header-navigation__icon tv-header-navigation__icon--active" \n
+                                                hidden\n><svg viewBox="0 0 24 24" class="nrk-media-direktetv--active"
+                                                    width="1.500em" height="1.500em" aria-hidden="true"
+                                                    focusable="false">
+                                                    <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M1 3h22v16H1V3zm5.5 7C7.32843 10 8 9.32843 8 8.5S7.32843 7 6.5 7 5 7.67157 5 8.5 5.67157 10 6.5 10zM8 23h8v-2H8v2z" />
+                                                </svg></span\n>\n <span
+                                                class="tv-header-navigation-item__label">Direkte</span>\n </a>\n </div>
+                                    \n <div class="tv-header-navigation-item tv-header-navigation-item--guide">\n <a\n
+                                            class="tv-text-styles-subhead tv-header-navigation-item__link" \n
+                                            href="/guide" \n>\n <span class="tv-header-navigation__icon" \n><svg
+                                                    viewBox="0 0 24 24" class="nrk-media-programguide" width="1.500em"
+                                                    height="1.500em" aria-hidden="true" focusable="false">
+                                                    <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M1 2.33333V19.7441l11 3.3 11-3.3V2.33333l-1.7351-1.15674L12 3.95606 2.73511 1.17659 1 2.33333zm11 3.71079l-9-2.7V18.2561l8 2.4V9.25081l2-.6V20.6561l8-2.4V3.34412l-9 2.7zm7 .81189l-4 1.2v2.08809l4-1.20003V6.85601z" />
+                                                </svg></span\n>\n <span\n
+                                                    class="tv-header-navigation__icon tv-header-navigation__icon tv-header-navigation__icon--active"
+                                                    \n hidden\n><svg viewBox="0 0 24 24"
+                                                        class="nrk-media-programguide--active" width="1.500em"
+                                                        height="1.500em" aria-hidden="true" focusable="false">
+                                                        <path fill="currentColor" fill-rule="evenodd"
+                                                            clip-rule="evenodd"
+                                                            d="M1 2.33332V19.744l10 3V9.25074l2-.6V22.744l10-3V2.33332l-1.7352-1.15681L12 3.95595 2.7352 1.17651 1 2.33332zm18 4.52263l-4 1.2V10.144l4-1.19999V6.85595z" />
+                                                    </svg></span\n>\n <span
+                                                    class="tv-header-navigation-item__label">TV-guide</span>\n </a>\n
+                                    </div>\n <div\n
+                                        class="tv-header-navigation-item tv-header-navigation-item--my-content" \n>\n
+                                        <a\n class="tv-text-styles-subhead tv-header-navigation-item__link" \n
+                                            href="/mittinnhold" \n \n>\n <span class="tv-header-navigation__icon"
+                                                \n><svg viewBox="0 0 24 24" class="nrk-user-notloggedin" width="1.500em"
+                                                    height="1.500em" aria-hidden="true" focusable="false">
+                                                    <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M3 12c0-4.97056 4.02944-9 9-9 4.9706 0 9 4.02944 9 9 0 4.9706-4.0294 9-9 9-4.97056 0-9-4.0294-9-9zm-2 0C1 5.92487 5.92487 1 12 1c6.0751 0 11 4.92487 11 11 0 6.0751-4.9249 11-11 11-6.07513 0-11-4.9249-11-11zm5 0c0 3.3137 2.68629 6 6 6 3.3137 0 6-2.6863 6-6h-2c0 2.2091-1.7909 4-4 4-2.20914 0-4-1.7909-4-4H6z" />
+                                                </svg></span\n>\n <span\n
+                                                    class="tv-header-navigation__icon tv-header-navigation__icon--active"
+                                                    \n hidden\n><svg viewBox="0 0 24 24"
+                                                        class="nrk-user-notloggedin--active" width="1.500em"
+                                                        height="1.500em" aria-hidden="true" focusable="false">
+                                                        <path fill="currentColor" fill-rule="evenodd"
+                                                            clip-rule="evenodd"
+                                                            d="M12 1C5.92487 1 1 5.92487 1 12c0 6.0751 4.92487 11 11 11 6.0751 0 11-4.9249 11-11 0-6.07513-4.9249-11-11-11zM6 12c0 3.3137 2.68629 6 6 6 3.3137 0 6-2.6863 6-6h-2c0 2.2091-1.7909 4-4 4-2.20914 0-4-1.7909-4-4H6z" />
+                                                    </svg></span\n>\n <span
+                                                    class="tv-header-navigation-item__label">Logg inn</span>\n </a>\n
+                                                </div>\n </nav>\n </header>\n <div\n id="hf-explore-backdrop" \n
+            class="explore__backdrop tv-theme" \n hidden\n>
+            </div>\n \n\n <div id="sfMain" style="outline: 0;" tabindex="-1" role="main">\n\n \n <div id="app-main">
+                    <main class="tv-series">
+                        <div class="tv-series-hero tv-theme">
+                            <div>
+                                <div class="tv-series-hero__backdrop-image-wrapper tv-theme">
+                                    <figure class="tv-series-hero__backdrop-image" aria-hidden="true"><img
+                                            alt="Stemningsbilde for serien"
+                                            class="tv-series-hero__backdrop-image__img lazyload" width="auto"
+                                            src="https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqg8mtg4wZLGJj2HircfSVs7w"
+                                            data-srcset="https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqg8mtg4wZLGJj2HircfSVs7w 300w,https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqgOmZ5nsJWjAL2HircfSVs7w 600w,https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqgbGawynBzedT2HircfSVs7w 960w,https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqgpx1BcEh8KxD2HircfSVs7w 1280w,https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqgs6TV_iMlJmj2HircfSVs7w 1600w,https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqgslFq1ssvVbT2HircfSVs7w 1920w"
+                                            data-sizes="auto" /></figure>
+                                    <div class="tv-series-hero__backdrop-overlay"></div>
+                                    <div class="tv-series-hero__main-image-wrapper">
+                                        <figure class="tv-series-hero-series-image" aria-hidden="true"><img
+                                                class="tv-series-hero-series-image__image lazyload" width="auto"
+                                                src="https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqg8mtg4wZLGJj2HircfSVs7w"
+                                                data-srcset="https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqg8mtg4wZLGJj2HircfSVs7w 300w,https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqgOmZ5nsJWjAL2HircfSVs7w 600w,https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqgbGawynBzedT2HircfSVs7w 960w,https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqgpx1BcEh8KxD2HircfSVs7w 1280w,https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqgs6TV_iMlJmj2HircfSVs7w 1600w,https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqgslFq1ssvVbT2HircfSVs7w 1920w"
+                                                data-sizes="auto" /></figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tv-series-hero__text-wrapper">
+                                <h1 class="tv-text-styles-largeTitle tv-series-hero__title">Aargang 1882</h1>
+                                <div class="tv-series-hero__button-wrapper"><button
+                                        class="tv-theme tv-button tv-button--icon tv-text-styles-subhead tv-share-button tv-text-styles-subhead"
+                                        title="Del serie"><svg aria-hidden="true" width="1.500em" height="1.500em"
+                                            viewBox="0 0 24 24">
+                                            <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M20.6023 9l-4.9-7H13.43l4.2 6H12c-3.86599 0-7 3.134-7 7v7.2929l2-2V15c0-2.7614 2.23858-5 5-5h5.63l-4.2 6h2.2723l4.9-7z" />
+                                        </svg></button></div>
+                            </div>
+                        </div>
+                        <div></div>
+                        <div class="tv-series-sticky__reference"></div>
+                        <div class="tv-series-sticky">
+                            <div class="tv-theme tv-series-season-select">
+                                <div class="tv-theme tv-select"><select
+                                        class="tv-theme tv-text-styles-subhead tv-select__select tv-series-select">
+                                        <option selected="" class="tv-select__option"
+                                            data-display-value="Nyeste episoder" value="alle">Nyeste episoder</option>
+                                        <option class="tv-select__option" data-display-value="1982"
+                                            value="/tv/catalog/series/aargang-1882/seasons/1982">1982</option>
+                                    </select><svg aria-hidden="true" width="1.500em" height="1.500em"
+                                        viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M4 10.88l8 5.6 8-5.6V9l-8 5.6L4 9v1.88z" />
+                                    </svg></div>
+                            </div>
+                        </div>
+                        <div style="display:block">
+                            <div class="tv-series-season-grid">
+                                <div id="episode-list"
+                                    class="tv-theme tv-series-season-grid__episode-list tv-series-season-episode__list--sticky">
+                                    <div class="episode-list">
+                                        <div
+                                            class="tv-text-styles-caption1 tv-series-episode-grouped-list-item__season-name">
+                                            Sesong 1982</div>
+                                        <ul class="tv-series-episodes-list-items">
+                                            <li><a id="tv-series-episode-list-item-0"
+                                                    class="tv-theme tv-text-styles-subhead tv-series-episode-list-item tv-series-episode-list-item--selected"
+                                                    href="/serie/aargang-1882/1982/FOLA01005882" aria-current="true"
+                                                    aria-label="Aargang 1882 - Aktuelt Magazin. ">
+                                                    <div class="tv-series-episode-list-item-image"><img
+                                                            class="tv-series-episode-list-item-image__image" alt=""
+                                                            src="https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqg8mtg4wZLGJj2HircfSVs7w" />
+                                                    </div>
+                                                    <div class="tv-series-episode-list-item__text-wrapper"
+                                                        aria-hidden="true">
+                                                        <div class="tv-series-episode-list-item__title">
+                                                            Aargang\xc2\xa01882 - Aktuelt Magazin</div>
+                                                    </div>
+                                                </a></li>
+                                            <li><a id="tv-series-episode-list-item-1"
+                                                    class="tv-theme tv-text-styles-subhead tv-series-episode-list-item"
+                                                    href="/serie/aargang-1882/1982/FOLA01005782" aria-current="false"
+                                                    aria-label="Aargang 1882 - aktuelt magazin. ">
+                                                    <div class="tv-series-episode-list-item-image"><img
+                                                            class="tv-series-episode-list-item-image__image" alt=""
+                                                            src="https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqg8mtg4wZLGJj2HircfSVs7w" />
+                                                    </div>
+                                                    <div class="tv-series-episode-list-item__text-wrapper"
+                                                        aria-hidden="true">
+                                                        <div class="tv-series-episode-list-item__title">
+                                                            Aargang\xc2\xa01882 - aktuelt magazin</div>
+                                                    </div>
+                                                </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="tv-screen-reader-only">
+                                    <h2 class="tv-text-styles-title2 tv-series-episode-title" aria-hidden="true">Aargang
+                                        1882 - Aktuelt Magazin</h2>
+                                </div>
+                                <div class="tv-series-season-grid__video">
+                                    <div class="tv-theme tv-series-video-player">
+                                        <div class="tv-series-eea-playback-info__poster"><img
+                                                class="tv-series-eea-playback-info__image"
+                                                src="https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqg8mtg4wZLGJj2HircfSVs7w"
+                                                srcSet="https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqg8mtg4wZLGJj2HircfSVs7w 300w,https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqgOmZ5nsJWjAL2HircfSVs7w 600w,https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqgbGawynBzedT2HircfSVs7w 960w,https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqgpx1BcEh8KxD2HircfSVs7w 1280w,https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqgs6TV_iMlJmj2HircfSVs7w 1600w,https://gfx.nrk.no/DEeM7Z7L-29fxM-CgcjNqgslFq1ssvVbT2HircfSVs7w 1920w"
+                                                sizes="(min-width: 40rem) 66.6666vw, 100vw" alt="" aria-hidden="true"
+                                                role="presentation" />
+                                            <div class="tv-series-spinner tv-series-eea-playback-info__spinner">
+                                                <nrk-spinner-tv delay="500" aria-hidden="true" role="img">
+                                                </nrk-spinner-tv>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tv-series-button-group"><button
+                                            class="tv-theme tv-button tv-button--icon tv-text-styles-subhead tv-share-button tv-series-season-episode__share-button"
+                                            title="Del episode"><svg aria-hidden="true" width="1.500em" height="1.500em"
+                                                viewBox="0 0 24 24">
+                                                <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M20.6023 9l-4.9-7H13.43l4.2 6H12c-3.86599 0-7 3.134-7 7v7.2929l2-2V15c0-2.7614 2.23858-5 5-5h5.63l-4.2 6h2.2723l4.9-7z" />
+                                            </svg></button></div>
+                                </div>
+                                <div class="tv-series-season-grid__episode-details"><button
+                                        class="tv-theme tv-button tv-text-styles-subhead tv-series-mobile-season-button"><span
+                                            class="tv-screen-reader-only">Tilbake til episodelisten</span><svg
+                                            aria-hidden="true" width="1.500em" height="1.500em" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M13.12 4l-5.6 8 5.6 8H15l-5.6-8L15 4h-1.88z" />
+                                        </svg><span class="tv-series-mobile-season-button__text"
+                                            aria-hidden="true">Aargang 1882</span></button>
+                                    <div class="tv-series-season-grid-episode-header">
+                                        <h2 class="tv-text-styles-title2 tv-series-episode-title" aria-hidden="true">
+                                            Aargang 1882 - Aktuelt Magazin</h2>
+                                    </div>
+                                    <div class="tv-theme tv-series-episode-metadata">
+                                        <ul class="tv-text-styles-footnote tv-series-episode-metadata__short-list">
+                                            <li>Aargang 1882 - Aktuelt Magazin</li>
+                                            <li>Tillatt for alle</li>
+                                            <li><span>32
+                                                    <!-- -->\xc2\xa0<abbr class="tv-series-episode-duration"
+                                                        title="minutter">min</abbr>
+                                                </span></li>
+                                        </ul>
+                                    </div>
+                                    <section class="tv-series-section">
+                                        <h3 class="tv-text-styles-title2 tv-series-section__title">Se ogs\xc3\xa5</h3>
+                                        <ul class="tv-vod-recommendations">
+                                            <li class="tv-vod-recommendation">
+                                                <div class="tv-theme tv-series-pre-load-box"></div>
+                                                <div class="tv-vod-recommendation__title">\xc2\xa0</div>
+                                                <div class="tv-vod-recommendation__subtitle">\xc2\xa0</div>
+                                            </li>
+                                            <li class="tv-vod-recommendation">
+                                                <div class="tv-theme tv-series-pre-load-box"></div>
+                                                <div class="tv-vod-recommendation__title">\xc2\xa0</div>
+                                                <div class="tv-vod-recommendation__subtitle">\xc2\xa0</div>
+                                            </li>
+                                            <li class="tv-vod-recommendation">
+                                                <div class="tv-theme tv-series-pre-load-box"></div>
+                                                <div class="tv-vod-recommendation__title">\xc2\xa0</div>
+                                                <div class="tv-vod-recommendation__subtitle">\xc2\xa0</div>
+                                            </li>
+                                            <li class="tv-vod-recommendation">
+                                                <div class="tv-theme tv-series-pre-load-box"></div>
+                                                <div class="tv-vod-recommendation__title">\xc2\xa0</div>
+                                                <div class="tv-vod-recommendation__subtitle">\xc2\xa0</div>
+                                            </li>
+                                            <li class="tv-vod-recommendation">
+                                                <div class="tv-theme tv-series-pre-load-box"></div>
+                                                <div class="tv-vod-recommendation__title">\xc2\xa0</div>
+                                                <div class="tv-vod-recommendation__subtitle">\xc2\xa0</div>
+                                            </li>
+                                            <li class="tv-vod-recommendation">
+                                                <div class="tv-theme tv-series-pre-load-box"></div>
+                                                <div class="tv-vod-recommendation__title">\xc2\xa0</div>
+                                                <div class="tv-vod-recommendation__subtitle">\xc2\xa0</div>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                    <section class="tv-series-section">
+                                        <h3 class="tv-text-styles-title2 tv-series-section__title">Mer informasjon</h3>
+                                        <ul class="tv-theme tv-series-more-info">
+                                            <li class="tv-series-more-info__group">
+                                                <ul>
+                                                    <li class="tv-text-styles-body tv-series-more-info-item"><span
+                                                            class="tv-series-more-info-item__title">Tilgjengelig fra
+                                                            <!-- -->:
+                                                        </span> <span class="tv-series-more-info-item__value">3. juli
+                                                            2015 kl. 00:00</span></li>
+                                                    <li class="tv-text-styles-body tv-series-more-info-item"><span
+                                                            class="tv-series-more-info-item__title">Tilgjengelig til
+                                                            <!-- -->:
+                                                        </span> <span class="tv-series-more-info-item__value">Alltid
+                                                            tilgjengelig</span></li>
+                                                    <li class="tv-text-styles-body tv-series-more-info-item"><span
+                                                            class="tv-series-more-info-item__title">Tilgjengelig i
+                                                            <!-- -->:
+                                                        </span> <span
+                                                            class="tv-series-more-info-item__value">Verden</span></li>
+                                                </ul>
+                                            </li>
+                                            <li class="tv-series-more-info__group">
+                                                <ul>
+                                                    <li class="tv-text-styles-body tv-series-more-info-item"><span
+                                                            class="tv-series-more-info-item__title">Aldersgrense
+                                                            <!-- -->:
+                                                        </span> <span class="tv-series-more-info-item__value">A</span>
+                                                    </li>
+                                                    <li class="tv-text-styles-body tv-series-more-info-item"><span
+                                                            class="tv-series-more-info-item__title">Produksjons\xc3\xa5r
+                                                            <!-- -->:
+                                                        </span> <span
+                                                            class="tv-series-more-info-item__value">1982</span></li>
+                                                    <li class="tv-text-styles-body tv-series-more-info-item"><span
+                                                            class="tv-series-more-info-item__title">Lengde
+                                                            <!-- -->:
+                                                        </span> <span class="tv-series-more-info-item__value">32
+                                                            minutter</span></li>
+                                                    <li class="tv-text-styles-body tv-series-more-info-item"><span
+                                                            class="tv-series-more-info-item__title">Originaltittel
+                                                            <!-- -->:
+                                                        </span> <span class="tv-series-more-info-item__value">Aargang
+                                                            1882 - Aktuelt Magazin</span></li>
+                                                </ul>
+                                            </li>
+                                            <li class="tv-series-more-info__group">
+                                                <ul></ul>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="series-program-id-container" data-program-id="FOLA01005882"></div>
+                    </main>
+                </div>\n \n \n\n </div>\n\n \n <footer class="tv-footer tv-theme" id="footer">\n <div
+                    class="tv-footer-text-list tv-text-styles-footnote">\n <ul class="tv-footer-text-list__sublist">\n
+                        <li class="tv-footer-text-list__item">\n <a class="tv-footer-link"
+                                href="https://www.nrk.no/etikk/opphavsrett-pa-nrk.no-1.2843522">\n Opphavsrett NRK
+                                \xc2\xa9 2021\n </a>\n </li>\n </ul>\n <ul class="tv-footer-text-list__sublist">\n <li
+                            class="tv-footer-text-list__item">\n <span
+                                class="tv-footer-label">Nettsjef:</span><span>Hildegunn Soldal</span>\n </li>\n <li
+                            class="tv-footer-text-list__item">\n <span class="tv-footer-label">TV-sjef:</span><span>Arne
+                                Helsingen</span>\n </li>\n <li class="tv-footer-text-list__item">\n <span
+                                class="tv-footer-label">Ansvarlig redakt\xc3\xb8r:</span
+                                class="tv-footer-value"><span>Thor Gjermund Eriksen</span>\n </li>\n </ul>\n <ul
+                        class="tv-footer-text-list__sublist">\n <li class="tv-footer-text-list__item">\n <a
+                                class="tv-footer-link"
+                                href="https://www.nrk.no/etikk/redaktoransvar-pa-nrk.no-1.2843526"
+                                \n>Redakt\xc3\xb8ransvar</a\n>\n </li>\n <li class="tv-footer-text-list__item">\n <a
+                                class="tv-footer-link" href="http://www.nrk.no/kontakt">Kontakt</a>\n </li>\n <li
+                            class="tv-footer-text-list__item">\n <a class="tv-footer-link"
+                                href="https://www.nrk.no/informasjon">Om NRK</a>\n </li>\n <li
+                            class="tv-footer-text-list__item">\n <a class="tv-footer-link"
+                                href="https://www.nrk.no/retningslinjer/personvern-i-nrk-1.7765898" \n>Personvern</a\n>
+                                \n </li>\n <li class="tv-footer-text-list__item">\n <a\n class="tv-footer-link" \n
+                                href="https://www.nrk.no/retningslinjer/informasjonskapsler-_cookies_-1.11109868" \n>
+                                Informasjonskapsler (cookies)</a\n>\n </li>\n <li class="tv-footer-text-list__item">\n
+                            <a class="tv-footer-link" href="https://tv.nrk.no/alle-programmer">A \xe2\x80\x93
+                                \xc3\x85</a>\n </li>\n </ul>\n </div>\n <div class="tv-footer-button-container">\n \n
+                    <button name="age-control" class="tv-button footer-button tv-text-styles-caption1 tv-theme">\n \n
+                        <svg viewBox="0 0 24 24" class="nrk-lock" width="1.500em" height="1.500em" aria-hidden="true"
+                            focusable="false">
+                            <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12 2C9.79086 2 8 3.79086 8 6H6c0-3.31371 2.68629-6 6-6 3.3137 0 6 2.68629 6 6v2h-2V6c0-2.20914-1.7909-4-4-4zm9 21V10H3v13h18zM5 21v-9h14v9H5zm8-2v-5h-2v5h2z" />
+                        </svg>\n <span class="footer-button__text">Alderskontroll</span>\n \n </button>\n \n <a\n
+                        id="helplink" \n class="tv-button footer-button tv-text-styles-caption1 tv-theme tv-footer-link"
+                        \n href="/hjelp" \n><svg viewBox="0 0 24 24" class="nrk-help" width="1.500em" height="1.500em"
+                            aria-hidden="true" focusable="false">
+                            <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
+                                d="M21 12c0 4.9706-4.0294 9-9 9-4.97056 0-9-4.0294-9-9 0-4.97056 4.02944-9 9-9 4.9706 0 9 4.02944 9 9zm-9 11c6.0751 0 11-4.9249 11-11 0-6.07513-4.9249-11-11-11C5.92487 1 1 5.92487 1 12c0 6.0751 4.92487 11 11 11zm-.806-9h1.666v-.262c0-.2894.0817-.574.245-.854s.3617-.539.595-.777c.2333-.238.4667-.483.7-.735.2333-.252.4317-.5507.595-.896.1633-.3454.245-.71404.245-1.10605 0-.84-.2963-1.48633-.889-1.939-.5927-.45267-1.3277-.679-2.205-.679-1.0174 0-1.8293.266-2.43601.798-.60667.53201-.91 1.32533-.91 2.38H10.522c0-.51333.14-.90766.42-1.183.28-.27533.644-.413 1.092-.413.4107 0 .735.10267.973.308.238.20534.357.50867.357.91 0 .26134-.0747.51805-.224.77005s-.329.4853-.539.7c-.21.2146-.4223.4386-.637.672-.2147.2333-.3967.511-.546.833-.1493.322-.224.665-.224 1.029V14zM12 17.7c.6627 0 1.2-.5373 1.2-1.2s-.5373-1.2-1.2-1.2c-.6628 0-1.2.5373-1.2 1.2s.5372 1.2 1.2 1.2z" />
+                        </svg><span class="footer-button__text">Hjelp</span></a\n>\n </div>\n </footer>\n \n \n
+            <script>\n    window.__NRK_TV_SERIES_INITIAL_DATA_V2__ = { "initialState": { "config": { "PSAPI": { "basePath": "https:\\u002F\\u002Fpsapi.nrk.no" }, "FEATURES": { "IMPROVE_METADATA": true, "OVERRIDE_SERIES_KALD_KRIG_METADATA": true, "X_ROBOTS_TAG": false } }, "series": { "_links": { "favourite": { "href": "\\u002Ftv\\u002Fuserdata\\u002F{userId}\\u002Ffavourites\\u002Fseries\\u002Faargang-1882" }, "highlightedEpisode": { "href": "\\u002Ftv\\u002Fuserdata\\u002F{userId}\\u002Fprogress\\u002Fseries\\u002Faargang-1882\\u002FhighlightedProgram" }, "fargerik": { "href": "https:\\u002F\\u002Ffargerik-psapi.nrk.no\\u002Ftv\\u002Fseriespage\\u002Fseries\\u002Faargang-1882" }, "share": { "href": "https:\\u002F\\u002Ftv.nrk.no\\u002Fse?s=aargang-1882{&autoplay}" } }, "type": "standard", "id": "0b7cc1d9c9bd86396bc4880a057d70c9", "urlFriendlySeriesId": "aargang-1882", "titles": { "title": "Aargang 1882", "subtitle": undefined }, "image": [{ "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqg8mtg4wZLGJj2HircfSVs7w", "width": 300 }, { "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqgOmZ5nsJWjAL2HircfSVs7w", "width": 600 }, { "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqgbGawynBzedT2HircfSVs7w", "width": 960 }, { "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqgpx1BcEh8KxD2HircfSVs7w", "width": 1280 }, { "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqgs6TV_iMlJmj2HircfSVs7w", "width": 1600 }, { "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqgslFq1ssvVbT2HircfSVs7w", "width": 1920 }], "backdropImage": [{ "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqg8mtg4wZLGJj2HircfSVs7w", "width": 300 }, { "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqgOmZ5nsJWjAL2HircfSVs7w", "width": 600 }, { "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqgbGawynBzedT2HircfSVs7w", "width": 960 }, { "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqgpx1BcEh8KxD2HircfSVs7w", "width": 1280 }, { "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqgs6TV_iMlJmj2HircfSVs7w", "width": 1600 }, { "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqgslFq1ssvVbT2HircfSVs7w", "width": 1920 }], "highlightedInstalment": "8efd0e9e4ee210af1f6da7f4afdd2950", "category": { "id": "nyheter", "name": "Nyheter" }, "instalments": [{ "type": "standard", "id": "8efd0e9e4ee210af1f6da7f4afdd2950", "prfId": "FOLA01005882", "titles": { "title": "Aargang 1882 - Aktuelt Magazin", "subtitle": undefined }, "originalTitle": "Aargang 1882 - Aktuelt Magazin", "image": [{ "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqg8mtg4wZLGJj2HircfSVs7w", "width": 300 }, { "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqgOmZ5nsJWjAL2HircfSVs7w", "width": 600 }, { "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqgbGawynBzedT2HircfSVs7w", "width": 960 }, { "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqgpx1BcEh8KxD2HircfSVs7w", "width": 1280 }, { "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqgs6TV_iMlJmj2HircfSVs7w", "width": 1600 }, { "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqgslFq1ssvVbT2HircfSVs7w", "width": 1920 }], "durationISO8601": "PT32M16S", "durationInSeconds": 1936, "usageRights": { "from": { "date": "2015-07-03T00:00:00+02:00", "displayValue": "3. juli 2015 kl. 00:00" }, "to": { "date": "9999-12-31T00:00:00+01:00", "displayValue": "Alltid tilgjengelig" }, "geoBlock": { "displayValue": "Verden" } }, "productionYear": 1982, "releaseDateOnDemand": "2015-07-03T00:00:00+02:00", "availability": { "status": "available", "label": null }, "legalAge": { "body": { "rating": { "code": "A", "displayValue": "Tillatt for alle", "displayAge": "A" } } }, "contributors": [], "ga": { "dimension1": "prf:FOLA01005882", "dimension2": "aargang-1882-aktuelt-magazin", "dimension3": "1982", "dimension4": "11", "dimension5": "08", "dimension10": "prf:FOLA01005882", "dimension21": "aargang-1882", "dimension22": "2", "dimension23": "nyheter", "dimension25": "video", "dimension26": "ondemand" }, "season": { "name": "1982", "pathname": "\\u002Ftv\\u002Fcatalog\\u002Fseries\\u002Faargang-1882\\u002Fseasons\\u002F1982", "title": "Sesong 1982" }, "recommendationsPathTemplate": "\\u002Ftv\\u002Frecommendations\\u002FFOLA01005882?list=tv_viderenavigasjon_fra_episode{&maxNumber,experiment}", "shareUrlTemplate": "https:\\u002F\\u002Ftv.nrk.no\\u002Fse?v=FOLA01005882{&autoplay,t}", "badge": undefined }, { "type": "standard", "id": "e2714d91d1c41c83b181b661af903181", "prfId": "FOLA01005782", "titles": { "title": "Aargang 1882 - aktuelt magazin", "subtitle": undefined }, "originalTitle": "Aargang 1882 - aktuelt magazin", "image": [{ "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqg8mtg4wZLGJj2HircfSVs7w", "width": 300 }, { "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqgOmZ5nsJWjAL2HircfSVs7w", "width": 600 }, { "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqgbGawynBzedT2HircfSVs7w", "width": 960 }, { "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqgpx1BcEh8KxD2HircfSVs7w", "width": 1280 }, { "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqgs6TV_iMlJmj2HircfSVs7w", "width": 1600 }, { "url": "https:\\u002F\\u002Fgfx.nrk.no\\u002FDEeM7Z7L-29fxM-CgcjNqgslFq1ssvVbT2HircfSVs7w", "width": 1920 }], "durationISO8601": "PT44M16S", "durationInSeconds": 2656, "usageRights": { "from": { "date": "2015-07-03T00:00:00+02:00", "displayValue": "3. juli 2015 kl. 00:00" }, "to": { "date": "9999-12-31T00:00:00+01:00", "displayValue": "Alltid tilgjengelig" }, "geoBlock": { "displayValue": "Verden" } }, "productionYear": 1982, "releaseDateOnDemand": "2015-07-03T00:00:00+02:00", "availability": { "status": "available", "label": null }, "legalAge": { "body": { "rating": { "code": "A", "displayValue": "Tillatt for alle", "displayAge": "A" } } }, "contributors": [], "ga": { "dimension1": "prf:FOLA01005782", "dimension2": "aargang-1882-aktuelt-magazin", "dimension3": "1982", "dimension4": "10", "dimension5": "12", "dimension10": "prf:FOLA01005782", "dimension21": "aargang-1882", "dimension22": "1", "dimension23": "nyheter", "dimension25": "video", "dimension26": "ondemand" }, "season": { "name": "1982", "pathname": "\\u002Ftv\\u002Fcatalog\\u002Fseries\\u002Faargang-1882\\u002Fseasons\\u002F1982", "title": "Sesong 1982" }, "recommendationsPathTemplate": "\\u002Ftv\\u002Frecommendations\\u002FFOLA01005782?list=tv_viderenavigasjon_fra_episode{&maxNumber,experiment}", "shareUrlTemplate": "https:\\u002F\\u002Ftv.nrk.no\\u002Fse?v=FOLA01005782{&autoplay,t}", "badge": undefined }], "seasons": [{ "name": "1982", "pathname": "\\u002Ftv\\u002Fcatalog\\u002Fseries\\u002Faargang-1882\\u002Fseasons\\u002F1982", "title": "1982" }], "progressPath": "\\u002Ftv\\u002Fuserdata\\u002F{userId}\\u002Fprogress\\u002Fseries\\u002Faargang-1882?contentIds=H4sIAAAAAAAAA3Pz93E0MDQwMLWwMNJxg3HMLYwAvDN0zhkAAAA", "nextPath": undefined, "extraMaterial": undefined }, "personalization": { "highlightedProgram": null, "fetchingHighlightedProgram": false, "fetchingHighlightedProgramFailed": false, "deleteAsFavouritePath": null, "isSeriesFavorite": false, "isSeriesFavoriteUpdating": false, "fetchingIsSeriesFavorite": false, "fetchingIsSeriesFavoriteFailed": false, "episodesProgress": {}, "fetchingEpisodesProgress": false, "fetchingEpisodesProgressFailed": true, "hasFetchedSeasonEpisodesProgress": false, "fetchingAllPersonalizationsLoading": false }, "accessToken": { "isLoggedIn": false, "isFetching": false, "token": null }, "standard": { "instalments": { "progressPath": "\\u002Ftv\\u002Fuserdata\\u002F{userId}\\u002Fprogress\\u002Fseries\\u002Faargang-1882?contentIds=H4sIAAAAAAAAA3Pz93E0MDQwMLWwMNJxg3HMLYwAvDN0zhkAAAA", "nextPath": undefined, "instalments": [], "isLoading": false, "hasFailed": false }, "seasons": { "seasons": {}, "selectedSeason": { "selectedSeason": "alle" } } }, "news": { "instalments": { "instalments": [], "progressPath": undefined, "isLoading": false, "hasFailed": false }, "seasons": { "seasons": {}, "selectedSeason": { "selectedSeason": "alle" } } }, "theme": { "isLoading": false, "hasFailed": false, "data": { "light": "#efc9a5", "mediumLight10": "#6c523a", "mediumLight20": "#775c43", "medium": "#5f462f", "dark": "#46301c" } }, "playback": { "teaserCanPlay": true, "trailerCanPlay": true, "episodeCanPlay": true }, "trailer": { "metadata": null, "open": false, "userInteracted": false } }, "initialRoute": "\\u002Fserie\\u002Faargang-1882" }; \n</script>
+            \n
+            <script defer src="/_static/serie/tv-web-series.0145f0b41a517c36a2c8.js"></script>\n \n\n
+            <script>window.idsrv = { \n    inIframe: function () { \n        try { \n            return window.self !== window.top; \n } catch (e) { \n            return true; \n } \n }, \n    config: { \n        sessionStateUrl: \'/auth/sessionstate\',\n        clientId: \'tv.nrk.no.web2\',\n        loginPath: \'/auth/reauthenticate\',\n        logoutPath: \'/auth/localautologout\',\n        opOrigin: \'https://innlogging.nrk.no\',\n        opSessionIframeUrl: \'https://innlogging.nrk.no/core/nonstandard/opsession\',\n        opSessionInterval: 2000,\n        firstMessage: true,\n        opLoginOnFirstMessageOnly: false,\n        opLogoutOnFirstMessageOnly: false\n    },\n    timer: null,\n    init: function () {\n        if (idsrv.inIframe()) {\n            console.warn(\'Aborting idsrv.init inside an iFrame\');\n            return;\n        }\n        if (window.deactivateOpSession) {\n            console.warn(\'Aborting idsrv.init since window.deactivateOpSession is set\');\n            return;\n        }\n\n        var xhr = new XMLHttpRequest();\n        xhr.onreadystatechange = function () {\n            if (xhr.readyState === 4) {\n                if (xhr.status >= 200 && xhr.status < 300) {\n                    var data = JSON.parse(xhr.responseText);\n                    idsrv.config.sessionState = data.sessionState;\n                    idsrv.go();\n                } else {\n                    console.error(xhr.responseText);\n                }\n            }\n        };\n        xhr.open(\'GET\', idsrv.config.sessionStateUrl, true);\n        xhr.setRequestHeader("Accept", "application/json");\n        xhr.send();\n    },\n    go: function () {\n        if (idsrv.config.sessionState === \'reauthenticate\') {\n            window.location.href = idsrv.config.loginPath + \'?redirectUrl=\' + window.location.href;\n            return;\n        }\n        if (idsrv.config.sessionState === \'offgrid\') {\n            console.log(\'Offgrid mode: no check will be made against authority opsession frame\');\n            return;\n        }\n        var iframe = document.createElement(\'iframe\');\n        iframe.id = \'op\';\n        iframe.src = idsrv.config.opSessionIframeUrl + \'?d=\' + new Date().getTime();\n        iframe.style.display = \'none\';\n        var counter = 0;\n        idsrv.timer = window.setInterval(function () {\n            try {\n                var op = iframe.contentWindow;\n                op.postMessage(idsrv.config.clientId + \' \' + idsrv.config.sessionState, \'*\');\n            } catch (ex) {\n                counter++;\n                if (counter > 5) {\n                    console.log(\'Error connecting to opsession frame\');\n                    window.clearInterval(idsrv.timer);\n                }\n            }\n        }, idsrv.config.opSessionInterval);\n        window.addEventListener("message",\n            function (e) {\n                {\n                    if (e.origin === idsrv.config.opOrigin) {\n                        {\n                            if (e.data !== "unchanged") {\n                                {\n                                    window.clearInterval(idsrv.timer);\n                                }\n                            }\n                            idsrv.handle(e);\n                        }\n                    }\n                }\n            });\n\n\n        document.body.appendChild(iframe);\n    },\n    handle: function (e) {\n        var shouldHandleLogin = idsrv.config.firstMessage || !idsrv.config.opLoginOnFirstMessageOnly;\n        var shouldHandleLogout = idsrv.config.firstMessage || !idsrv.config.opLogoutOnFirstMessageOnly;\n        switch (e.data) {\n\n            case "changed":\n                if (shouldHandleLogin) {\n                    window.location.href = idsrv.config.loginPath + \'?redirectUrl=\' + window.location.href;\n                }\n                break;\n            case "ended":\n                if (shouldHandleLogout) {\n                    window.location.href = idsrv.config.logoutPath + \'?redirectUrl=\' + window.location.href;\n                }\n                break;\n        }\n        idsrv.config.firstMessage = false;\n    }\n};\nidsrv.init();\n</script>
+</body>\n\n
+
+</html>\n'

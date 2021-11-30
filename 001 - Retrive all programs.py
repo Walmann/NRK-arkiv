@@ -2,6 +2,7 @@
 import string
 
 from bs4.element import Script
+import requests
 
 # extra_letters = "ae, oe, aa, 0-9"
 # letters = string.ascii_lowercase
@@ -11,6 +12,7 @@ from bs4.element import Script
 letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "ae", "oe", "aa", "0-9"]
 # letters = ["ae", "oe", "aa", "0-9"]
 print(letters)
+import requests
 from requests_html import HTMLSession
 from bs4 import BeautifulSoup
 import json
@@ -18,10 +20,43 @@ import json
 from selenium import webdriver
 import time
 
+
+def Get_Program_Id(Program_href):
+
+    url = "https://tv.nrk.no" + Program_href
+    html_page = requests.get(url)
+    beautiful_html_page = BeautifulSoup(html_page.content, "html.parser")
+    
+    List_of_div = beautiful_html_page.find_all(id="series-program-id-container") #TODO: denne finner ingenting. Fikse dette.
+    List_of_div = List_of_div.append(beautiful_html_page.find_all('property="nrk:program-id"'))
+    for tag in List_of_div:
+        Program_id = tag.get("data-program-id")
+        # if tag.get("") #<meta property="nrk:program-id" content="FNYH70001182"/>
+        if Program_id == "None":
+            Program_id = tag.get("content")
+            input("None was found, using content")
+        print(Program_id)
+        return Program_id
+
+
 List_In_Memory = []
 amount = 0
+
+chromedriver_path =  "C:\chromedriver\chromedriver.exe"
+options = webdriver.ChromeOptions()
+# options.binary_location = chromedriver_path
+# options.add_experimental_option('excludeSwitches', ['enable-logging'])
+options.add_argument("--headless")
+options.add_argument("--log-level=3")
+options.add_argument("--window-size=800x800")
+options.add_argument("--mute-audio")
+# options.add_argument("--no-sandbox")
+# options.add_argument("--disable-dev-shm-usage")
+# options.add_argument('--disable-extensions')
+# options.add_argument('--disable-gpu')
+
 for link in letters:
-    driver = webdriver.Chrome("C:\chromedriver\chromedriver.exe")
+    driver = webdriver.Chrome(chrome_options=options,executable_path=chromedriver_path)
     driver.get("https://tv.nrk.no/alle-programmer/" + link)
     # time.sleep(1)
     html_page = driver.page_source
@@ -34,9 +69,11 @@ for link in letters:
 #    TODO: Fix the extra_letters pages not being included.
     with open("List_Of_Programs.txt", "a", encoding="utf-8") as file_object:
         for item in List_In_Memory:
-            array = [item.text,item['href']]
+            Program_href = item["href"]
+            array = [item.text,Program_href, Get_Program_Id(Program_href)]
             json.dump(array, file_object, ensure_ascii=False)
             file_object.write("\n")
+            print(array)
 print(amount)
 # ["program", /serie/programlink]
     
