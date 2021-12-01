@@ -15,6 +15,11 @@ Må så finne alle programmer laget før 2015
 Se TODO i 001
 
 
+https://github.com/timethrow/yt-dlp/blob/master/yt_dlp/extractor/nrk.py
+Avalible: https://psapi.nrk.no/tv/catalog/programs/MUHH41000121
+Expired: https://psapi.nrk.no/tv/catalog/programs/MSUI30006115
+
+
 https://www.nrk.no/nyheter/programmer-kan-forsvinne-fra-nett-1.15727475
 https://psapi.nrk.no/documentation/redoc/programsider-tv/
 https://psapi.nrk.no/documentation/redoc/programsider-tv/#tag/Programs
