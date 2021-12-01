@@ -3,6 +3,7 @@ import string
 
 from bs4.element import Script
 import requests
+import yt_dlp
 
 # extra_letters = "ae, oe, aa, 0-9"
 # letters = string.ascii_lowercase
@@ -17,26 +18,48 @@ from requests_html import HTMLSession
 from bs4 import BeautifulSoup
 import json
 
+import subprocess
+import sys
+from yt_dlp import YoutubeDL
 from selenium import webdriver
-import time
+
 
 
 def Get_Program_Id(Program_href):
-
+    ydl_opts = {'playlistend': 1}
     url = "https://tv.nrk.no" + Program_href
-    html_page = requests.get(url)
-    beautiful_html_page = BeautifulSoup(html_page.content, "html.parser")
+    Program_Json = YoutubeDL(ydl_opts).extract_info(url, download=False)
+    try:
+        return Program_Json['entries'][0]['id']
+    except:
+            try: return Program_Json['id']
+            except: print("Could not find ID"), input()
     
-    List_of_div = beautiful_html_page.find_all(id="series-program-id-container") #TODO: denne finner ingenting. Fikse dette.
-    List_of_div = List_of_div.append(beautiful_html_page.find_all('property="nrk:program-id"'))
-    for tag in List_of_div:
-        Program_id = tag.get("data-program-id")
-        # if tag.get("") #<meta property="nrk:program-id" content="FNYH70001182"/>
-        if Program_id == "None":
-            Program_id = tag.get("content")
-            input("None was found, using content")
-        print(Program_id)
-        return Program_id
+    # html_page = requests.get(url)
+    # beautiful_html_page = BeautifulSoup(html_page.content, "html.parser")
+    
+    # List_of_div = beautiful_html_page.find_all(id="series-program-id-container") #TODO: denne finner ingenting. Fikse dette.
+    # List_of_div = List_of_div.append(beautiful_html_page.find_all('property="nrk:program-id"'))
+    # for tag in List_of_div:
+    #     Program_id = tag.get("data-program-id")
+    #     # if tag.get("") #<meta property="nrk:program-id" content="FNYH70001182"/>
+    #     if Program_id == "None":
+    #         Program_id = tag.get("content")
+    #         input("None was found, using content")
+    #     print(Program_id)
+    #     return Program_id
+
+def Get_Program_Year(Program_ID):
+    from urllib.request import urlopen
+    url = "https://psapi.nrk.no/tv/catalog/programs/" + Program_ID
+    Program_Json = json.loads(urlopen(url).read())
+    return Program_Json['moreInformation']['productionYear']
+    
+def Check_Avability(Program_ID):
+    from urllib.request import urlopen
+    url = "https://psapi.nrk.no/tv/catalog/programs/" + Program_ID
+    Program_Json = json.loads(urlopen(url).read())
+    return Program_Json['programInformation']['availability']['status']
 
 
 List_In_Memory = []
@@ -70,10 +93,14 @@ for link in letters:
     with open("List_Of_Programs.txt", "a", encoding="utf-8") as file_object:
         for item in List_In_Memory:
             Program_href = item["href"]
-            array = [item.text,Program_href, Get_Program_Id(Program_href)]
-            json.dump(array, file_object, ensure_ascii=False)
-            file_object.write("\n")
-            print(array)
+            Program_ID = Get_Program_Id(Program_href)
+            if Check_Avability(Program_ID) == "available":
+                Program_Year = Get_Program_Year(Program_ID)
+                array = [item.text,Program_href, Program_ID, Program_Year]
+                json.dump(array, file_object, ensure_ascii=False)
+                file_object.write("\n")
+                print(array)
+                input
 print(amount)
 # ["program", /serie/programlink]
     
