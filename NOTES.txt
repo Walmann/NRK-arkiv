@@ -12,8 +12,9 @@ Ting som må gjøres:
 Må finne ID for programmene for å kunne se dato.
 Må så finne alle programmer laget før 2015
 
-Se TODO i 001
-
+TODO: 
+Sjekk hva som skjer med denne. Klager på UNPLAYABLE FORMAT.
+Alltid no' godt fra Bergen: Chocolate Overdose
 
 https://github.com/timethrow/yt-dlp/blob/master/yt_dlp/extractor/nrk.py
 Avalible: https://psapi.nrk.no/tv/catalog/programs/MUHH41000121

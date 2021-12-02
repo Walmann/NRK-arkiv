@@ -3,7 +3,7 @@ import string
 
 from bs4.element import Script
 import requests
-import yt_dlp
+# import yt_dlp
 
 # extra_letters = "ae, oe, aa, 0-9"
 # letters = string.ascii_lowercase
@@ -26,13 +26,17 @@ from selenium import webdriver
 
 
 def Get_Program_Id(Program_href):
-    ydl_opts = {'playlistend': 1}
+    ydl_opts = {'playlistend': 1, 'ignoreerrors': True}
     url = "https://tv.nrk.no" + Program_href
+    # url = "https://tv.nrk.no/serie/animanimals"
     Program_Json = YoutubeDL(ydl_opts).extract_info(url, download=False)
     try:
         return Program_Json['entries'][0]['id']
     except:
-            try: return Program_Json['id']
+            try: 
+                if Program_Json['entries'] == [None]:
+                    return "None"
+                else: return Program_Json['entries'] 
             except: print("Could not find ID"), input()
     
     # html_page = requests.get(url)
@@ -65,7 +69,7 @@ def Check_Avability(Program_ID):
 List_In_Memory = []
 amount = 0
 
-chromedriver_path =  "C:\chromedriver\chromedriver.exe"
+chromedriver_path =  "./chromedriver.exe"
 options = webdriver.ChromeOptions()
 # options.binary_location = chromedriver_path
 # options.add_experimental_option('excludeSwitches', ['enable-logging'])
@@ -94,13 +98,14 @@ for link in letters:
         for item in List_In_Memory:
             Program_href = item["href"]
             Program_ID = Get_Program_Id(Program_href)
-            if Check_Avability(Program_ID) == "available":
-                Program_Year = Get_Program_Year(Program_ID)
-                array = [item.text,Program_href, Program_ID, Program_Year]
-                json.dump(array, file_object, ensure_ascii=False)
-                file_object.write("\n")
-                print(array)
-                input
+            if not Program_ID == "None":
+                if Check_Avability(Program_ID) == "available":
+                    Program_Year = Get_Program_Year(Program_ID)
+                    array = [item.text,Program_href, Program_ID, Program_Year]
+                    json.dump(array, file_object, ensure_ascii=False)
+                    file_object.write("\n")
+                    print(array)
+                    input
 print(amount)
 # ["program", /serie/programlink]
     
