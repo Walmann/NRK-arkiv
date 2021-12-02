@@ -13,6 +13,9 @@ Må finne ID for programmene for å kunne se dato.
 Må så finne alle programmer laget før 2015
 
 TODO: 
+Den klarer ikkk '/programs/FØST70001093' av en eller annen grunn, selvom den er riktig. kanskje den får noen feil HTTP respons?
+
+
 Sjekk hva som skjer med denne. Klager på UNPLAYABLE FORMAT.
 Alltid no' godt fra Bergen: Chocolate Overdose
 
