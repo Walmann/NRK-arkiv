@@ -23,35 +23,59 @@ def Program_Prod_Year(Program_href):
     org_href = Program_href
     Program_Json = ""
     # url = "https://psapi.nrk.no/tv/catalog" + Program_href
-    try:
-        url = "https://psapi.nrk.no/tv/catalog" + Program_href
-        Program_Json = json.loads(urlopen(url).read())
-    except: 
-        try: 
-            Program_href = Program_href.replace("/serie/", "/series/").replace("/program/", "/programs/")
-            url = "https://psapi.nrk.no/tv/catalog" + Program_href
-            Program_Json = json.loads(urlopen(url).read())
-            Write_To_File(Program_Json)
-        except:
-            print("Error in getting JSON value")
-            print("Lets see.")
-            input()
-
-    try:                
-        Program_Prod_Year = Program_Json['_embedded']['instalments']['_embedded']['instalments'][0]['productionYear']
-    except:
-        try:
-            Program_Prod_Year = Program_Json['moreInformation']['productionYear']
-        except:
+    Program_href_Possibilities = [
+        Program_href,
+        Program_href.replace("/serie/", "/series/"),
+        Program_href.replace("/program/", "/programs/")
+    ]
+    Finding_JSON = False
+    while Finding_JSON == True:
+        for Possibilities in Program_href_Possibilities:
+            url = "https://psapi.nrk.no/tv/catalog" + Possibilities
+        #     Program_Json = json.loads(urlopen(url).read())
             try:
-                Program_Prod_Year = Program_Json['_embedded']['seasons'][0]['_embedded']['episodes'][0]['productionYear']
-            except:
-                Print("Error")
-                
+                Program_Json = json.loads(urlopen(url).read())
+                Finding_JSON = False
+                # input("Succsess!")
+                break
+
+            except: 
+                # input("Error getting JSON")
+                pass
 
 
 
-    # print(Program_Prod_Year)
+    #     try:
+    #     url = "https://psapi.nrk.no/tv/catalog" + Program_href
+    #     Program_Json = json.loads(urlopen(url).read())
+    # except: 
+    #     try: 
+    #         Program_href = Program_href.replace("/serie/", "/series/").replace("/program/", "/programs/")
+    #         url = "https://psapi.nrk.no/tv/catalog" + Program_href
+    #         Program_Json = json.loads(urlopen(url).read())
+    #         Write_To_File(Program_Json)
+    #     except:
+    #         print("Error in getting JSON value")
+    #         print("Lets see.")
+    #         input()
+
+    Program_Json_Correct_Element = [
+        Program_Json['_embedded']['instalments']['_embedded']['instalments'][0]['productionYear'],
+        Program_Json['_embedded']['seasons'][0]['_embedded']['episodes'][0]['productionYear'],
+        Program_Json['moreInformation']['productionYear'],
+    ]
+    Finding_JSON_Element = True
+    while Finding_JSON_Element == True:
+        for Possibility in Program_Json_Correct_Element:
+            try:                
+                Program_Prod_Year = Possibility
+                Finding_JSON_Element = False
+                #Succsess!
+                break
+            except Exception: pass
+                        
+
+    print(Program_Prod_Year)
     return Program_Prod_Year
 
 
