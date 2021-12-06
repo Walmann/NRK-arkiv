@@ -1,9 +1,9 @@
-from bs4.element import Script
-import requests
+# from bs4.element import Script
+# import requests
 #
 
-import requests
-from requests_html import HTMLSession
+# import requests
+# from requests_html import HTMLSession
 from bs4 import BeautifulSoup
 import json
 
@@ -12,6 +12,8 @@ import sys
 from yt_dlp import YoutubeDL
 from selenium import webdriver
 from urllib.request import urlopen
+from jsonpath_ng import jsonpath, parse
+
 
 def Write_To_File(Variable):
     print("Writing Error to file: ")
@@ -28,7 +30,7 @@ def Program_Prod_Year(Program_href):
         Program_href.replace("/serie/", "/series/"),
         Program_href.replace("/program/", "/programs/")
     ]
-    Finding_JSON = False
+    Finding_JSON = True
     while Finding_JSON == True:
         for Possibilities in Program_href_Possibilities:
             url = "https://psapi.nrk.no/tv/catalog" + Possibilities
@@ -59,23 +61,33 @@ def Program_Prod_Year(Program_href):
     #         print("Lets see.")
     #         input()
 
-    Program_Json_Correct_Element = [
-        Program_Json['_embedded']['instalments']['_embedded']['instalments'][0]['productionYear'],
-        Program_Json['_embedded']['seasons'][0]['_embedded']['episodes'][0]['productionYear'],
-        Program_Json['moreInformation']['productionYear'],
-    ]
-    Finding_JSON_Element = True
-    while Finding_JSON_Element == True:
-        for Possibility in Program_Json_Correct_Element:
-            try:                
-                Program_Prod_Year = Possibility
-                Finding_JSON_Element = False
-                #Succsess!
-                break
-            except Exception: pass
-                        
+    # Program_Json_Correct_Element = [
+    #     Program_Json['_embedded']['instalments']['_embedded']['instalments'][0]['productionYear'],
+    #     Program_Json['_embedded']['seasons'][0]['_embedded']['episodes'][0]['productionYear'],
+    #     Program_Json['moreInformation']['productionYear'],
+    # ]
 
-    print(Program_Prod_Year)
+
+    # Finding_JSON_Element = True
+    # while Finding_JSON_Element == True:
+    #     for Possibility in Program_Json_Correct_Element:
+    #         try:                
+    #             Program_Prod_Year = Possibility
+    #             Finding_JSON_Element = False
+    #             #Succsess!
+    #             break
+    #         except Exception: pass
+
+
+    
+    
+    match = parse('$..productionYear').find(Program_Json)
+    # print(match)
+    # print("produYead: " + str(match[0].value))
+    Program_Prod_Year = match[0].value
+                
+
+    # print(Program_Prod_Year)
     return Program_Prod_Year
 
 
