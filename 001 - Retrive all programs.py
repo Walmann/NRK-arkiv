@@ -11,6 +11,7 @@ import subprocess
 import sys
 from yt_dlp import YoutubeDL
 from selenium import webdriver
+import urllib
 from urllib.request import urlopen
 from jsonpath_ng import jsonpath, parse
 
@@ -24,7 +25,6 @@ def Write_To_File(Variable):
 def Program_Prod_Year(Program_href): #Also get avability?
     org_href = Program_href
     Program_Json = ""
-    # url = "https://psapi.nrk.no/tv/catalog" + Program_href
     Program_href_Possibilities = [
         Program_href,
         Program_href.replace("/serie/", "/series/"),
@@ -33,62 +33,35 @@ def Program_Prod_Year(Program_href): #Also get avability?
     Finding_JSON = True
     while Finding_JSON == True:
         for Possibilities in Program_href_Possibilities:
-            url = "https://psapi.nrk.no/tv/catalog" + Possibilities
-        #     Program_Json = json.loads(urlopen(url).read())
+            url = "https://psapi.nrk.no/tv/catalog" + urllib.parse.quote(Possibilities)
+            
             try:
-                Program_Json = json.loads(urlopen(url).read().decode('utf-8'))
+                Program_Json = json.loads(urlopen(url).read())
                 Finding_JSON = False
-                # input("Succsess!")
                 break
 
             except: 
-                # input("Error getting JSON")
+                # input("Error getting JSON from " + Program_href)
                 pass
 
-
-
-    #     try:
-    #     url = "https://psapi.nrk.no/tv/catalog" + Program_href
-    #     Program_Json = json.loads(urlopen(url).read())
-    # except: 
-    #     try: 
-    #         Program_href = Program_href.replace("/serie/", "/series/").replace("/program/", "/programs/")
-    #         url = "https://psapi.nrk.no/tv/catalog" + Program_href
-    #         Program_Json = json.loads(urlopen(url).read())
-    #         Write_To_File(Program_Json)
-    #     except:
-    #         print("Error in getting JSON value")
-    #         print("Lets see.")
-    #         input()
-
-    # Program_Json_Correct_Element = [
-    #     Program_Json['_embedded']['instalments']['_embedded']['instalments'][0]['productionYear'],
-    #     Program_Json['_embedded']['seasons'][0]['_embedded']['episodes'][0]['productionYear'],
-    #     Program_Json['moreInformation']['productionYear'],
-    # ]
-
-
-    # Finding_JSON_Element = True
-    # while Finding_JSON_Element == True:
-    #     for Possibility in Program_Json_Correct_Element:
-    #         try:                
-    #             Program_Prod_Year = Possibility
-    #             Finding_JSON_Element = False
-    #             #Succsess!
-    #             break
-    #         except Exception: pass
-
-
     
-    
-    match = parse('$..productionYear').find(Program_Json)
-    # print(match)
-    # print("produYead: " + str(match[0].value))
-    Program_Prod_Year = match[0].value
-                
+    #Get production year
+    Program_Prod_Year = parse('$..productionYear').find(Program_Json)[0].value
+
+
+    #Check if available. Even if it's only a few episodes
+    Program_Available_List = [] #Create or reset list.
+    for match in parse('$..availability.status').find(Program_Json):
+        Program_Available_List.append(match.value)
+
+    if "available" in Program_Available_List:
+        Program_Available = "Available"
+    else: Program_Available = "Not Available"
+
+
 
     # print(Program_Prod_Year)
-    return Program_Prod_Year
+    return Program_Prod_Year, Program_Available
 
 
 def Get_List_Of_Programs(): #Get list of programs and put them into List_Of_Programs.txt
@@ -124,7 +97,8 @@ def Get_List_Of_Programs(): #Get list of programs and put them into List_Of_Prog
         with open("List_Of_Programs.txt", "a", encoding="utf-8") as file_object:
             for item in List_In_Memory:
                 Program_href = item["href"]
-                array = [item.text,Program_href, Program_Prod_Year(Program_href)]
+                Prod_Year, Available = Program_Prod_Year(Program_href)
+                array = [item.text,Program_href, Prod_Year, Available]
                 json.dump(array, file_object, ensure_ascii=False)
                 file_object.write("\n")
                 print(array)

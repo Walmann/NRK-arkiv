@@ -8,17 +8,12 @@ Skaff en liste over alle programmer som NRK nett tv har. Enten via navn, eller p
 Program ID lagres i en div med id=series-program-id-container, og en egen greie som heter data-program-id="MSUI13000117" (for ape og snabel)
 
 
-Ting som må gjøres:
-Må så finne alle programmer laget før 2015
-Legge til Avability eller hjvordan det skrives. Så yt-dlp ikke bæsjer på seg. 
-
 
 TODO: 
-Den klarer ikkk '/programs/FØST70001093'. urllib tuller seg til pga æøå i URL.
-Dumme NRK.
+Exportere til CSV, så det er mulig å se etter feil i listen. Burte være mulig? Lag det som ett eget script.
 
 
-
+https://www.journaldev.com/33265/python-jsonpath-examples
 
 https://github.com/timethrow/yt-dlp/blob/master/yt_dlp/extractor/nrk.py
 Avalible: https://psapi.nrk.no/tv/catalog/programs/MUHH41000121
