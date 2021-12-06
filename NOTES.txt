@@ -9,15 +9,16 @@ Program ID lagres i en div med id=series-program-id-container, og en egen greie 
 
 
 Ting som må gjøres:
-Må finne ID for programmene for å kunne se dato.
 Må så finne alle programmer laget før 2015
+Legge til Avability eller hjvordan det skrives. Så yt-dlp ikke bæsjer på seg. 
+
 
 TODO: 
-Den klarer ikkk '/programs/FØST70001093' av en eller annen grunn, selvom den er riktig. kanskje den får noen feil HTTP respons?
+Den klarer ikkk '/programs/FØST70001093'. urllib tuller seg til pga æøå i URL.
+Dumme NRK.
 
 
-Sjekk hva som skjer med denne. Klager på UNPLAYABLE FORMAT.
-Alltid no' godt fra Bergen: Chocolate Overdose
+
 
 https://github.com/timethrow/yt-dlp/blob/master/yt_dlp/extractor/nrk.py
 Avalible: https://psapi.nrk.no/tv/catalog/programs/MUHH41000121

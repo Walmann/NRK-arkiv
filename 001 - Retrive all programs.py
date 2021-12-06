@@ -21,7 +21,7 @@ def Write_To_File(Variable):
         file_object.write(str(Variable))
 
 
-def Program_Prod_Year(Program_href):
+def Program_Prod_Year(Program_href): #Also get avability?
     org_href = Program_href
     Program_Json = ""
     # url = "https://psapi.nrk.no/tv/catalog" + Program_href
@@ -36,7 +36,7 @@ def Program_Prod_Year(Program_href):
             url = "https://psapi.nrk.no/tv/catalog" + Possibilities
         #     Program_Json = json.loads(urlopen(url).read())
             try:
-                Program_Json = json.loads(urlopen(url).read())
+                Program_Json = json.loads(urlopen(url).read().decode('utf-8'))
                 Finding_JSON = False
                 # input("Succsess!")
                 break
