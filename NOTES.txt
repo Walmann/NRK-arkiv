@@ -10,6 +10,7 @@ Program ID lagres i en div med id=series-program-id-container, og en egen greie 
 
 Jobber på nå: 
 Fil størrelse:
+jsonpath.parse does not find matches.
 
 
 
@@ -17,7 +18,7 @@ TODO:
 Progressbar på ting som hentes. tqdm eller hva tillegget het.
 Exportere til CSV, så det er mulig å se etter feil i listen. Burte være mulig? Lag det som ett eget script.
 
-
+https://jsonpath.com/
 https://www.journaldev.com/33265/python-jsonpath-examples
 
 https://github.com/timethrow/yt-dlp/blob/master/yt_dlp/extractor/nrk.py
