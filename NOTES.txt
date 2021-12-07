@@ -8,8 +8,13 @@ Skaff en liste over alle programmer som NRK nett tv har. Enten via navn, eller p
 Program ID lagres i en div med id=series-program-id-container, og en egen greie som heter data-program-id="MSUI13000117" (for ape og snabel)
 
 
+Jobber på nå: 
+Fil størrelse:
+
+
 
 TODO: 
+Progressbar på ting som hentes. tqdm eller hva tillegget het.
 Exportere til CSV, så det er mulig å se etter feil i listen. Burte være mulig? Lag det som ett eget script.
 
 

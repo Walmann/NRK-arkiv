@@ -82,7 +82,8 @@ def Get_List_Of_Programs(): #Get list of programs and put them into List_Of_Prog
     # options.add_argument('--disable-extensions')
     # options.add_argument('--disable-gpu')
 
-    #Itterate through 
+    #Itterate through links
+    Last_Link_Used = ""
     for link in letters:
         driver = webdriver.Chrome(chrome_options=options,executable_path=chromedriver_path)
         driver.get("https://tv.nrk.no/alle-programmer/" + link)
@@ -102,7 +103,9 @@ def Get_List_Of_Programs(): #Get list of programs and put them into List_Of_Prog
                 json.dump(array, file_object, ensure_ascii=False)
                 file_object.write("\n")
                 print(array)
-                input
+                Last_Link_Used = link
+    if not Last_Link_Used == "0-9":
+        print("Last link is not '0-9'. This could mean the loop did not fully work. Manually check List_Of_Programs for errors.")
     print(amount)
 
 Get_List_Of_Programs()
