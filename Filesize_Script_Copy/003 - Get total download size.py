@@ -61,4 +61,11 @@ with open("List_Of_Programs.txt", "r", encoding="utf-8") as file_object:
 
 
     print("Total filesize: " + humanfriendly.format_size(Filesize_Total) + "In Bytes: " + Filesize_Total)
-        # Program_Prod_Year = parse('$..productionYear').find(Program_Json)[0].value
+    import sys
+    with open("TotalFileSize.txt", "w", encoding="utf-8") as f:
+        original_stdout = sys.stdout    
+        sys.stdout = f 
+
+        print("Total filesize: " + humanfriendly.format_size(Filesize_Total) + "In Bytes: " + Filesize_Total)
+        
+        sys.stdout = original_stdout 
