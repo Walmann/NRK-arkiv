@@ -12,21 +12,13 @@ import humanfriendly
 #         num /= 1024.0
 #     return f"{num:.1f}Yi{suffix}"
 
-Error_Occoured = False
-def hook(d):
-    if d['status'] == 'error':
-        with open("TotalFileSize_Errors.txt", "a", encoding="utf-8") as f:
-            f.write(d['filename'] + "\n")
-            Error_Occoured = True
-            
-
-
 yt_dlp_options = {
         # "outtmpl": "%(id)s%(ext)s",
         # "noplaylist": True,
         "quiet": True,
         # "format": "bestvideo",
-        "progress_hooks": [hook]
+        # "ignore_no_formats_error": True,
+        "ignoreerrors": True,
     }
 
 
@@ -47,11 +39,7 @@ with open("List_Of_Programs.txt", "r", encoding="utf-8") as file_object:
         # entry [Name, href, ProdYear, Available]
         url = "https://tv.nrk.no" + entry[1]
         # url = "https://tv.nrk.no/serie/fleksnes/1995/FKUN89000295"
-
-
         ytdl = YoutubeDL(yt_dlp_options).extract_info(url, download=False)
-        
-        
         jsondump = json.dumps(ytdl)
         Program_Json_Info = json.loads(jsondump)
         

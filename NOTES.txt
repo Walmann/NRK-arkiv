@@ -15,6 +15,10 @@ Fil størrelse:
 Får også feil viss den ikke har noen format, aka. episoden mangler. Har løst dette ved ignore_errors. Må finnes en bedre løsning?
 kanskje oppdatere description i tqdm viss det har gått mer enn si 5 sekunder, at den bruker tid på store programmer?
 
+kan jeg lage playlist selv kanskje? 
+tqdm alternativ?
+
+youtubedl.py funker ikke bra nok...
 
 
 TODO: 
