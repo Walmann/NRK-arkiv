@@ -27,23 +27,17 @@ with open("List_Of_Programs.txt", "r", encoding="utf-8") as file_object:
     # Filesize_Total_Human_Readable = sizeof_fmt(Filesize_Total)
     # List_Length = len(file_object.readlines())
 
-    Program_List = tqdm(file_object, total=len(file_object), leave=False)
+    Program_List = tqdm(file_object, total=len(file_object))
     for entry in Program_List:
         entry = json.loads(entry)
-        Program_List_Desc = "Current filesize: " + humanfriendly.format_size(Filesize_Total) + ", Finding Filesize for " + entry[0] + " "
+        Program_List_Desc = "Current filesize: %s Finding Filesize for %s" % (humanfriendly.format_size(Filesize_Total), entry[0])
         Program_List.set_description(Program_List_Desc)
 
 
         # entry [Name, href, ProdYear, Available]
         url = "https://tv.nrk.no" + entry[1]
         # url = "https://tv.nrk.no/serie/fleksnes/1995/FKUN89000295"
-
-
-        # ytdl = YoutubeDL(yt_dlp_options).extract_info(url, download=False)
-        with tqdm(YoutubeDL(yt_dlp_options), desc="Getting JSON info: ", leave=False) as ytdl:
-            ytdl.extract_info(url, download=False)
-        
-        
+        ytdl = YoutubeDL(yt_dlp_options).extract_info(url, download=False)
         jsondump = json.dumps(ytdl)
         Program_Json_Info = json.loads(jsondump)
         
