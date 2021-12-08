@@ -17,6 +17,8 @@ yt_dlp_options = {
         # "noplaylist": True,
         "quiet": True,
         # "format": "bestvideo",
+        # "ignore_no_formats_error": True,
+        "ignoreerrors": True,
     }
 
 

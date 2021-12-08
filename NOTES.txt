@@ -13,6 +13,7 @@ Fil størrelse:
     Prøver å finne en måte å få progressbar på YoutubeDL. Eller kunne legge den sitt output i linje 2 på tqdm, så det ikke bare 
     set ut som programmet henger på programmer med veldig mange episoder. 
 Får også feil viss den ikke har noen format, aka. episoden mangler. Har løst dette ved ignore_errors. Må finnes en bedre løsning?
+kanskje oppdatere description i tqdm viss det har gått mer enn si 5 sekunder, at den bruker tid på store programmer?
 
 
 
