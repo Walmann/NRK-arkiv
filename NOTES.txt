@@ -10,7 +10,9 @@ Program ID lagres i en div med id=series-program-id-container, og en egen greie 
 
 Jobber på nå: 
 Fil størrelse:
-jsonpath.parse does not find matches.
+    Prøver å finne en måte å få progressbar på YoutubeDL. Eller kunne legge den sitt output i linje 2 på tqdm, så det ikke bare 
+    set ut som programmet henger på programmer med veldig mange episoder. 
+Får også feil viss den ikke har noen format, aka. episoden mangler. Har løst dette ved ignore_errors. Må finnes en bedre løsning?
 
 
 
