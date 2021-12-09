@@ -21,6 +21,14 @@ tqdm alternativ?
 youtubedl.py funker ikke bra nok...
 
 
+Edit: 
+Ser ut som det er mulig å lage en egen extractor til nrk. Kan bruke sessong siden av psapi til å hente
+episoder, må bare finne en måte å få frem alle episodene på en gang.
+
+
+Må finne m3u8 filen, for å finne størrelsen på video filen!
+har lagret test JSON i egen fil. $[_embedded].[instalments].[_links].[self].href
+
 TODO: 
 Progressbar på ting som hentes. tqdm eller hva tillegget het.
 Exportere til CSV, så det er mulig å se etter feil i listen. Burte være mulig? Lag det som ett eget script.

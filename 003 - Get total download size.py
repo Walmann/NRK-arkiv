@@ -62,12 +62,12 @@ with open("List_Of_Programs.txt", "r", encoding="utf-8") as file_object:
         
 
 
-    print("Total filesize: " + humanfriendly.format_size(Filesize_Total) + "In Bytes: " + Filesize_Total)
-    import sys
-    with open("TotalFileSize.txt", "w", encoding="utf-8") as f:
-        original_stdout = sys.stdout    
-        sys.stdout = f 
+            print("Total filesize: " + str(humanfriendly.format_size(Filesize_Total)) + "In Bytes: " + str(Filesize_Total))
+            import sys
+            with open("TotalFileSize.txt", "w", encoding="utf-8") as f:
+                original_stdout = sys.stdout    
+                sys.stdout = f 
 
-        print("Total filesize: " + humanfriendly.format_size(Filesize_Total) + "In Bytes: " + Filesize_Total)
-        
-        sys.stdout = original_stdout 
+                print("Total filesize: " + str(humanfriendly.format_size(Filesize_Total)) + "In Bytes: " + str(Filesize_Total))
+                
+                sys.stdout = original_stdout 
