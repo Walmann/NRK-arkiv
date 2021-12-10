@@ -1,0 +1,1982 @@
+[
+  {
+    "_links": {
+      "self": {
+        "href": "/tv/catalog/programs/NNFA50120915"
+      },
+      "playbackmetadata": {
+        "href": "/playback/metadata/program/NNFA50120915"
+      },
+      "playback": {
+        "href": "/mediaelement/program/NNFA50120915"
+      },
+      "season": {
+        "name": "201512",
+        "href": "/tv/catalog/series/aktuelt-tv/seasons/201512",
+        "title": "Desember 2015"
+      },
+      "recommendations": {
+        "href": "/tv/recommendations/NNFA50120915?list=tv_viderenavigasjon_fra_episode{&maxNumber,experiment}",
+        "templated": true
+      },
+      "share": {
+        "href": "https://tv.nrk.no/se?v=NNFA50120915{&autoplay,t}",
+        "templated": true
+      },
+      "fargerik": {
+        "href": "https://fargerik-psapi.nrk.no/tv/seriespage/series/aktuelt-tv"
+      }
+    },
+    "id": "7a0cecdaeb6949d33707834e53906389",
+    "prfId": "NNFA50120915",
+    "titles": {
+      "title": "9. des. 2015 – Aktuelt",
+      "subtitle": "Direkte fra studio om politikk, kultur og samfunnsliv. Programleder er Ole Torp.\t"
+    },
+    "details": {
+      "displayValue": "09.12.2015   ·   Tillatt for alle   ·   32 min",
+      "accessibilityValue": "09.12.2015. Tillatt for alle. 32 minutter."
+    },
+    "image": [
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQUcFLF7W_gEsfxglhs9zuZA",
+        "width": 300
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQaLa9cnSQL0ofxglhs9zuZA",
+        "width": 600
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQJ8d1voDm6Egfxglhs9zuZA",
+        "width": 960
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQdBaQ6wi1DNkfxglhs9zuZA",
+        "width": 1280
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQkiQtL0BdgiIfxglhs9zuZA",
+        "width": 1600
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQ1Xmn-RgQhekfxglhs9zuZA",
+        "width": 1920
+      }
+    ],
+    "duration": "PT32M16.08S",
+    "durationInSeconds": 1936,
+    "usageRights": {
+      "from": {
+        "date": "2015-12-09T20:14:56.36+01:00",
+        "displayValue": "9. desember 2015 kl. 20:14"
+      },
+      "to": {
+        "date": "9999-12-31T00:00:00+01:00",
+        "displayValue": "Alltid tilgjengelig"
+      },
+      "geoBlock": {
+        "isGeoBlocked": false,
+        "displayValue": "Verden"
+      },
+      "offline": false
+    },
+    "releaseDateOnDemand": "2015-12-09T20:14:56.36+01:00",
+    "productionYear": 2015,
+    "availability": {
+      "status": "available",
+      "hasLabel": false,
+      "label": null
+    },
+    "legalAge": {
+      "legalReference": "LOV2015-02-06-7",
+      "body": {
+        "rating": {
+          "code": "A",
+          "displayValue": "Tillatt for alle",
+          "displayAge": "A"
+        },
+        "status": "rated"
+      }
+    },
+    "contributors": [],
+    "firstTransmissionDateDisplayValue": "09.12.2015",
+    "_embedded": {
+      "ga": {
+        "_links": {
+          "self": {
+            "href": "/tv/programs/pageviews/ga/NNFA50120915"
+          }
+        },
+        "dimension1": "prf:NNFA50120915",
+        "dimension2": "aktuelt",
+        "dimension3": "2015",
+        "dimension4": "12",
+        "dimension5": "09",
+        "dimension10": "prf:NNFA50120915",
+        "dimension21": "aktuelt-tv",
+        "dimension22": "5",
+        "dimension23": "nyheter",
+        "dimension25": "video",
+        "dimension26": "ondemand"
+      }
+    }
+  },
+  {
+    "_links": {
+      "self": {
+        "href": "/tv/catalog/programs/NNFA50120815"
+      },
+      "playbackmetadata": {
+        "href": "/playback/metadata/program/NNFA50120815"
+      },
+      "playback": {
+        "href": "/mediaelement/program/NNFA50120815"
+      },
+      "season": {
+        "name": "201512",
+        "href": "/tv/catalog/series/aktuelt-tv/seasons/201512",
+        "title": "Desember 2015"
+      },
+      "recommendations": {
+        "href": "/tv/recommendations/NNFA50120815?list=tv_viderenavigasjon_fra_episode{&maxNumber,experiment}",
+        "templated": true
+      },
+      "share": {
+        "href": "https://tv.nrk.no/se?v=NNFA50120815{&autoplay,t}",
+        "templated": true
+      },
+      "fargerik": {
+        "href": "https://fargerik-psapi.nrk.no/tv/seriespage/series/aktuelt-tv"
+      }
+    },
+    "id": "e8b71b4f3425131dfc6aa23820b50c19",
+    "prfId": "NNFA50120815",
+    "titles": {
+      "title": "8. des. 2015 – Aktuelt",
+      "subtitle": "Direkte fra studio om politikk, kultur og samfunnsliv. Programleder er Ole Torp.\t"
+    },
+    "details": {
+      "displayValue": "08.12.2015   ·   Tillatt for alle   ·   28 min",
+      "accessibilityValue": "08.12.2015. Tillatt for alle. 28 minutter."
+    },
+    "image": [
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQUcFLF7W_gEsfxglhs9zuZA",
+        "width": 300
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQaLa9cnSQL0ofxglhs9zuZA",
+        "width": 600
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQJ8d1voDm6Egfxglhs9zuZA",
+        "width": 960
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQdBaQ6wi1DNkfxglhs9zuZA",
+        "width": 1280
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQkiQtL0BdgiIfxglhs9zuZA",
+        "width": 1600
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQ1Xmn-RgQhekfxglhs9zuZA",
+        "width": 1920
+      }
+    ],
+    "duration": "PT28M57.72S",
+    "durationInSeconds": 1738,
+    "usageRights": {
+      "from": {
+        "date": "2015-12-08T20:14:50.64+01:00",
+        "displayValue": "8. desember 2015 kl. 20:14"
+      },
+      "to": {
+        "date": "9999-12-31T00:00:00+01:00",
+        "displayValue": "Alltid tilgjengelig"
+      },
+      "geoBlock": {
+        "isGeoBlocked": false,
+        "displayValue": "Verden"
+      },
+      "offline": false
+    },
+    "releaseDateOnDemand": "2015-12-08T20:14:50.64+01:00",
+    "productionYear": 2015,
+    "availability": {
+      "status": "available",
+      "hasLabel": false,
+      "label": null
+    },
+    "legalAge": {
+      "legalReference": "LOV2015-02-06-7",
+      "body": {
+        "rating": {
+          "code": "A",
+          "displayValue": "Tillatt for alle",
+          "displayAge": "A"
+        },
+        "status": "rated"
+      }
+    },
+    "contributors": [],
+    "firstTransmissionDateDisplayValue": "08.12.2015",
+    "_embedded": {
+      "ga": {
+        "_links": {
+          "self": {
+            "href": "/tv/programs/pageviews/ga/NNFA50120815"
+          }
+        },
+        "dimension1": "prf:NNFA50120815",
+        "dimension2": "aktuelt",
+        "dimension3": "2015",
+        "dimension4": "12",
+        "dimension5": "08",
+        "dimension10": "prf:NNFA50120815",
+        "dimension21": "aktuelt-tv",
+        "dimension22": "4",
+        "dimension23": "nyheter",
+        "dimension25": "video",
+        "dimension26": "ondemand"
+      }
+    }
+  },
+  {
+    "_links": {
+      "self": {
+        "href": "/tv/catalog/programs/NNFA50120715"
+      },
+      "playbackmetadata": {
+        "href": "/playback/metadata/program/NNFA50120715"
+      },
+      "playback": {
+        "href": "/mediaelement/program/NNFA50120715"
+      },
+      "season": {
+        "name": "201512",
+        "href": "/tv/catalog/series/aktuelt-tv/seasons/201512",
+        "title": "Desember 2015"
+      },
+      "recommendations": {
+        "href": "/tv/recommendations/NNFA50120715?list=tv_viderenavigasjon_fra_episode{&maxNumber,experiment}",
+        "templated": true
+      },
+      "share": {
+        "href": "https://tv.nrk.no/se?v=NNFA50120715{&autoplay,t}",
+        "templated": true
+      },
+      "fargerik": {
+        "href": "https://fargerik-psapi.nrk.no/tv/seriespage/series/aktuelt-tv"
+      }
+    },
+    "id": "ee64ebf775f9321801088f935d32b443",
+    "prfId": "NNFA50120715",
+    "titles": {
+      "title": "7. des. 2015 – Aktuelt",
+      "subtitle": "Direkte fra studio om politikk, kultur og samfunnsliv. Programleder er Ole Torp.\t"
+    },
+    "details": {
+      "displayValue": "07.12.2015   ·   Tillatt for alle   ·   29 min",
+      "accessibilityValue": "07.12.2015. Tillatt for alle. 29 minutter."
+    },
+    "image": [
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQUcFLF7W_gEsfxglhs9zuZA",
+        "width": 300
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQaLa9cnSQL0ofxglhs9zuZA",
+        "width": 600
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQJ8d1voDm6Egfxglhs9zuZA",
+        "width": 960
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQdBaQ6wi1DNkfxglhs9zuZA",
+        "width": 1280
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQkiQtL0BdgiIfxglhs9zuZA",
+        "width": 1600
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQ1Xmn-RgQhekfxglhs9zuZA",
+        "width": 1920
+      }
+    ],
+    "duration": "PT29M54.84S",
+    "durationInSeconds": 1795,
+    "usageRights": {
+      "from": {
+        "date": "2015-12-07T20:14:34.68+01:00",
+        "displayValue": "7. desember 2015 kl. 20:14"
+      },
+      "to": {
+        "date": "9999-12-31T00:00:00+01:00",
+        "displayValue": "Alltid tilgjengelig"
+      },
+      "geoBlock": {
+        "isGeoBlocked": false,
+        "displayValue": "Verden"
+      },
+      "offline": false
+    },
+    "releaseDateOnDemand": "2015-12-07T20:14:34.68+01:00",
+    "productionYear": 2015,
+    "availability": {
+      "status": "available",
+      "hasLabel": false,
+      "label": null
+    },
+    "legalAge": {
+      "legalReference": "LOV2015-02-06-7",
+      "body": {
+        "rating": {
+          "code": "A",
+          "displayValue": "Tillatt for alle",
+          "displayAge": "A"
+        },
+        "status": "rated"
+      }
+    },
+    "contributors": [],
+    "firstTransmissionDateDisplayValue": "07.12.2015",
+    "_embedded": {
+      "ga": {
+        "_links": {
+          "self": {
+            "href": "/tv/programs/pageviews/ga/NNFA50120715"
+          }
+        },
+        "dimension1": "prf:NNFA50120715",
+        "dimension2": "aktuelt",
+        "dimension3": "2015",
+        "dimension4": "12",
+        "dimension5": "07",
+        "dimension10": "prf:NNFA50120715",
+        "dimension21": "aktuelt-tv",
+        "dimension22": "3",
+        "dimension23": "nyheter",
+        "dimension25": "video",
+        "dimension26": "ondemand"
+      }
+    }
+  },
+  {
+    "_links": {
+      "self": {
+        "href": "/tv/catalog/programs/NNFA50120215"
+      },
+      "playbackmetadata": {
+        "href": "/playback/metadata/program/NNFA50120215"
+      },
+      "playback": {
+        "href": "/mediaelement/program/NNFA50120215"
+      },
+      "season": {
+        "name": "201512",
+        "href": "/tv/catalog/series/aktuelt-tv/seasons/201512",
+        "title": "Desember 2015"
+      },
+      "recommendations": {
+        "href": "/tv/recommendations/NNFA50120215?list=tv_viderenavigasjon_fra_episode{&maxNumber,experiment}",
+        "templated": true
+      },
+      "share": {
+        "href": "https://tv.nrk.no/se?v=NNFA50120215{&autoplay,t}",
+        "templated": true
+      },
+      "fargerik": {
+        "href": "https://fargerik-psapi.nrk.no/tv/seriespage/series/aktuelt-tv"
+      }
+    },
+    "id": "dfae7b91ab7b34af730324a04e382542",
+    "prfId": "NNFA50120215",
+    "titles": {
+      "title": "2. des. 2015 – Aktuelt",
+      "subtitle": "Direkte fra studio om politikk, kultur og samfunnsliv. Programleder er Ole Torp.\t"
+    },
+    "details": {
+      "displayValue": "02.12.2015   ·   Tillatt for alle   ·   29 min",
+      "accessibilityValue": "02.12.2015. Tillatt for alle. 29 minutter."
+    },
+    "image": [
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQUcFLF7W_gEsfxglhs9zuZA",
+        "width": 300
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQaLa9cnSQL0ofxglhs9zuZA",
+        "width": 600
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQJ8d1voDm6Egfxglhs9zuZA",
+        "width": 960
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQdBaQ6wi1DNkfxglhs9zuZA",
+        "width": 1280
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQkiQtL0BdgiIfxglhs9zuZA",
+        "width": 1600
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQ1Xmn-RgQhekfxglhs9zuZA",
+        "width": 1920
+      }
+    ],
+    "duration": "PT29M2.68S",
+    "durationInSeconds": 1743,
+    "usageRights": {
+      "from": {
+        "date": "2015-12-02T20:14:52.12+01:00",
+        "displayValue": "2. desember 2015 kl. 20:14"
+      },
+      "to": {
+        "date": "9999-12-31T00:00:00+01:00",
+        "displayValue": "Alltid tilgjengelig"
+      },
+      "geoBlock": {
+        "isGeoBlocked": false,
+        "displayValue": "Verden"
+      },
+      "offline": false
+    },
+    "releaseDateOnDemand": "2015-12-02T20:14:52.12+01:00",
+    "productionYear": 2015,
+    "availability": {
+      "status": "available",
+      "hasLabel": false,
+      "label": null
+    },
+    "legalAge": {
+      "legalReference": "LOV2015-02-06-7",
+      "body": {
+        "rating": {
+          "code": "A",
+          "displayValue": "Tillatt for alle",
+          "displayAge": "A"
+        },
+        "status": "rated"
+      }
+    },
+    "contributors": [],
+    "firstTransmissionDateDisplayValue": "02.12.2015",
+    "_embedded": {
+      "ga": {
+        "_links": {
+          "self": {
+            "href": "/tv/programs/pageviews/ga/NNFA50120215"
+          }
+        },
+        "dimension1": "prf:NNFA50120215",
+        "dimension2": "aktuelt",
+        "dimension3": "2015",
+        "dimension4": "12",
+        "dimension5": "02",
+        "dimension10": "prf:NNFA50120215",
+        "dimension21": "aktuelt-tv",
+        "dimension22": "2",
+        "dimension23": "nyheter",
+        "dimension25": "video",
+        "dimension26": "ondemand"
+      }
+    }
+  },
+  {
+    "_links": {
+      "self": {
+        "href": "/tv/catalog/programs/NNFA50120115"
+      },
+      "playbackmetadata": {
+        "href": "/playback/metadata/program/NNFA50120115"
+      },
+      "playback": {
+        "href": "/mediaelement/program/NNFA50120115"
+      },
+      "season": {
+        "name": "201512",
+        "href": "/tv/catalog/series/aktuelt-tv/seasons/201512",
+        "title": "Desember 2015"
+      },
+      "recommendations": {
+        "href": "/tv/recommendations/NNFA50120115?list=tv_viderenavigasjon_fra_episode{&maxNumber,experiment}",
+        "templated": true
+      },
+      "share": {
+        "href": "https://tv.nrk.no/se?v=NNFA50120115{&autoplay,t}",
+        "templated": true
+      },
+      "fargerik": {
+        "href": "https://fargerik-psapi.nrk.no/tv/seriespage/series/aktuelt-tv"
+      }
+    },
+    "id": "ef2fb96980d2437c8017b8fdf0a1d265",
+    "prfId": "NNFA50120115",
+    "titles": {
+      "title": "1. des. 2015 – Aktuelt",
+      "subtitle": "Direkte fra studio om politikk, kultur og samfunnsliv. Programleder er Ole Torp.\t"
+    },
+    "details": {
+      "displayValue": "01.12.2015   ·   Tillatt for alle   ·   29 min",
+      "accessibilityValue": "01.12.2015. Tillatt for alle. 29 minutter."
+    },
+    "image": [
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQUcFLF7W_gEsfxglhs9zuZA",
+        "width": 300
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQaLa9cnSQL0ofxglhs9zuZA",
+        "width": 600
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQJ8d1voDm6Egfxglhs9zuZA",
+        "width": 960
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQdBaQ6wi1DNkfxglhs9zuZA",
+        "width": 1280
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQkiQtL0BdgiIfxglhs9zuZA",
+        "width": 1600
+      },
+      {
+        "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQ1Xmn-RgQhekfxglhs9zuZA",
+        "width": 1920
+      }
+    ],
+    "duration": "PT29M10.8S",
+    "durationInSeconds": 1751,
+    "usageRights": {
+      "from": {
+        "date": "2015-12-01T20:14:57.52+01:00",
+        "displayValue": "1. desember 2015 kl. 20:14"
+      },
+      "to": {
+        "date": "9999-12-31T00:00:00+01:00",
+        "displayValue": "Alltid tilgjengelig"
+      },
+      "geoBlock": {
+        "isGeoBlocked": false,
+        "displayValue": "Verden"
+      },
+      "offline": false
+    },
+    "releaseDateOnDemand": "2015-12-01T20:14:57.52+01:00",
+    "productionYear": 2015,
+    "availability": {
+      "status": "available",
+      "hasLabel": false,
+      "label": null
+    },
+    "legalAge": {
+      "legalReference": "LOV2015-02-06-7",
+      "body": {
+        "rating": {
+          "code": "A",
+          "displayValue": "Tillatt for alle",
+          "displayAge": "A"
+        },
+        "status": "rated"
+      }
+    },
+    "contributors": [],
+    "firstTransmissionDateDisplayValue": "01.12.2015",
+    "_embedded": {
+      "ga": {
+        "_links": {
+          "self": {
+            "href": "/tv/programs/pageviews/ga/NNFA50120115"
+          }
+        },
+        "dimension1": "prf:NNFA50120115",
+        "dimension2": "aktuelt",
+        "dimension3": "2015",
+        "dimension4": "12",
+        "dimension5": "01",
+        "dimension10": "prf:NNFA50120115",
+        "dimension21": "aktuelt-tv",
+        "dimension22": "1",
+        "dimension23": "nyheter",
+        "dimension25": "video",
+        "dimension26": "ondemand"
+      }
+    }
+  },
+  {
+    "self": {
+      "href": "/tv/catalog/programs/NNFA50120915"
+    },
+    "playbackmetadata": {
+      "href": "/playback/metadata/program/NNFA50120915"
+    },
+    "playback": {
+      "href": "/mediaelement/program/NNFA50120915"
+    },
+    "season": {
+      "name": "201512",
+      "href": "/tv/catalog/series/aktuelt-tv/seasons/201512",
+      "title": "Desember 2015"
+    },
+    "recommendations": {
+      "href": "/tv/recommendations/NNFA50120915?list=tv_viderenavigasjon_fra_episode{&maxNumber,experiment}",
+      "templated": true
+    },
+    "share": {
+      "href": "https://tv.nrk.no/se?v=NNFA50120915{&autoplay,t}",
+      "templated": true
+    },
+    "fargerik": {
+      "href": "https://fargerik-psapi.nrk.no/tv/seriespage/series/aktuelt-tv"
+    }
+  },
+  "7a0cecdaeb6949d33707834e53906389",
+  "NNFA50120915",
+  {
+    "title": "9. des. 2015 – Aktuelt",
+    "subtitle": "Direkte fra studio om politikk, kultur og samfunnsliv. Programleder er Ole Torp.\t"
+  },
+  {
+    "displayValue": "09.12.2015   ·   Tillatt for alle   ·   32 min",
+    "accessibilityValue": "09.12.2015. Tillatt for alle. 32 minutter."
+  },
+  [
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQUcFLF7W_gEsfxglhs9zuZA",
+      "width": 300
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQaLa9cnSQL0ofxglhs9zuZA",
+      "width": 600
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQJ8d1voDm6Egfxglhs9zuZA",
+      "width": 960
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQdBaQ6wi1DNkfxglhs9zuZA",
+      "width": 1280
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQkiQtL0BdgiIfxglhs9zuZA",
+      "width": 1600
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQ1Xmn-RgQhekfxglhs9zuZA",
+      "width": 1920
+    }
+  ],
+  "PT32M16.08S",
+  1936,
+  {
+    "from": {
+      "date": "2015-12-09T20:14:56.36+01:00",
+      "displayValue": "9. desember 2015 kl. 20:14"
+    },
+    "to": {
+      "date": "9999-12-31T00:00:00+01:00",
+      "displayValue": "Alltid tilgjengelig"
+    },
+    "geoBlock": {
+      "isGeoBlocked": false,
+      "displayValue": "Verden"
+    },
+    "offline": false
+  },
+  "2015-12-09T20:14:56.36+01:00",
+  2015,
+  {
+    "status": "available",
+    "hasLabel": false,
+    "label": null
+  },
+  {
+    "legalReference": "LOV2015-02-06-7",
+    "body": {
+      "rating": {
+        "code": "A",
+        "displayValue": "Tillatt for alle",
+        "displayAge": "A"
+      },
+      "status": "rated"
+    }
+  },
+  [],
+  "09.12.2015",
+  {
+    "ga": {
+      "_links": {
+        "self": {
+          "href": "/tv/programs/pageviews/ga/NNFA50120915"
+        }
+      },
+      "dimension1": "prf:NNFA50120915",
+      "dimension2": "aktuelt",
+      "dimension3": "2015",
+      "dimension4": "12",
+      "dimension5": "09",
+      "dimension10": "prf:NNFA50120915",
+      "dimension21": "aktuelt-tv",
+      "dimension22": "5",
+      "dimension23": "nyheter",
+      "dimension25": "video",
+      "dimension26": "ondemand"
+    }
+  },
+  {
+    "href": "/tv/catalog/programs/NNFA50120915"
+  },
+  {
+    "href": "/playback/metadata/program/NNFA50120915"
+  },
+  {
+    "href": "/mediaelement/program/NNFA50120915"
+  },
+  {
+    "name": "201512",
+    "href": "/tv/catalog/series/aktuelt-tv/seasons/201512",
+    "title": "Desember 2015"
+  },
+  {
+    "href": "/tv/recommendations/NNFA50120915?list=tv_viderenavigasjon_fra_episode{&maxNumber,experiment}",
+    "templated": true
+  },
+  {
+    "href": "https://tv.nrk.no/se?v=NNFA50120915{&autoplay,t}",
+    "templated": true
+  },
+  {
+    "href": "https://fargerik-psapi.nrk.no/tv/seriespage/series/aktuelt-tv"
+  },
+  "/tv/catalog/programs/NNFA50120915",
+  "/playback/metadata/program/NNFA50120915",
+  "/mediaelement/program/NNFA50120915",
+  "201512",
+  "/tv/catalog/series/aktuelt-tv/seasons/201512",
+  "Desember 2015",
+  "/tv/recommendations/NNFA50120915?list=tv_viderenavigasjon_fra_episode{&maxNumber,experiment}",
+  true,
+  "https://tv.nrk.no/se?v=NNFA50120915{&autoplay,t}",
+  true,
+  "https://fargerik-psapi.nrk.no/tv/seriespage/series/aktuelt-tv",
+  "9. des. 2015 – Aktuelt",
+  "Direkte fra studio om politikk, kultur og samfunnsliv. Programleder er Ole Torp.\t",
+  "09.12.2015   ·   Tillatt for alle   ·   32 min",
+  "09.12.2015. Tillatt for alle. 32 minutter.",
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQUcFLF7W_gEsfxglhs9zuZA",
+    "width": 300
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQaLa9cnSQL0ofxglhs9zuZA",
+    "width": 600
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQJ8d1voDm6Egfxglhs9zuZA",
+    "width": 960
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQdBaQ6wi1DNkfxglhs9zuZA",
+    "width": 1280
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQkiQtL0BdgiIfxglhs9zuZA",
+    "width": 1600
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQ1Xmn-RgQhekfxglhs9zuZA",
+    "width": 1920
+  },
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQUcFLF7W_gEsfxglhs9zuZA",
+  300,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQaLa9cnSQL0ofxglhs9zuZA",
+  600,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQJ8d1voDm6Egfxglhs9zuZA",
+  960,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQdBaQ6wi1DNkfxglhs9zuZA",
+  1280,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQkiQtL0BdgiIfxglhs9zuZA",
+  1600,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQ1Xmn-RgQhekfxglhs9zuZA",
+  1920,
+  {
+    "date": "2015-12-09T20:14:56.36+01:00",
+    "displayValue": "9. desember 2015 kl. 20:14"
+  },
+  {
+    "date": "9999-12-31T00:00:00+01:00",
+    "displayValue": "Alltid tilgjengelig"
+  },
+  {
+    "isGeoBlocked": false,
+    "displayValue": "Verden"
+  },
+  false,
+  "2015-12-09T20:14:56.36+01:00",
+  "9. desember 2015 kl. 20:14",
+  "9999-12-31T00:00:00+01:00",
+  "Alltid tilgjengelig",
+  false,
+  "Verden",
+  "available",
+  false,
+  null,
+  "LOV2015-02-06-7",
+  {
+    "rating": {
+      "code": "A",
+      "displayValue": "Tillatt for alle",
+      "displayAge": "A"
+    },
+    "status": "rated"
+  },
+  {
+    "code": "A",
+    "displayValue": "Tillatt for alle",
+    "displayAge": "A"
+  },
+  "rated",
+  "A",
+  "Tillatt for alle",
+  "A",
+  {
+    "_links": {
+      "self": {
+        "href": "/tv/programs/pageviews/ga/NNFA50120915"
+      }
+    },
+    "dimension1": "prf:NNFA50120915",
+    "dimension2": "aktuelt",
+    "dimension3": "2015",
+    "dimension4": "12",
+    "dimension5": "09",
+    "dimension10": "prf:NNFA50120915",
+    "dimension21": "aktuelt-tv",
+    "dimension22": "5",
+    "dimension23": "nyheter",
+    "dimension25": "video",
+    "dimension26": "ondemand"
+  },
+  {
+    "self": {
+      "href": "/tv/programs/pageviews/ga/NNFA50120915"
+    }
+  },
+  "prf:NNFA50120915",
+  "aktuelt",
+  "2015",
+  "12",
+  "09",
+  "prf:NNFA50120915",
+  "aktuelt-tv",
+  "5",
+  "nyheter",
+  "video",
+  "ondemand",
+  {
+    "href": "/tv/programs/pageviews/ga/NNFA50120915"
+  },
+  "/tv/programs/pageviews/ga/NNFA50120915",
+  {
+    "self": {
+      "href": "/tv/catalog/programs/NNFA50120815"
+    },
+    "playbackmetadata": {
+      "href": "/playback/metadata/program/NNFA50120815"
+    },
+    "playback": {
+      "href": "/mediaelement/program/NNFA50120815"
+    },
+    "season": {
+      "name": "201512",
+      "href": "/tv/catalog/series/aktuelt-tv/seasons/201512",
+      "title": "Desember 2015"
+    },
+    "recommendations": {
+      "href": "/tv/recommendations/NNFA50120815?list=tv_viderenavigasjon_fra_episode{&maxNumber,experiment}",
+      "templated": true
+    },
+    "share": {
+      "href": "https://tv.nrk.no/se?v=NNFA50120815{&autoplay,t}",
+      "templated": true
+    },
+    "fargerik": {
+      "href": "https://fargerik-psapi.nrk.no/tv/seriespage/series/aktuelt-tv"
+    }
+  },
+  "e8b71b4f3425131dfc6aa23820b50c19",
+  "NNFA50120815",
+  {
+    "title": "8. des. 2015 – Aktuelt",
+    "subtitle": "Direkte fra studio om politikk, kultur og samfunnsliv. Programleder er Ole Torp.\t"
+  },
+  {
+    "displayValue": "08.12.2015   ·   Tillatt for alle   ·   28 min",
+    "accessibilityValue": "08.12.2015. Tillatt for alle. 28 minutter."
+  },
+  [
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQUcFLF7W_gEsfxglhs9zuZA",
+      "width": 300
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQaLa9cnSQL0ofxglhs9zuZA",
+      "width": 600
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQJ8d1voDm6Egfxglhs9zuZA",
+      "width": 960
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQdBaQ6wi1DNkfxglhs9zuZA",
+      "width": 1280
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQkiQtL0BdgiIfxglhs9zuZA",
+      "width": 1600
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQ1Xmn-RgQhekfxglhs9zuZA",
+      "width": 1920
+    }
+  ],
+  "PT28M57.72S",
+  1738,
+  {
+    "from": {
+      "date": "2015-12-08T20:14:50.64+01:00",
+      "displayValue": "8. desember 2015 kl. 20:14"
+    },
+    "to": {
+      "date": "9999-12-31T00:00:00+01:00",
+      "displayValue": "Alltid tilgjengelig"
+    },
+    "geoBlock": {
+      "isGeoBlocked": false,
+      "displayValue": "Verden"
+    },
+    "offline": false
+  },
+  "2015-12-08T20:14:50.64+01:00",
+  2015,
+  {
+    "status": "available",
+    "hasLabel": false,
+    "label": null
+  },
+  {
+    "legalReference": "LOV2015-02-06-7",
+    "body": {
+      "rating": {
+        "code": "A",
+        "displayValue": "Tillatt for alle",
+        "displayAge": "A"
+      },
+      "status": "rated"
+    }
+  },
+  [],
+  "08.12.2015",
+  {
+    "ga": {
+      "_links": {
+        "self": {
+          "href": "/tv/programs/pageviews/ga/NNFA50120815"
+        }
+      },
+      "dimension1": "prf:NNFA50120815",
+      "dimension2": "aktuelt",
+      "dimension3": "2015",
+      "dimension4": "12",
+      "dimension5": "08",
+      "dimension10": "prf:NNFA50120815",
+      "dimension21": "aktuelt-tv",
+      "dimension22": "4",
+      "dimension23": "nyheter",
+      "dimension25": "video",
+      "dimension26": "ondemand"
+    }
+  },
+  {
+    "href": "/tv/catalog/programs/NNFA50120815"
+  },
+  {
+    "href": "/playback/metadata/program/NNFA50120815"
+  },
+  {
+    "href": "/mediaelement/program/NNFA50120815"
+  },
+  {
+    "name": "201512",
+    "href": "/tv/catalog/series/aktuelt-tv/seasons/201512",
+    "title": "Desember 2015"
+  },
+  {
+    "href": "/tv/recommendations/NNFA50120815?list=tv_viderenavigasjon_fra_episode{&maxNumber,experiment}",
+    "templated": true
+  },
+  {
+    "href": "https://tv.nrk.no/se?v=NNFA50120815{&autoplay,t}",
+    "templated": true
+  },
+  {
+    "href": "https://fargerik-psapi.nrk.no/tv/seriespage/series/aktuelt-tv"
+  },
+  "/tv/catalog/programs/NNFA50120815",
+  "/playback/metadata/program/NNFA50120815",
+  "/mediaelement/program/NNFA50120815",
+  "201512",
+  "/tv/catalog/series/aktuelt-tv/seasons/201512",
+  "Desember 2015",
+  "/tv/recommendations/NNFA50120815?list=tv_viderenavigasjon_fra_episode{&maxNumber,experiment}",
+  true,
+  "https://tv.nrk.no/se?v=NNFA50120815{&autoplay,t}",
+  true,
+  "https://fargerik-psapi.nrk.no/tv/seriespage/series/aktuelt-tv",
+  "8. des. 2015 – Aktuelt",
+  "Direkte fra studio om politikk, kultur og samfunnsliv. Programleder er Ole Torp.\t",
+  "08.12.2015   ·   Tillatt for alle   ·   28 min",
+  "08.12.2015. Tillatt for alle. 28 minutter.",
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQUcFLF7W_gEsfxglhs9zuZA",
+    "width": 300
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQaLa9cnSQL0ofxglhs9zuZA",
+    "width": 600
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQJ8d1voDm6Egfxglhs9zuZA",
+    "width": 960
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQdBaQ6wi1DNkfxglhs9zuZA",
+    "width": 1280
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQkiQtL0BdgiIfxglhs9zuZA",
+    "width": 1600
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQ1Xmn-RgQhekfxglhs9zuZA",
+    "width": 1920
+  },
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQUcFLF7W_gEsfxglhs9zuZA",
+  300,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQaLa9cnSQL0ofxglhs9zuZA",
+  600,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQJ8d1voDm6Egfxglhs9zuZA",
+  960,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQdBaQ6wi1DNkfxglhs9zuZA",
+  1280,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQkiQtL0BdgiIfxglhs9zuZA",
+  1600,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQ1Xmn-RgQhekfxglhs9zuZA",
+  1920,
+  {
+    "date": "2015-12-08T20:14:50.64+01:00",
+    "displayValue": "8. desember 2015 kl. 20:14"
+  },
+  {
+    "date": "9999-12-31T00:00:00+01:00",
+    "displayValue": "Alltid tilgjengelig"
+  },
+  {
+    "isGeoBlocked": false,
+    "displayValue": "Verden"
+  },
+  false,
+  "2015-12-08T20:14:50.64+01:00",
+  "8. desember 2015 kl. 20:14",
+  "9999-12-31T00:00:00+01:00",
+  "Alltid tilgjengelig",
+  false,
+  "Verden",
+  "available",
+  false,
+  null,
+  "LOV2015-02-06-7",
+  {
+    "rating": {
+      "code": "A",
+      "displayValue": "Tillatt for alle",
+      "displayAge": "A"
+    },
+    "status": "rated"
+  },
+  {
+    "code": "A",
+    "displayValue": "Tillatt for alle",
+    "displayAge": "A"
+  },
+  "rated",
+  "A",
+  "Tillatt for alle",
+  "A",
+  {
+    "_links": {
+      "self": {
+        "href": "/tv/programs/pageviews/ga/NNFA50120815"
+      }
+    },
+    "dimension1": "prf:NNFA50120815",
+    "dimension2": "aktuelt",
+    "dimension3": "2015",
+    "dimension4": "12",
+    "dimension5": "08",
+    "dimension10": "prf:NNFA50120815",
+    "dimension21": "aktuelt-tv",
+    "dimension22": "4",
+    "dimension23": "nyheter",
+    "dimension25": "video",
+    "dimension26": "ondemand"
+  },
+  {
+    "self": {
+      "href": "/tv/programs/pageviews/ga/NNFA50120815"
+    }
+  },
+  "prf:NNFA50120815",
+  "aktuelt",
+  "2015",
+  "12",
+  "08",
+  "prf:NNFA50120815",
+  "aktuelt-tv",
+  "4",
+  "nyheter",
+  "video",
+  "ondemand",
+  {
+    "href": "/tv/programs/pageviews/ga/NNFA50120815"
+  },
+  "/tv/programs/pageviews/ga/NNFA50120815",
+  {
+    "self": {
+      "href": "/tv/catalog/programs/NNFA50120715"
+    },
+    "playbackmetadata": {
+      "href": "/playback/metadata/program/NNFA50120715"
+    },
+    "playback": {
+      "href": "/mediaelement/program/NNFA50120715"
+    },
+    "season": {
+      "name": "201512",
+      "href": "/tv/catalog/series/aktuelt-tv/seasons/201512",
+      "title": "Desember 2015"
+    },
+    "recommendations": {
+      "href": "/tv/recommendations/NNFA50120715?list=tv_viderenavigasjon_fra_episode{&maxNumber,experiment}",
+      "templated": true
+    },
+    "share": {
+      "href": "https://tv.nrk.no/se?v=NNFA50120715{&autoplay,t}",
+      "templated": true
+    },
+    "fargerik": {
+      "href": "https://fargerik-psapi.nrk.no/tv/seriespage/series/aktuelt-tv"
+    }
+  },
+  "ee64ebf775f9321801088f935d32b443",
+  "NNFA50120715",
+  {
+    "title": "7. des. 2015 – Aktuelt",
+    "subtitle": "Direkte fra studio om politikk, kultur og samfunnsliv. Programleder er Ole Torp.\t"
+  },
+  {
+    "displayValue": "07.12.2015   ·   Tillatt for alle   ·   29 min",
+    "accessibilityValue": "07.12.2015. Tillatt for alle. 29 minutter."
+  },
+  [
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQUcFLF7W_gEsfxglhs9zuZA",
+      "width": 300
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQaLa9cnSQL0ofxglhs9zuZA",
+      "width": 600
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQJ8d1voDm6Egfxglhs9zuZA",
+      "width": 960
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQdBaQ6wi1DNkfxglhs9zuZA",
+      "width": 1280
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQkiQtL0BdgiIfxglhs9zuZA",
+      "width": 1600
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQ1Xmn-RgQhekfxglhs9zuZA",
+      "width": 1920
+    }
+  ],
+  "PT29M54.84S",
+  1795,
+  {
+    "from": {
+      "date": "2015-12-07T20:14:34.68+01:00",
+      "displayValue": "7. desember 2015 kl. 20:14"
+    },
+    "to": {
+      "date": "9999-12-31T00:00:00+01:00",
+      "displayValue": "Alltid tilgjengelig"
+    },
+    "geoBlock": {
+      "isGeoBlocked": false,
+      "displayValue": "Verden"
+    },
+    "offline": false
+  },
+  "2015-12-07T20:14:34.68+01:00",
+  2015,
+  {
+    "status": "available",
+    "hasLabel": false,
+    "label": null
+  },
+  {
+    "legalReference": "LOV2015-02-06-7",
+    "body": {
+      "rating": {
+        "code": "A",
+        "displayValue": "Tillatt for alle",
+        "displayAge": "A"
+      },
+      "status": "rated"
+    }
+  },
+  [],
+  "07.12.2015",
+  {
+    "ga": {
+      "_links": {
+        "self": {
+          "href": "/tv/programs/pageviews/ga/NNFA50120715"
+        }
+      },
+      "dimension1": "prf:NNFA50120715",
+      "dimension2": "aktuelt",
+      "dimension3": "2015",
+      "dimension4": "12",
+      "dimension5": "07",
+      "dimension10": "prf:NNFA50120715",
+      "dimension21": "aktuelt-tv",
+      "dimension22": "3",
+      "dimension23": "nyheter",
+      "dimension25": "video",
+      "dimension26": "ondemand"
+    }
+  },
+  {
+    "href": "/tv/catalog/programs/NNFA50120715"
+  },
+  {
+    "href": "/playback/metadata/program/NNFA50120715"
+  },
+  {
+    "href": "/mediaelement/program/NNFA50120715"
+  },
+  {
+    "name": "201512",
+    "href": "/tv/catalog/series/aktuelt-tv/seasons/201512",
+    "title": "Desember 2015"
+  },
+  {
+    "href": "/tv/recommendations/NNFA50120715?list=tv_viderenavigasjon_fra_episode{&maxNumber,experiment}",
+    "templated": true
+  },
+  {
+    "href": "https://tv.nrk.no/se?v=NNFA50120715{&autoplay,t}",
+    "templated": true
+  },
+  {
+    "href": "https://fargerik-psapi.nrk.no/tv/seriespage/series/aktuelt-tv"
+  },
+  "/tv/catalog/programs/NNFA50120715",
+  "/playback/metadata/program/NNFA50120715",
+  "/mediaelement/program/NNFA50120715",
+  "201512",
+  "/tv/catalog/series/aktuelt-tv/seasons/201512",
+  "Desember 2015",
+  "/tv/recommendations/NNFA50120715?list=tv_viderenavigasjon_fra_episode{&maxNumber,experiment}",
+  true,
+  "https://tv.nrk.no/se?v=NNFA50120715{&autoplay,t}",
+  true,
+  "https://fargerik-psapi.nrk.no/tv/seriespage/series/aktuelt-tv",
+  "7. des. 2015 – Aktuelt",
+  "Direkte fra studio om politikk, kultur og samfunnsliv. Programleder er Ole Torp.\t",
+  "07.12.2015   ·   Tillatt for alle   ·   29 min",
+  "07.12.2015. Tillatt for alle. 29 minutter.",
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQUcFLF7W_gEsfxglhs9zuZA",
+    "width": 300
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQaLa9cnSQL0ofxglhs9zuZA",
+    "width": 600
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQJ8d1voDm6Egfxglhs9zuZA",
+    "width": 960
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQdBaQ6wi1DNkfxglhs9zuZA",
+    "width": 1280
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQkiQtL0BdgiIfxglhs9zuZA",
+    "width": 1600
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQ1Xmn-RgQhekfxglhs9zuZA",
+    "width": 1920
+  },
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQUcFLF7W_gEsfxglhs9zuZA",
+  300,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQaLa9cnSQL0ofxglhs9zuZA",
+  600,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQJ8d1voDm6Egfxglhs9zuZA",
+  960,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQdBaQ6wi1DNkfxglhs9zuZA",
+  1280,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQkiQtL0BdgiIfxglhs9zuZA",
+  1600,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQ1Xmn-RgQhekfxglhs9zuZA",
+  1920,
+  {
+    "date": "2015-12-07T20:14:34.68+01:00",
+    "displayValue": "7. desember 2015 kl. 20:14"
+  },
+  {
+    "date": "9999-12-31T00:00:00+01:00",
+    "displayValue": "Alltid tilgjengelig"
+  },
+  {
+    "isGeoBlocked": false,
+    "displayValue": "Verden"
+  },
+  false,
+  "2015-12-07T20:14:34.68+01:00",
+  "7. desember 2015 kl. 20:14",
+  "9999-12-31T00:00:00+01:00",
+  "Alltid tilgjengelig",
+  false,
+  "Verden",
+  "available",
+  false,
+  null,
+  "LOV2015-02-06-7",
+  {
+    "rating": {
+      "code": "A",
+      "displayValue": "Tillatt for alle",
+      "displayAge": "A"
+    },
+    "status": "rated"
+  },
+  {
+    "code": "A",
+    "displayValue": "Tillatt for alle",
+    "displayAge": "A"
+  },
+  "rated",
+  "A",
+  "Tillatt for alle",
+  "A",
+  {
+    "_links": {
+      "self": {
+        "href": "/tv/programs/pageviews/ga/NNFA50120715"
+      }
+    },
+    "dimension1": "prf:NNFA50120715",
+    "dimension2": "aktuelt",
+    "dimension3": "2015",
+    "dimension4": "12",
+    "dimension5": "07",
+    "dimension10": "prf:NNFA50120715",
+    "dimension21": "aktuelt-tv",
+    "dimension22": "3",
+    "dimension23": "nyheter",
+    "dimension25": "video",
+    "dimension26": "ondemand"
+  },
+  {
+    "self": {
+      "href": "/tv/programs/pageviews/ga/NNFA50120715"
+    }
+  },
+  "prf:NNFA50120715",
+  "aktuelt",
+  "2015",
+  "12",
+  "07",
+  "prf:NNFA50120715",
+  "aktuelt-tv",
+  "3",
+  "nyheter",
+  "video",
+  "ondemand",
+  {
+    "href": "/tv/programs/pageviews/ga/NNFA50120715"
+  },
+  "/tv/programs/pageviews/ga/NNFA50120715",
+  {
+    "self": {
+      "href": "/tv/catalog/programs/NNFA50120215"
+    },
+    "playbackmetadata": {
+      "href": "/playback/metadata/program/NNFA50120215"
+    },
+    "playback": {
+      "href": "/mediaelement/program/NNFA50120215"
+    },
+    "season": {
+      "name": "201512",
+      "href": "/tv/catalog/series/aktuelt-tv/seasons/201512",
+      "title": "Desember 2015"
+    },
+    "recommendations": {
+      "href": "/tv/recommendations/NNFA50120215?list=tv_viderenavigasjon_fra_episode{&maxNumber,experiment}",
+      "templated": true
+    },
+    "share": {
+      "href": "https://tv.nrk.no/se?v=NNFA50120215{&autoplay,t}",
+      "templated": true
+    },
+    "fargerik": {
+      "href": "https://fargerik-psapi.nrk.no/tv/seriespage/series/aktuelt-tv"
+    }
+  },
+  "dfae7b91ab7b34af730324a04e382542",
+  "NNFA50120215",
+  {
+    "title": "2. des. 2015 – Aktuelt",
+    "subtitle": "Direkte fra studio om politikk, kultur og samfunnsliv. Programleder er Ole Torp.\t"
+  },
+  {
+    "displayValue": "02.12.2015   ·   Tillatt for alle   ·   29 min",
+    "accessibilityValue": "02.12.2015. Tillatt for alle. 29 minutter."
+  },
+  [
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQUcFLF7W_gEsfxglhs9zuZA",
+      "width": 300
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQaLa9cnSQL0ofxglhs9zuZA",
+      "width": 600
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQJ8d1voDm6Egfxglhs9zuZA",
+      "width": 960
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQdBaQ6wi1DNkfxglhs9zuZA",
+      "width": 1280
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQkiQtL0BdgiIfxglhs9zuZA",
+      "width": 1600
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQ1Xmn-RgQhekfxglhs9zuZA",
+      "width": 1920
+    }
+  ],
+  "PT29M2.68S",
+  1743,
+  {
+    "from": {
+      "date": "2015-12-02T20:14:52.12+01:00",
+      "displayValue": "2. desember 2015 kl. 20:14"
+    },
+    "to": {
+      "date": "9999-12-31T00:00:00+01:00",
+      "displayValue": "Alltid tilgjengelig"
+    },
+    "geoBlock": {
+      "isGeoBlocked": false,
+      "displayValue": "Verden"
+    },
+    "offline": false
+  },
+  "2015-12-02T20:14:52.12+01:00",
+  2015,
+  {
+    "status": "available",
+    "hasLabel": false,
+    "label": null
+  },
+  {
+    "legalReference": "LOV2015-02-06-7",
+    "body": {
+      "rating": {
+        "code": "A",
+        "displayValue": "Tillatt for alle",
+        "displayAge": "A"
+      },
+      "status": "rated"
+    }
+  },
+  [],
+  "02.12.2015",
+  {
+    "ga": {
+      "_links": {
+        "self": {
+          "href": "/tv/programs/pageviews/ga/NNFA50120215"
+        }
+      },
+      "dimension1": "prf:NNFA50120215",
+      "dimension2": "aktuelt",
+      "dimension3": "2015",
+      "dimension4": "12",
+      "dimension5": "02",
+      "dimension10": "prf:NNFA50120215",
+      "dimension21": "aktuelt-tv",
+      "dimension22": "2",
+      "dimension23": "nyheter",
+      "dimension25": "video",
+      "dimension26": "ondemand"
+    }
+  },
+  {
+    "href": "/tv/catalog/programs/NNFA50120215"
+  },
+  {
+    "href": "/playback/metadata/program/NNFA50120215"
+  },
+  {
+    "href": "/mediaelement/program/NNFA50120215"
+  },
+  {
+    "name": "201512",
+    "href": "/tv/catalog/series/aktuelt-tv/seasons/201512",
+    "title": "Desember 2015"
+  },
+  {
+    "href": "/tv/recommendations/NNFA50120215?list=tv_viderenavigasjon_fra_episode{&maxNumber,experiment}",
+    "templated": true
+  },
+  {
+    "href": "https://tv.nrk.no/se?v=NNFA50120215{&autoplay,t}",
+    "templated": true
+  },
+  {
+    "href": "https://fargerik-psapi.nrk.no/tv/seriespage/series/aktuelt-tv"
+  },
+  "/tv/catalog/programs/NNFA50120215",
+  "/playback/metadata/program/NNFA50120215",
+  "/mediaelement/program/NNFA50120215",
+  "201512",
+  "/tv/catalog/series/aktuelt-tv/seasons/201512",
+  "Desember 2015",
+  "/tv/recommendations/NNFA50120215?list=tv_viderenavigasjon_fra_episode{&maxNumber,experiment}",
+  true,
+  "https://tv.nrk.no/se?v=NNFA50120215{&autoplay,t}",
+  true,
+  "https://fargerik-psapi.nrk.no/tv/seriespage/series/aktuelt-tv",
+  "2. des. 2015 – Aktuelt",
+  "Direkte fra studio om politikk, kultur og samfunnsliv. Programleder er Ole Torp.\t",
+  "02.12.2015   ·   Tillatt for alle   ·   29 min",
+  "02.12.2015. Tillatt for alle. 29 minutter.",
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQUcFLF7W_gEsfxglhs9zuZA",
+    "width": 300
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQaLa9cnSQL0ofxglhs9zuZA",
+    "width": 600
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQJ8d1voDm6Egfxglhs9zuZA",
+    "width": 960
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQdBaQ6wi1DNkfxglhs9zuZA",
+    "width": 1280
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQkiQtL0BdgiIfxglhs9zuZA",
+    "width": 1600
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQ1Xmn-RgQhekfxglhs9zuZA",
+    "width": 1920
+  },
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQUcFLF7W_gEsfxglhs9zuZA",
+  300,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQaLa9cnSQL0ofxglhs9zuZA",
+  600,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQJ8d1voDm6Egfxglhs9zuZA",
+  960,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQdBaQ6wi1DNkfxglhs9zuZA",
+  1280,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQkiQtL0BdgiIfxglhs9zuZA",
+  1600,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQ1Xmn-RgQhekfxglhs9zuZA",
+  1920,
+  {
+    "date": "2015-12-02T20:14:52.12+01:00",
+    "displayValue": "2. desember 2015 kl. 20:14"
+  },
+  {
+    "date": "9999-12-31T00:00:00+01:00",
+    "displayValue": "Alltid tilgjengelig"
+  },
+  {
+    "isGeoBlocked": false,
+    "displayValue": "Verden"
+  },
+  false,
+  "2015-12-02T20:14:52.12+01:00",
+  "2. desember 2015 kl. 20:14",
+  "9999-12-31T00:00:00+01:00",
+  "Alltid tilgjengelig",
+  false,
+  "Verden",
+  "available",
+  false,
+  null,
+  "LOV2015-02-06-7",
+  {
+    "rating": {
+      "code": "A",
+      "displayValue": "Tillatt for alle",
+      "displayAge": "A"
+    },
+    "status": "rated"
+  },
+  {
+    "code": "A",
+    "displayValue": "Tillatt for alle",
+    "displayAge": "A"
+  },
+  "rated",
+  "A",
+  "Tillatt for alle",
+  "A",
+  {
+    "_links": {
+      "self": {
+        "href": "/tv/programs/pageviews/ga/NNFA50120215"
+      }
+    },
+    "dimension1": "prf:NNFA50120215",
+    "dimension2": "aktuelt",
+    "dimension3": "2015",
+    "dimension4": "12",
+    "dimension5": "02",
+    "dimension10": "prf:NNFA50120215",
+    "dimension21": "aktuelt-tv",
+    "dimension22": "2",
+    "dimension23": "nyheter",
+    "dimension25": "video",
+    "dimension26": "ondemand"
+  },
+  {
+    "self": {
+      "href": "/tv/programs/pageviews/ga/NNFA50120215"
+    }
+  },
+  "prf:NNFA50120215",
+  "aktuelt",
+  "2015",
+  "12",
+  "02",
+  "prf:NNFA50120215",
+  "aktuelt-tv",
+  "2",
+  "nyheter",
+  "video",
+  "ondemand",
+  {
+    "href": "/tv/programs/pageviews/ga/NNFA50120215"
+  },
+  "/tv/programs/pageviews/ga/NNFA50120215",
+  {
+    "self": {
+      "href": "/tv/catalog/programs/NNFA50120115"
+    },
+    "playbackmetadata": {
+      "href": "/playback/metadata/program/NNFA50120115"
+    },
+    "playback": {
+      "href": "/mediaelement/program/NNFA50120115"
+    },
+    "season": {
+      "name": "201512",
+      "href": "/tv/catalog/series/aktuelt-tv/seasons/201512",
+      "title": "Desember 2015"
+    },
+    "recommendations": {
+      "href": "/tv/recommendations/NNFA50120115?list=tv_viderenavigasjon_fra_episode{&maxNumber,experiment}",
+      "templated": true
+    },
+    "share": {
+      "href": "https://tv.nrk.no/se?v=NNFA50120115{&autoplay,t}",
+      "templated": true
+    },
+    "fargerik": {
+      "href": "https://fargerik-psapi.nrk.no/tv/seriespage/series/aktuelt-tv"
+    }
+  },
+  "ef2fb96980d2437c8017b8fdf0a1d265",
+  "NNFA50120115",
+  {
+    "title": "1. des. 2015 – Aktuelt",
+    "subtitle": "Direkte fra studio om politikk, kultur og samfunnsliv. Programleder er Ole Torp.\t"
+  },
+  {
+    "displayValue": "01.12.2015   ·   Tillatt for alle   ·   29 min",
+    "accessibilityValue": "01.12.2015. Tillatt for alle. 29 minutter."
+  },
+  [
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQUcFLF7W_gEsfxglhs9zuZA",
+      "width": 300
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQaLa9cnSQL0ofxglhs9zuZA",
+      "width": 600
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQJ8d1voDm6Egfxglhs9zuZA",
+      "width": 960
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQdBaQ6wi1DNkfxglhs9zuZA",
+      "width": 1280
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQkiQtL0BdgiIfxglhs9zuZA",
+      "width": 1600
+    },
+    {
+      "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQ1Xmn-RgQhekfxglhs9zuZA",
+      "width": 1920
+    }
+  ],
+  "PT29M10.8S",
+  1751,
+  {
+    "from": {
+      "date": "2015-12-01T20:14:57.52+01:00",
+      "displayValue": "1. desember 2015 kl. 20:14"
+    },
+    "to": {
+      "date": "9999-12-31T00:00:00+01:00",
+      "displayValue": "Alltid tilgjengelig"
+    },
+    "geoBlock": {
+      "isGeoBlocked": false,
+      "displayValue": "Verden"
+    },
+    "offline": false
+  },
+  "2015-12-01T20:14:57.52+01:00",
+  2015,
+  {
+    "status": "available",
+    "hasLabel": false,
+    "label": null
+  },
+  {
+    "legalReference": "LOV2015-02-06-7",
+    "body": {
+      "rating": {
+        "code": "A",
+        "displayValue": "Tillatt for alle",
+        "displayAge": "A"
+      },
+      "status": "rated"
+    }
+  },
+  [],
+  "01.12.2015",
+  {
+    "ga": {
+      "_links": {
+        "self": {
+          "href": "/tv/programs/pageviews/ga/NNFA50120115"
+        }
+      },
+      "dimension1": "prf:NNFA50120115",
+      "dimension2": "aktuelt",
+      "dimension3": "2015",
+      "dimension4": "12",
+      "dimension5": "01",
+      "dimension10": "prf:NNFA50120115",
+      "dimension21": "aktuelt-tv",
+      "dimension22": "1",
+      "dimension23": "nyheter",
+      "dimension25": "video",
+      "dimension26": "ondemand"
+    }
+  },
+  {
+    "href": "/tv/catalog/programs/NNFA50120115"
+  },
+  {
+    "href": "/playback/metadata/program/NNFA50120115"
+  },
+  {
+    "href": "/mediaelement/program/NNFA50120115"
+  },
+  {
+    "name": "201512",
+    "href": "/tv/catalog/series/aktuelt-tv/seasons/201512",
+    "title": "Desember 2015"
+  },
+  {
+    "href": "/tv/recommendations/NNFA50120115?list=tv_viderenavigasjon_fra_episode{&maxNumber,experiment}",
+    "templated": true
+  },
+  {
+    "href": "https://tv.nrk.no/se?v=NNFA50120115{&autoplay,t}",
+    "templated": true
+  },
+  {
+    "href": "https://fargerik-psapi.nrk.no/tv/seriespage/series/aktuelt-tv"
+  },
+  "/tv/catalog/programs/NNFA50120115",
+  "/playback/metadata/program/NNFA50120115",
+  "/mediaelement/program/NNFA50120115",
+  "201512",
+  "/tv/catalog/series/aktuelt-tv/seasons/201512",
+  "Desember 2015",
+  "/tv/recommendations/NNFA50120115?list=tv_viderenavigasjon_fra_episode{&maxNumber,experiment}",
+  true,
+  "https://tv.nrk.no/se?v=NNFA50120115{&autoplay,t}",
+  true,
+  "https://fargerik-psapi.nrk.no/tv/seriespage/series/aktuelt-tv",
+  "1. des. 2015 – Aktuelt",
+  "Direkte fra studio om politikk, kultur og samfunnsliv. Programleder er Ole Torp.\t",
+  "01.12.2015   ·   Tillatt for alle   ·   29 min",
+  "01.12.2015. Tillatt for alle. 29 minutter.",
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQUcFLF7W_gEsfxglhs9zuZA",
+    "width": 300
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQaLa9cnSQL0ofxglhs9zuZA",
+    "width": 600
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQJ8d1voDm6Egfxglhs9zuZA",
+    "width": 960
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQdBaQ6wi1DNkfxglhs9zuZA",
+    "width": 1280
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQkiQtL0BdgiIfxglhs9zuZA",
+    "width": 1600
+  },
+  {
+    "url": "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQ1Xmn-RgQhekfxglhs9zuZA",
+    "width": 1920
+  },
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQUcFLF7W_gEsfxglhs9zuZA",
+  300,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQaLa9cnSQL0ofxglhs9zuZA",
+  600,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQJ8d1voDm6Egfxglhs9zuZA",
+  960,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQdBaQ6wi1DNkfxglhs9zuZA",
+  1280,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQkiQtL0BdgiIfxglhs9zuZA",
+  1600,
+  "https://gfx.nrk.no/CZ-wAbfEem5JxRCldXn-AQ1Xmn-RgQhekfxglhs9zuZA",
+  1920,
+  {
+    "date": "2015-12-01T20:14:57.52+01:00",
+    "displayValue": "1. desember 2015 kl. 20:14"
+  },
+  {
+    "date": "9999-12-31T00:00:00+01:00",
+    "displayValue": "Alltid tilgjengelig"
+  },
+  {
+    "isGeoBlocked": false,
+    "displayValue": "Verden"
+  },
+  false,
+  "2015-12-01T20:14:57.52+01:00",
+  "1. desember 2015 kl. 20:14",
+  "9999-12-31T00:00:00+01:00",
+  "Alltid tilgjengelig",
+  false,
+  "Verden",
+  "available",
+  false,
+  null,
+  "LOV2015-02-06-7",
+  {
+    "rating": {
+      "code": "A",
+      "displayValue": "Tillatt for alle",
+      "displayAge": "A"
+    },
+    "status": "rated"
+  },
+  {
+    "code": "A",
+    "displayValue": "Tillatt for alle",
+    "displayAge": "A"
+  },
+  "rated",
+  "A",
+  "Tillatt for alle",
+  "A",
+  {
+    "_links": {
+      "self": {
+        "href": "/tv/programs/pageviews/ga/NNFA50120115"
+      }
+    },
+    "dimension1": "prf:NNFA50120115",
+    "dimension2": "aktuelt",
+    "dimension3": "2015",
+    "dimension4": "12",
+    "dimension5": "01",
+    "dimension10": "prf:NNFA50120115",
+    "dimension21": "aktuelt-tv",
+    "dimension22": "1",
+    "dimension23": "nyheter",
+    "dimension25": "video",
+    "dimension26": "ondemand"
+  },
+  {
+    "self": {
+      "href": "/tv/programs/pageviews/ga/NNFA50120115"
+    }
+  },
+  "prf:NNFA50120115",
+  "aktuelt",
+  "2015",
+  "12",
+  "01",
+  "prf:NNFA50120115",
+  "aktuelt-tv",
+  "1",
+  "nyheter",
+  "video",
+  "ondemand",
+  {
+    "href": "/tv/programs/pageviews/ga/NNFA50120115"
+  },
+  "/tv/programs/pageviews/ga/NNFA50120115"
+]

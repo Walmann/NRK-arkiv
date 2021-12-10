@@ -7,6 +7,12 @@ import urllib
 from urllib.request import urlopen
 
 
+def export_JSON_to_file(_json):
+    with open("JSON_export.json", "w", encoding="utf-8") as file:
+        json.dump(_json, file)
+        print("Exported JSON. Press enter to continue.")
+
+
 
 
 def Program_Convert_href_To_Json(Program_href): #Also get avability?
@@ -50,6 +56,7 @@ url = "https://tv.nrk.no/serie/fleksnes/"
 
 Filesize_Total = 0
 with open("List_Of_Programs_Debug.txt", "r", encoding="utf-8") as file_object:
+    # file_object = '["Aktuelt - TV", "/serie/aktuelt-tv", 2015, "Available"]'
     file_object = file_object.readlines()
     # Filesize_Total_Human_Readable = sizeof_fmt(Filesize_Total)
     # List_Length = len(file_object.readlines())
@@ -64,31 +71,42 @@ with open("List_Of_Programs_Debug.txt", "r", encoding="utf-8") as file_object:
 
         Program_href_For_JSON = Program_Convert_href_To_Json(Program_href)
 
-        Program_List_Desc = "Current filesize: %s Finding Filesize for %s" % (humanfriendly.format_size(Filesize_Total), Program_Name)
+        # Program_List_Desc = "Current filesize: %s Finding Filesize for %s" % (humanfriendly.format_size(Filesize_Total), Program_Name)
+        Program_List_Desc = "Show: %s" % Program_Name
         Program_List.set_description(Program_List_Desc) #Set description for progressbar1
         
 
-        #Find how many seasons
+        #START Find href to all seasons This does not take long
         seasons_url = "https://psapi.nrk.no/tv/catalog" + urllib.parse.quote(Program_href_For_JSON)
         season_JSON = json.loads(urlopen(seasons_url).read())  
         seasons_href = []
-        season_parse = tqdm(parse('$[_links][seasons].[*].href').find(season_JSON), leave=False)
+        # export_JSON_to_file(season_JSON)
+        season_parse = tqdm(parse('$[_links][seasons][*].href').find(season_JSON), leave=False)
         for entries in season_parse:
-            seasons_href.append(entries.value)   #HEREHERHERHERHEHRRHERHEHRHEHRHER
+            # season_parse.set_description("Seasons: ")
+            seasons_href.append(entries.value)
 
-        #Loop seasons, get episodes
+        #STOP Find href to all seasons
+         
+        
+        #START find episodes in season
         season_Entry = tqdm(seasons_href, total=len(seasons_href), leave=False)
         for episodes_in_season in season_Entry:
-            #Find episodes in seasons
-            #/tv/catalog/series/aktuelt-tv/seasons/201512
+            season_Entry.set_description("Seasons: ")
             episode_url = "https://psapi.nrk.no" + urllib.parse.quote(episodes_in_season)
             episode_JSON = json.loads(urlopen(episode_url).read())  
+            export_JSON_to_file(episode_JSON), input()
+
+            #Find Href for current episode and add to list.
             episode_href = []
-            episode_parse = tqdm(parse('$._embedded.instalments[*]._links.self.href').find(episode_JSON), leave=False )
-            episode_parseset_description = "Episodes(?)"
+            # episode_parse = tqdm(parse('$._embedded.instalments[*]._links.self.href').find(episode_JSON), leave=False )
+            episode_parse = tqdm(parse('$._embedded.instalments[*]').find(episode_JSON), leave=False )
             for entries in episode_parse:
+                episode_name = parse()
+                episode_parse.set_description("Episodes: ")
                 episode_href.append(entries.value)
-        
-        print(episode_href)
+    
+        # print(episode_href)
+    tqdm.write("Current Filesize: " + humanfriendly.format_size(Filesize_Total))
 
         
