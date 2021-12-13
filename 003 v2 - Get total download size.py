@@ -100,10 +100,10 @@ with open("List_Of_Programs_Debug.txt", "r", encoding="utf-8") as file_object:
             #Find Href for current episode and add to list.
             episode_href = []
             # episode_parse = tqdm(parse('$._embedded.instalments[*]._links.self.href').find(episode_JSON), leave=False )
-            episode_parse = tqdm(parse('$._embedded.instalments[*]').find(episode_JSON), leave=False )
-            for entries in episode_parse:
-                episode_name = parse()
-                episode_parse.set_description("Episodes: ")
+            episode_parse = tqdm(parse('$._embedded.instalments[*]._links.self.href').find(episode_JSON), leave=False ).set_description("Episodes: ")
+            for eposides in episode_parse:
+                # episode_name = parse()
+                # episode_parse.set_description("Episodes: ")
                 episode_href.append(entries.value)
     
         # print(episode_href)
