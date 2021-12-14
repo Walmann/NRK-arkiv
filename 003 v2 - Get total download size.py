@@ -1,5 +1,4 @@
 # from jsonpath_ng import jsonpath, parse
-from types import NoneType
 from jsonpath_ng import jsonpath, parse
 import json
 from tqdm import tqdm
@@ -7,6 +6,7 @@ import humanfriendly
 import urllib
 from urllib.request import urlopen
 import m3u8
+from os import system
 
 def export_JSON_to_file(_json):
     with open("JSON_export.json", "w", encoding="utf-8") as file:
@@ -39,20 +39,16 @@ def Program_Convert_href_To_Json(Program_href): #Also get avability?
                 pass
     return new_href
 
-yt_dlp_options = {
-        # "outtmpl": "%(id)s%(ext)s",
-        # "noplaylist": True,
-        "quiet": True,
-        # "format": "bestvideo",
-        # "ignore_no_formats_error": True,
-        "ignoreerrors": True,
-    }
-
 
 # 
 # url = "https://tv.nrk.no" + entry[1]
 # url = "https://tv.nrk.no/serie/fleksnes/1995/FKUN89000295"
 # url = "https://tv.nrk.no/serie/fleksnes/"
+
+
+
+clear = lambda: system('cls') #on Windows System
+clear()
 
 
 Filesize_Total = 0
@@ -78,7 +74,7 @@ with open("List_Of_Programs.txt", "r", encoding="utf-8") as file_object:
         
 
         #START Find href to all seasons This does not take long
-        show_url = "https://psapi.nrk.no/tv/catalog" + urllib.parse.quote(Program_href_For_JSON)
+        show_url = "https://psapi.nrk.no/tv/catalog" + urllib.parse.unquote(Program_href_For_JSON)
         show_JSON = json.loads(urlopen(show_url).read())  
         show_href = []
         # export_JSON_to_file(season_JSON)
@@ -101,31 +97,30 @@ with open("List_Of_Programs.txt", "r", encoding="utf-8") as file_object:
 
             #Find Href for current episode and add to list.
             episode_href = []
-            # episode_parse = tqdm(parse('$._embedded.instalments[*]._links.self.href').find(episode_JSON), leave=False )
-
             #Need to find if program uses Episodes, or instalments:
             episode_parse = parse('$._embedded.instalments[*].prfId').find(season_JSON)
             if len(episode_parse) == "0":
                 episode_parse = parse('$._embedded.episodes[*].prfId').find(season_JSON)
                 # tqdm.write("Using backup episode parse")
 
-            # episode_parse = tqdm(parse('$[_embedded][instalments][*][_links][self][href]').find(season_JSON), leave=False )
+
+
             for episodes in episode_parse:
-                # episode_parse.set_description("Episodes: ")
-                # episode_name = parse()
                 episode_href.append(episodes.value)
 
             episodes_href_tqdm = tqdm(episode_href, leave=False)
             for episode_prfId in episodes_href_tqdm:
                 episodes_href_tqdm.set_description("Episodes Href: ")
+                
                 #Get manifestfile:
                 episode_manifest_url = "https://psapi.nrk.no/playback/manifest/program/" + urllib.parse.quote(episode_prfId)
                 episode_manifest_JSON = json.loads(urlopen(episode_manifest_url).read())
-                # export_JSON_to_file(episode_manifest_JSON)
+
                 
-                # url = "https://psapi.nrk.no/playback/manifest/program/" + episode_prfId
-                m3u8_parse = parse('playable.assets[0].url').find(episode_manifest_JSON)[0].value
-                # print (m3u8_parse)
+
+                try: m3u8_parse = parse('playable.assets[0].url').find(episode_manifest_JSON)[0].value
+                except: break
+
                 try: 
                     m3u8_obj = m3u8.load(m3u8_parse)
                 except: 
@@ -137,8 +132,6 @@ with open("List_Of_Programs.txt", "r", encoding="utf-8") as file_object:
                         retry_counter +=1
                     if retry_counter < 10:
                         break
-                        
-                # print(m3u8_obj.playlists[0].stream_info.bandwidth)
                 
 
                 #Find biggest file, usually means best resolution
@@ -147,6 +140,10 @@ with open("List_Of_Programs.txt", "r", encoding="utf-8") as file_object:
                     if item.stream_info.bandwidth > biggest_filesize:
                         biggest_filesize = item.stream_info.bandwidth
                     else: continue
+                
+                #Update Progressbars: 
+                Program_List.refresh()
+                seasons_parse.refresh()
 
 
                 Filesize_Total = Filesize_Total + biggest_filesize
