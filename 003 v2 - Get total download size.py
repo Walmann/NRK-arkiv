@@ -74,8 +74,12 @@ with open("List_Of_Programs.txt", "r", encoding="utf-8") as file_object:
         
 
         #START Find href to all seasons This does not take long
-        show_url = "https://psapi.nrk.no/tv/catalog" + urllib.parse.unquote(Program_href_For_JSON)
-        show_JSON = json.loads(urlopen(show_url).read())  
+        show_url = "https://psapi.nrk.no/tv/catalog" + urllib.parse.quote(Program_href_For_JSON)
+        url_open = urlopen(urllib.parse.unquote(show_url)).read()
+        show_JSON = json.loads(url_open)  
+
+
+
         show_href = []
         # export_JSON_to_file(season_JSON)
         show_parse = tqdm(parse('$[_links][seasons][*].href').find(show_JSON), leave=False)
