@@ -40,10 +40,9 @@ def Program_Convert_href_To_Json(Program_href): #Also get avability?
     return new_href
 
 
-# 
-# url = "https://tv.nrk.no" + entry[1]
-# url = "https://tv.nrk.no/serie/fleksnes/1995/FKUN89000295"
-# url = "https://tv.nrk.no/serie/fleksnes/"
+def Progress_bar():
+    
+    print()
 
 
 
@@ -58,15 +57,15 @@ with open("List_Of_Programs.txt", "r", encoding="utf-8") as file_object:
     # Filesize_Total_Human_Readable = sizeof_fmt(Filesize_Total)
     # List_Length = len(file_object.readlines())
 
-    Program_List = tqdm(file_object, total=len(file_object), leave=False, miniters=1)
+    Program_List = tqdm(file_object, total=len(file_object), leave=False, mininterval= 1)
     for Program_Entry in Program_List:
-        
+
         # Program_Entry = '["Aktuelt - TV", "/serie/aktuelt-tv", 2015, "Available"]'
         Program_Entry = json.loads(Program_Entry) #Load entry into JSON format: entry [Name, href, ProdYear, Available]
-        
         Program_Name = Program_Entry[0]
         Program_href = Program_Entry[1]
 
+        Progress_bar(Program_Name, None, len(Program_List)) #(Show name, itteration, length of list)
         # if Program_Name in Excluded_List:
 
 
@@ -96,7 +95,7 @@ with open("List_Of_Programs.txt", "r", encoding="utf-8") as file_object:
          
         
         #START find episodes in season
-        seasons_parse = tqdm(show_href, total=len(show_href), leave=False, miniters=1)
+        seasons_parse = tqdm(show_href, total=len(show_href), leave=False, mininterval= 1)
         for seasons_href in seasons_parse:
             seasons_parse.set_description("Seasons: ")
             season_url = "https://psapi.nrk.no" + urllib.parse.quote(seasons_href)
@@ -116,7 +115,7 @@ with open("List_Of_Programs.txt", "r", encoding="utf-8") as file_object:
             for episodes in episode_parse:
                 episode_href.append(episodes.value)
 
-            episodes_href_tqdm = tqdm(episode_href, leave=False, miniters=0)
+            episodes_href_tqdm = tqdm(episode_href, leave=False, mininterval= 1)
             for episode_prfId in episodes_href_tqdm:
                 episodes_href_tqdm.set_description("Episodes Href: ")
                 
@@ -136,7 +135,6 @@ with open("List_Of_Programs.txt", "r", encoding="utf-8") as file_object:
                     while retry_counter > 10:
                         import time
                         time.sleep(5)
-                        tqdm.write("Got error getting m3u8 file. Waiting 5 seconds.")
                         m3u8_obj = m3u8.load(m3u8_parse)
                         retry_counter +=1
                     if retry_counter < 10:
@@ -156,7 +154,7 @@ with open("List_Of_Programs.txt", "r", encoding="utf-8") as file_object:
 
 
                 Filesize_Total = Filesize_Total + biggest_filesize
-                # clear()
+                clear()
     
         # print(episode_href)
     tqdm.write("Current Filesize: " + humanfriendly.format_size(Filesize_Total))
