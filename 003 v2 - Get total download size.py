@@ -1,11 +1,12 @@
 # from jsonpath_ng import jsonpath, parse
+from types import NoneType
 from jsonpath_ng import jsonpath, parse
 import json
 from tqdm import tqdm
 import humanfriendly
 import urllib
 from urllib.request import urlopen
-
+import m3u8
 
 def export_JSON_to_file(_json):
     with open("JSON_export.json", "w", encoding="utf-8") as file:
@@ -51,11 +52,11 @@ yt_dlp_options = {
 # 
 # url = "https://tv.nrk.no" + entry[1]
 # url = "https://tv.nrk.no/serie/fleksnes/1995/FKUN89000295"
-url = "https://tv.nrk.no/serie/fleksnes/"
+# url = "https://tv.nrk.no/serie/fleksnes/"
 
 
 Filesize_Total = 0
-with open("List_Of_Programs_Debug.txt", "r", encoding="utf-8") as file_object:
+with open("List_Of_Programs.txt", "r", encoding="utf-8") as file_object:
     # file_object = '["Aktuelt - TV", "/serie/aktuelt-tv", 2015, "Available"]'
     file_object = file_object.readlines()
     # Filesize_Total_Human_Readable = sizeof_fmt(Filesize_Total)
@@ -77,34 +78,79 @@ with open("List_Of_Programs_Debug.txt", "r", encoding="utf-8") as file_object:
         
 
         #START Find href to all seasons This does not take long
-        seasons_url = "https://psapi.nrk.no/tv/catalog" + urllib.parse.quote(Program_href_For_JSON)
-        season_JSON = json.loads(urlopen(seasons_url).read())  
-        seasons_href = []
+        show_url = "https://psapi.nrk.no/tv/catalog" + urllib.parse.quote(Program_href_For_JSON)
+        show_JSON = json.loads(urlopen(show_url).read())  
+        show_href = []
         # export_JSON_to_file(season_JSON)
-        season_parse = tqdm(parse('$[_links][seasons][*].href').find(season_JSON), leave=False)
-        for entries in season_parse:
+        show_parse = tqdm(parse('$[_links][seasons][*].href').find(show_JSON), leave=False)
+        for seasons in show_parse:
             # season_parse.set_description("Seasons: ")
-            seasons_href.append(entries.value)
+            show_href.append(seasons.value)
+            
 
         #STOP Find href to all seasons
          
         
         #START find episodes in season
-        season_Entry = tqdm(seasons_href, total=len(seasons_href), leave=False)
-        for episodes_in_season in season_Entry:
-            season_Entry.set_description("Seasons: ")
-            episode_url = "https://psapi.nrk.no" + urllib.parse.quote(episodes_in_season)
-            episode_JSON = json.loads(urlopen(episode_url).read())  
-            export_JSON_to_file(episode_JSON), input()
+        seasons_parse = tqdm(show_href, total=len(show_href), leave=False)
+        for seasons_href in seasons_parse:
+            seasons_parse.set_description("Seasons: ")
+            season_url = "https://psapi.nrk.no" + urllib.parse.quote(seasons_href)
+            season_JSON = json.loads(urlopen(season_url).read())  
+
 
             #Find Href for current episode and add to list.
             episode_href = []
             # episode_parse = tqdm(parse('$._embedded.instalments[*]._links.self.href').find(episode_JSON), leave=False )
-            episode_parse = tqdm(parse('$._embedded.instalments[*]._links.self.href').find(episode_JSON), leave=False ).set_description("Episodes: ")
-            for eposides in episode_parse:
-                # episode_name = parse()
+
+            #Need to find if program uses Episodes, or instalments:
+            episode_parse = parse('$._embedded.instalments[*].prfId').find(season_JSON)
+            if len(episode_parse) == "0":
+                episode_parse = parse('$._embedded.episodes[*].prfId').find(season_JSON)
+                # tqdm.write("Using backup episode parse")
+
+            # episode_parse = tqdm(parse('$[_embedded][instalments][*][_links][self][href]').find(season_JSON), leave=False )
+            for episodes in episode_parse:
                 # episode_parse.set_description("Episodes: ")
-                episode_href.append(entries.value)
+                # episode_name = parse()
+                episode_href.append(episodes.value)
+
+            episodes_href_tqdm = tqdm(episode_href, leave=False)
+            for episode_prfId in episodes_href_tqdm:
+                episodes_href_tqdm.set_description("Episodes Href: ")
+                #Get manifestfile:
+                episode_manifest_url = "https://psapi.nrk.no/playback/manifest/program/" + urllib.parse.quote(episode_prfId)
+                episode_manifest_JSON = json.loads(urlopen(episode_manifest_url).read())
+                # export_JSON_to_file(episode_manifest_JSON)
+                
+                # url = "https://psapi.nrk.no/playback/manifest/program/" + episode_prfId
+                m3u8_parse = parse('playable.assets[0].url').find(episode_manifest_JSON)[0].value
+                # print (m3u8_parse)
+                try: 
+                    m3u8_obj = m3u8.load(m3u8_parse)
+                except: 
+                    retry_counter = 0
+                    while retry_counter > 10:
+                        import time
+                        time.sleep(5)
+                        m3u8_obj = m3u8.load(m3u8_parse)
+                        retry_counter +=1
+                    if retry_counter < 10:
+                        break
+                        
+                # print(m3u8_obj.playlists[0].stream_info.bandwidth)
+                
+
+                #Find biggest file, usually means best resolution
+                biggest_filesize = 0
+                for item in tqdm(m3u8_obj.playlists, leave=False, desc="Find biggest: "):
+                    if item.stream_info.bandwidth > biggest_filesize:
+                        biggest_filesize = item.stream_info.bandwidth
+                    else: continue
+
+
+                Filesize_Total = Filesize_Total + biggest_filesize
+
     
         # print(episode_href)
     tqdm.write("Current Filesize: " + humanfriendly.format_size(Filesize_Total))
