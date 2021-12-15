@@ -7,7 +7,7 @@ upper_year_limit = int(input("Upper year limit (2015 for NRK removal jan. 2022):
 # Exclude_List_Decision = input("Do you want to include extra programs? (Programs that are big, and not getting removed): ")
 
 
-Exclude_List = ["Dagsrevyen", "Aktuelt - TV"]
+Exclude_List = ["Dagsrevyen", "Aktuelt - TV", "Dagsrevyen 21", "Dagsnytt 18 - TV"]
 
 
 with open("List_Of_Programs_Older_Than.txt", "w", encoding="utf-8") as file:
@@ -15,7 +15,7 @@ with open("List_Of_Programs_Older_Than.txt", "w", encoding="utf-8") as file:
         
         for item in _list:
             _item = json.loads(item)
-            if int(_item[2]) > upper_year_limit or _item[0] not in Exclude_List:
+            if _item[2] < upper_year_limit and _item[0] not in Exclude_List:
                 new_list.append(_item)
         
         for item in new_list:
