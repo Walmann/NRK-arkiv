@@ -3,8 +3,10 @@ https://psapi.nrk.no/documentation/redoc/ipcheck/
 
 
 Jobber på nå: 
-Ser ut som at dato i array viser til bare nyeste. Så pågående serier blir vist som at det er laget i det den siste episoden er laget.
+Gir snart opp. Vet ikke hvor det skal lagres.
 
+Vurderer å få filesize fra yt-dlp igjen. Den virker til å kunne få riktig størrelse på filer. Sender jeg den direkte på episoder, beste løsning.
+Jeg må finne en måte å få tak i den beste kvaliteten. usikker på hvordan det skal gjøres.
 
 https://jsonpath.com/
 https://www.journaldev.com/33265/python-jsonpath-examples
