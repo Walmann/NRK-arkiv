@@ -159,6 +159,8 @@ with open("List_Of_Programs_Older_Than.txt", "r", encoding="utf-8") as file_obje
                 # clear()
     
         # print(episode_href)
+    with open("Download_Size.txt") as file: 
+        file.write("Current Filesize: " + humanfriendly.format_size(Filesize_Total))
     tqdm.write("Current Filesize: " + humanfriendly.format_size(Filesize_Total))
 
         
