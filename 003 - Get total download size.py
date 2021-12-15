@@ -118,7 +118,7 @@ with open("List_Of_Programs.txt", "r", encoding="utf-8") as file_object:
 
             episodes_href_tqdm = tqdm(episode_href, leave=False, miniters=0)
             for episode_prfId in episodes_href_tqdm:
-                episodes_href_tqdm.set_description("Episodes Href: ")
+                episodes_href_tqdm.set_description("Episodes size: ")
                 
                 #Get manifestfile:
                 episode_manifest_url = "https://psapi.nrk.no/playback/manifest/program/" + urllib.parse.quote(episode_prfId)
@@ -158,7 +158,8 @@ with open("List_Of_Programs.txt", "r", encoding="utf-8") as file_object:
                 Filesize_Total = Filesize_Total + biggest_filesize
                 # clear()
     
-        # print(episode_href)
+    with open("Download_Size.txt", "w") as file: 
+        file.write("Current Filesize: " + humanfriendly.format_size(Filesize_Total))
     tqdm.write("Current Filesize: " + humanfriendly.format_size(Filesize_Total))
 
         
