@@ -1,6 +1,11 @@
 import subprocess
 
 
+#Check if yt-dlp is downloaded. Point them towards yt-dlp release page. Note wich version this program is made for
+
+#Check if ffmpeg is installed. PiP?
+
+
 
 debug_eposide = "https://tv.nrk.no/serie/minibarna/sesong/2/episode/1"
 
