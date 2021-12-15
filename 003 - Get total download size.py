@@ -52,7 +52,7 @@ clear()
 
 
 Filesize_Total = 0
-with open("List_Of_Programs.txt", "r", encoding="utf-8") as file_object:
+with open("List_Of_Programs_Older_Than.txt", "r", encoding="utf-8") as file_object:
     # file_object = '["Aktuelt - TV", "/serie/aktuelt-tv", 2015, "Available"]'
     file_object = file_object.readlines()
     # Filesize_Total_Human_Readable = sizeof_fmt(Filesize_Total)
