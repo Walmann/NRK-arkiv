@@ -13,7 +13,7 @@ from yt_dlp import YoutubeDL
 def export_JSON_to_file(_json, filename):
     with open("./Temp Files/" + filename, "w", encoding="utf-8") as file:
         json.dump(_json, file)
-        print("Exported JSON. Press enter to continue.")
+        # print("Exported JSON. Press enter to continue.")
 
 
 
@@ -42,7 +42,7 @@ def Program_Convert_href_To_Json(Program_href): #Also get avability?
     return new_href
 
 
-def FileSize(Get_or_Add, number):
+def func_FileSize(Get_or_Add, number):
     if Get_or_Add == "Add":
         Filesize_Total = Filesize_Total + number
     if Get_or_Add == "Get":
@@ -73,7 +73,8 @@ clear()
 yt_dlp_options = {
         # "outtmpl": "%(id)s%(ext)s",
         # "noplaylist": True,
-        "quiet": True,
+        # "quiet": True,
+        "verbose": True,
         # "format": "bestvideo",
         # "ignore_no_formats_error": True,
         "ignoreerrors": True,
@@ -110,15 +111,16 @@ with open("List_Of_Programs_Debug.txt", "r", encoding="utf-8") as file_object:
         url = urllib.parse.unquote(show_url)
         url_open = urlopen(url).read()
         show_JSON = json.loads(url_open)
-
+        # export_JSON_to_file(show_JSON, "show_JSON.json")
 
         #Check if is a show or series: 
-        check_for_show = parse('category.id').find(show_JSON)
+        check_for_show_type = parse('$.moreInformation.category.id').find(show_JSON)
 
-        if check_for_show.value == "dokumentar":
-            func_Solve_URL()      ##############Solve the URL for tv.nrk.no. replace program, programs etc. Done before.
-            func_YouTubeDL(url)
-
+        if check_for_show_type[0].value == "dokumentar":
+            # show_player_url = "https://tv.nrk.no/" + func_Solve_URL(Program_href)      ##############Solve the URL for tv.nrk.no. replace program, programs etc. Done before.
+            ytDL_JSON = func_YouTubeDL("https://tv.nrk.no" + Program_href)
+            func_FileSize("Add", parse('$.filesize_approx').find(episode_Json_Info))
+            break #TODO: ytdl sliter med æøå i addressefeltet.
 
         show_href = []
         # export_JSON_to_file(season_JSON)
@@ -162,7 +164,7 @@ with open("List_Of_Programs_Debug.txt", "r", encoding="utf-8") as file_object:
                 
                 episode_Json_Parsed = parse('$.filesize_approx').find(episode_Json_Info)
                 for parsed_entry in episode_Json_Parsed:
-                    FileSize("Add", parsed_entry.value)
+                    func_FileSize("Add", parsed_entry.value)
 
                     # Filesize_Total = Filesize_Total + parsed_entry.value
 
