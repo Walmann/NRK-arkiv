@@ -4,7 +4,7 @@ https://psapi.nrk.no/documentation/redoc/ipcheck/
 
 Jobber på nå: 
 Endret til yt-dlp
-Får error for ting som ikke er tiljengelig. Legg inn en sjekk for dette
+Får error for ting som ikke er tiljengelig. Legg inn en sjekk for dette.
 
 
 https://jsonpath.com/
