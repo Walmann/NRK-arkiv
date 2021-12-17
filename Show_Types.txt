@@ -1,0 +1,17 @@
+standard
+kultur
+sequential
+dokumentar
+nyheter
+underholdning
+news
+barn
+drama-serier
+samisk
+unknown
+livsstil
+natur
+sport
+vitenskap
+humor
+film
