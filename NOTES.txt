@@ -3,10 +3,9 @@ https://psapi.nrk.no/documentation/redoc/ipcheck/
 
 
 Jobber på nå: 
-Gir snart opp. Vet ikke hvor det skal lagres.
+Endret til yt-dlp
+Får error for ting som ikke er tiljengelig. Legg inn en sjekk for dette
 
-Vurderer å få filesize fra yt-dlp igjen. Den virker til å kunne få riktig størrelse på filer. Sender jeg den direkte på episoder, beste løsning.
-Jeg må finne en måte å få tak i den beste kvaliteten. usikker på hvordan det skal gjøres.
 
 https://jsonpath.com/
 https://www.journaldev.com/33265/python-jsonpath-examples
