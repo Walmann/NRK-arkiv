@@ -1,4 +1,4 @@
 chromedriver.exe
 yt-dlp.exe
 .vscode/
-.vscode/settings.json
+.vscode/*
