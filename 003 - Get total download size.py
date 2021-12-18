@@ -62,7 +62,7 @@ def func_FileSize(Get_or_Add, number):
     clear()
     Program_List.refresh()
     episode_list_itterate.refresh()
-    tqdm.write("Current Estimate: " + humanfriendly.format_size(Filesize_Total)+ ", Amount of errors: " + str(Amount_Of_Error))
+    tqdm.write("Current Estimate: " + humanfriendly.format_size(Filesize_Total)+ "| Amount of errors: " + str(Amount_Of_Error))
 
 
 def func_YouTubeDL(url):
