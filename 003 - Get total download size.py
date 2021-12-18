@@ -110,7 +110,42 @@ def func_retrive_episodes(Program_href):
         episode_list = parse('$._embedded.seasons[*]._embedded.episodes[*]._links.playback.href').find(JSON)
     if seriesType == "standard":
         episode_list = parse('$._embedded.instalments._embedded.instalments.[*]._links.playback.href').find(JSON)
+
+    episode_list = func_check_available_episodes(episode_list, JSON, seriesType)
+
+
     return episode_list
+
+
+def func_check_available_episodes(episode_list, JSON, seriesType):
+    new_episode_list = []
+    for episodes in episode_list:
+        try:
+            show_url = "https://psapi.nrk.no/tv/catalog" + str(episodes.value).replace("/mediaelement", "").replace("/program/", "/programs/")
+            url_open = urlopen(show_url).read()
+            JSON_data = json.loads(url_open)
+            parsed_data = parse('$.programInformation.availability.status').find(JSON_data)
+            if parsed_data[0].value == "available":
+                new_episode_list.append(episodes)
+            return new_episode_list
+        except:
+            func_write_error_to_log("Error with URL: " + show_url)
+            return new_episode_list
+
+def func_check_available_programs(Program_href):
+    new_episode_list = []
+    try:
+        show_url = "https://psapi.nrk.no/tv/catalog" + str(Program_href).replace("/mediaelement", "").replace("/program/", "/programs/")
+        url_open = urlopen(show_url).read()
+        JSON_data = json.loads(url_open)
+        parsed_data = parse('$.programInformation.availability.status').find(JSON_data)
+        if parsed_data[0].value == "available":
+            new_episode_list.append(Program_href)
+        return new_episode_list
+    except:
+        func_write_error_to_log("Error with URL: " + show_url)
+        return new_episode_list
+
 
 #
 # url = "https://tv.nrk.no" + entry[1]
@@ -160,6 +195,9 @@ with open("List_Of_Programs_Debug.txt", "r", encoding="utf-8") as file_object:
 
         show_type = func_find_show_type(Program_href)
         if show_type == "Show":
+            episode_list = []
+            episode_list = func_check_available_programs(Program_href)
+            if len(episode_list) == 0:  break
             # show_player_url = "https://tv.nrk.no/" + func_Solve_URL(Program_href)      ##############Solve the URL for tv.nrk.no. replace program, programs etc. Done before.
             try:
                 url = "https://tv.nrk.no" + Program_href
@@ -187,9 +225,10 @@ with open("List_Of_Programs_Debug.txt", "r", encoding="utf-8") as file_object:
                     func_write_error_to_log("URL Error: " + url)
                     continue
         else: func_write_error_to_log("Error getting show type: " + show_type)
-
+        tqdm.write(Program_Name)
 
     with open("Download_Size.txt", "w") as file:
         file.write("Current Filesize: " + humanfriendly.format_size(Filesize_Total))
     tqdm.write("Current Filesize: " + humanfriendly.format_size(Filesize_Total))
+    print("")
 
