@@ -6,6 +6,9 @@ Jobber på nå:
 Endret til yt-dlp
 Får error for ting som ikke er tiljengelig. Legg inn en sjekk for dette.
 
+Prøv å legg show størrelser inn i srray i show lista.
+Importer array -> legg inn størrelse > legg til ny linje > slett den gamle > sorter alfabetisk
+
 
 https://jsonpath.com/
 https://www.journaldev.com/33265/python-jsonpath-examples
