@@ -11,10 +11,10 @@ from os import system
 from yt_dlp import YoutubeDL
 import yt_dlp
 
-from Temp_Files import find_all_show_types
+# from Temp_Files import find_all_show_types
 
 def func_export_JSON_to_file(_json, filename):
-    with open("./Temp_Files/" + filename, "w", encoding="utf-8") as file:
+    with open(filename, "w", encoding="utf-8") as file:
         json.dump(_json, file)
         # print("Exported JSON. Press enter to continue.")
 
