@@ -1,16 +1,13 @@
 # from jsonpath_ng import jsonpath, parse
-from ctypes import GetLastError
-import string
-from jsonpath_ng import jsonpath, parse
+# from ctypes import GetLastError
+from jsonpath_ng import parse
 import json
 from tqdm import tqdm
 import humanfriendly
 import urllib
 from urllib.request import urlopen
-# import m3u8
 from os import system
 from yt_dlp import YoutubeDL
-import yt_dlp
 
 # from Temp_Files import find_all_show_types
 
@@ -28,8 +25,6 @@ def func_write_error_to_log(error_message):
 
 
 def func_Program_Convert_href_To_Json(Program_href): #Also get avability?
-    org_href = Program_href
-    JSON_Data = ""
     Program_href_Possibilities = [
         Program_href,
         Program_href.replace("/serie/", "/series/"),
@@ -83,6 +78,9 @@ def func_find_show_type(Program_href):
         return ("Show")
 
 
+
+
+
 def func_retrive_seasons(show_JSON):
     show_href = []
     show_parse = parse('$[_links][seasons][*].href').find(show_JSON)
@@ -102,28 +100,34 @@ def func_retrive_seasons(show_JSON):
 
 
 def func_retrive_episodes(Program_href):
-    new_episode_list = []
-    show_url = "https://psapi.nrk.no/tv/catalog" + Program_href.replace("/serie/", "/series/").replace("/program/", "/programs/")
-    # url = urllib.parse.unquote(show_url)
-    url_open = urlopen(show_url).read()
-    JSON = json.loads(url_open)
-    if "https://psapi.nrk.no/tv/catalog/series/" in show_url:
-        seriesType = parse("$.seriesType").find(JSON)[0].value
-        if seriesType == "news":
-            episode_list = parse('$._embedded.instalments._embedded.instalments[*]._links.playback.href').find(JSON)
-        if seriesType == "sequential":
-            episode_list = parse('$._embedded.seasons[*]._embedded.episodes[*]._links.playback.href').find(JSON)
-        if seriesType == "standard":
-            episode_list = parse('$._embedded.instalments._embedded.instalments.[*]._links.playback.href').find(JSON)
-        for element in episode_list:
-            new_episode_list.append(str(element.value).replace("/mediaelement", "").replace("/program/", "/programs/"))
-    if "https://psapi.nrk.no/tv/catalog/programs/" in show_url:
-        new_episode_list.append(str(Program_href).replace("/mediaelement", "").replace("/program/", "/programs/"))
-
+    try:
+        new_episode_list = []
+        show_url = "https://psapi.nrk.no/tv/catalog" + Program_href.replace("/serie/", "/series/").replace("/program/", "/programs/")
+        # url = urllib.parse.unquote(show_url)
+        url_open = urlopen(show_url).read()
+        JSON = json.loads(url_open)
+        if "https://psapi.nrk.no/tv/catalog/series/" in show_url:
+            seriesType = parse("$.seriesType").find(JSON)[0].value
+            if seriesType == "news":
+                episode_list = parse('$._embedded.instalments._embedded.instalments[*]._links.playback.href').find(JSON)
+            if seriesType == "sequential":
+                episode_list = parse('$._embedded.seasons[*]._embedded.episodes[*]._links.playback.href').find(JSON)
+            if seriesType == "standard":
+                episode_list = parse('$._embedded.instalments._embedded.instalments.[*]._links.playback.href').find(JSON)
+            for element in episode_list:
+                new_episode_list.append(str(element.value).replace("/mediaelement", "").replace("/program/", "/programs/"))
+        if "https://psapi.nrk.no/tv/catalog/programs/" in show_url:
+            new_episode_list.append(str(Program_href).replace("/mediaelement", "").replace("/program/", "/programs/"))
+    except: func_write_error_to_log("Error with Program_href: " + Program_href)
 
     # if "https://psapi.nrk.no/tv/catalog/programs/" in show_url:
 
     episode_list_sorted = func_check_available_episodes(new_episode_list)
+
+    if not len(new_episode_list) == 0:
+        with open("Text_Files/" + "Programs_with_available_content.txt", "a+") as available_list_file:
+            if not Program_href in available_list_file:
+                Programs_with_available_items.append(Program_href)
     return episode_list_sorted
 
 
@@ -138,14 +142,16 @@ def func_check_available_episodes(episode_list): #(episode_list, JSON, seriesTyp
             url_open = urlopen(show_url).read()
             JSON_data = json.loads(url_open)
             parsed_data = parse('$.programInformation.availability.status').find(JSON_data)
-            if parsed_data[0].value == "available":
+
+            if parsed_data[0].value == "available" or parsed_data[0].value == "expires":
                 new_episode_list.append(episodes)
+            with open("Avability.txt", "a") as file:
+                file.write(parsed_data[0].value + "\n")
         except:
             try:
                 func_write_error_to_log("Error with URL: " + show_url)
             except:
                 func_write_error_to_log("Error with show_url: " + episodes)
-
 
     return new_episode_list
 
@@ -160,6 +166,7 @@ def func_check_available_programs(Program_href): #This can be removed. Keeping i
             local_program_list.append(Program_href)
     except:
         func_write_error_to_log("Error with URL: " + show_url)
+
 
 
     return local_program_list
@@ -190,7 +197,8 @@ yt_dlp_options = {
 
 Filesize_Total = int()
 Amount_Of_Error = int()
-with open("Text_Files/" + "List_Of_Programs_Older_Than.txt", "r", encoding="utf-8") as file_object:
+Programs_with_available_items = []
+with open("Text_Files/" + "List_Of_Programs.txt", "r", encoding="utf-8") as file_object:
     # file_object = '["Aktuelt - TV", "/serie/aktuelt-tv", 2015, "Available"]'
     file_object = file_object.readlines()
     # Filesize_Total_Human_Readable = sizeof_fmt(Filesize_Total)
@@ -247,7 +255,9 @@ with open("Text_Files/" + "List_Of_Programs_Older_Than.txt", "r", encoding="utf-
                     continue
         else: func_write_error_to_log("Error getting show type: " + show_type)
 
-
+    with open("Text_Files/" + "Programs_with_available_content.txt", "w") as file:
+        for line in Programs_with_available_items:
+            file.write(line + "\n")
     with open("Text_Files/" + "Download_Size.txt", "w") as file:
         file.write("Current Filesize: " + humanfriendly.format_size(Filesize_Total))
     tqdm.write("Current Filesize: " + humanfriendly.format_size(Filesize_Total))
