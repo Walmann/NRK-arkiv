@@ -19,17 +19,18 @@ def func_export_JSON_to_file(_json, filename):
 
 def func_write_error_to_log(error_message):
     global Amount_Of_Error
-    with open("Text_Files/" + "Error.log", "a") as file:
-        file.write(error_message + "\n")
+    with open("Text_Files/" + "Error.log", "a") as error_file:
+        error_file.write(error_message + "\n")
         Amount_Of_Error += 1
 
 
-def func_Program_Convert_href_To_Json(Program_href): #Also get avability?
+def func_Program_Convert_href_To_Json(Program_href_original): #Also get avability?
     Program_href_Possibilities = [
-        Program_href,
-        Program_href.replace("/serie/", "/series/"),
-        Program_href.replace("/program/", "/programs/")
+        Program_href_original,
+        Program_href_original.replace("/serie/", "/series/"),
+        Program_href_original.replace("/program/", "/programs/")
     ]
+
     Finding_JSON = True
     while Finding_JSON == True:
         for Possibilities in Program_href_Possibilities:
@@ -60,49 +61,28 @@ def func_FileSize(Get_or_Add, number):
     tqdm.write("Current Estimate: " + humanfriendly.format_size(Filesize_Total)+ "| Amount of errors: " + str(Amount_Of_Error))
 
 
-def func_YouTubeDL(url):
+def func_YouTubeDL(func_yt_url):
     try:
-        ytdl = YoutubeDL(yt_dlp_options).extract_info(url, download=False)
+        ytdl = YoutubeDL(yt_dlp_options).extract_info(func_yt_url, download=False)
     except:
-        func_write_error_to_log("Error getting JSON info: " + url)
+        func_write_error_to_log("Error getting JSON info: " + func_yt_url)
         return ("Error")
     jsondump = json.dumps(ytdl)
     Json_Info = json.loads(jsondump)
     return Json_Info
 
-def func_find_show_type(Program_href):
+def func_find_show_type(Program_href_find_show):
 
-    if "/serie/" in Program_href:
+    if "/serie/" in Program_href_find_show:
         return ("Seasons")
-    if "/program/" in Program_href:
+    if "/program/" in Program_href_find_show:
         return ("Show")
 
 
-
-
-
-def func_retrive_seasons(show_JSON):
-    show_href = []
-    show_parse = parse('$[_links][seasons][*].href').find(show_JSON)
-    for seasons in show_parse:
-        # season_parse.set_description("Seasons: ")
-        show_href.append(seasons.value)
-    #STOP Find href to all seasons
-
-
-    #START find seasons in Show
-    seasons_parse = tqdm(show_href, total=len(show_href), leave=False, miniters=1)
-    for seasons_href in seasons_parse:
-        seasons_parse.set_description("Seasons: ")
-        season_url = "https://psapi.nrk.no" + urllib.parse.quote(seasons_href)
-        season_JSON = json.loads(urlopen(season_url).read())
-    return ()
-
-
-def func_retrive_episodes(Program_href):
+def func_retrive_episodes(Program_href_retrive_episode):
     try:
         new_episode_list = []
-        show_url = "https://psapi.nrk.no/tv/catalog" + Program_href.replace("/serie/", "/series/").replace("/program/", "/programs/")
+        show_url = "https://psapi.nrk.no/tv/catalog" + Program_href_retrive_episode.replace("/serie/", "/series/").replace("/program/", "/programs/")
         # url = urllib.parse.unquote(show_url)
         url_open = urlopen(show_url).read()
         JSON = json.loads(url_open)
@@ -117,8 +97,8 @@ def func_retrive_episodes(Program_href):
             for element in episode_list:
                 new_episode_list.append(str(element.value).replace("/mediaelement", "").replace("/program/", "/programs/"))
         if "https://psapi.nrk.no/tv/catalog/programs/" in show_url:
-            new_episode_list.append(str(Program_href).replace("/mediaelement", "").replace("/program/", "/programs/"))
-    except: func_write_error_to_log("Error with Program_href: " + Program_href)
+            new_episode_list.append(str(Program_href_retrive_episode).replace("/mediaelement", "").replace("/program/", "/programs/"))
+    except: func_write_error_to_log("Error with Program_href_retrive_episode: " + Program_href_retrive_episode)
 
     # if "https://psapi.nrk.no/tv/catalog/programs/" in show_url:
 
@@ -126,8 +106,8 @@ def func_retrive_episodes(Program_href):
 
     if not len(new_episode_list) == 0:
         with open("Text_Files/" + "Programs_with_available_content.txt", "a+") as available_list_file:
-            if not Program_href in available_list_file:
-                Programs_with_available_items.append(Program_href)
+            if not Program_href_retrive_episode in available_list_file:
+                Programs_with_available_items.append(Program_href_retrive_episode)
     return episode_list_sorted
 
 
@@ -145,27 +125,27 @@ def func_check_available_episodes(episode_list): #(episode_list, JSON, seriesTyp
 
             if parsed_data[0].value == "available" or parsed_data[0].value == "expires":
                 new_episode_list.append(episodes)
-            with open("Text_Files/" + "Avability.txt", "a") as file:
-                file.write(parsed_data[0].value + "\n")
+            # with open("Text_Files/" + "Avability.txt", "a") as file:  # No longer needed. But keeping it for later.
+            #     file.write(parsed_data[0].value + "\n")
         except:
             try:
-                func_write_error_to_log("Error with URL: " + show_url)
+                func_write_error_to_log("Error with url in Check_available_episodes: " + show_url)
             except:
-                func_write_error_to_log("Error with show_url: " + episodes)
+                func_write_error_to_log("Error with show_url in Check_available_episodes:: " + episodes)
 
     return new_episode_list
 
-def func_check_available_programs(Program_href): #This can be removed. Keeping it for the time being.
+def func_check_available_programs(Program_href_check_available): #This can be removed. Keeping it for the time being.
     local_program_list = []
     try:
-        show_url = "https://psapi.nrk.no/tv/catalog" + str(Program_href).replace("/mediaelement", "").replace("/program/", "/programs/")
+        show_url = "https://psapi.nrk.no/tv/catalog" + str(Program_href_check_available).replace("/mediaelement", "").replace("/program/", "/programs/")
         url_open = urlopen(show_url).read()
         JSON_data = json.loads(url_open)
         parsed_data = parse('$.programInformation.availability.status').find(JSON_data)
         if parsed_data[0].value == "available":
-            local_program_list.append(Program_href)
+            local_program_list.append(Program_href_check_available)
     except:
-        func_write_error_to_log("Error with URL: " + show_url)
+        func_write_error_to_log("Error with URL in Check_Available_programs: " + show_url)
 
 
 
@@ -234,11 +214,11 @@ with open("Text_Files/" + "List_Of_Programs_Older_Than.txt", "r", encoding="utf-
                 continue #TODO: ytdl sliter med æøå i addressefeltet.
             except:
                 # tqdm.write("Error with URL. Noted, and continue loop.")
-                func_write_error_to_log("URL Error: " + url)
+                func_write_error_to_log("URL Error yt-dlp in main, SHOW section: " + url)
                 continue
 
         if show_type == "Seasons":
-            # season_JSON = func_retrive_seasons(show_JSON)
+
             # seasons_JSON = func_retrive_episodes(Program_href)
             episode_JSON = func_retrive_episodes(Program_href)
 
@@ -251,9 +231,9 @@ with open("Text_Files/" + "List_Of_Programs_Older_Than.txt", "r", encoding="utf-
                     continue
                 except:
                     # tqdm.write("Error with URL. Noted, and continue loop.")
-                    func_write_error_to_log("URL Error: " + url)
+                    func_write_error_to_log("URL Error when getting filesize in main, SEASONS: " + url)
                     continue
-        else: func_write_error_to_log("Error getting show type: " + show_type)
+        else: func_write_error_to_log("Error getting show type: " + show_type + ", Program_href: " + Program_href)
 
     with open("Text_Files/" + "Programs_with_available_content.txt", "w") as file:
         for line in Programs_with_available_items:
