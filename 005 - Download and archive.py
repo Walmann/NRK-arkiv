@@ -58,7 +58,7 @@ yt_dlp_options = {
         # "extract_flat": True,
         "outtmpl": "Download Folder/%(series)s/Season %(season_number)s - %(season)s/%(episode_number)s - %(episode)s.%(ext)s",
         # 'prefer_ffmpeg': True,
-        "ffmpeg_location": "dep/ffmpeg.exe",
+        # "ffmpeg_location": "dep/ffmpeg.exe",
         "external_downloader_args":['-loglevel quiet','-hide_banner'],
     }
 
