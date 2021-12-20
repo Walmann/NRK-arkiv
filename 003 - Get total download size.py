@@ -198,7 +198,7 @@ yt_dlp_options = {
 Filesize_Total = int()
 Amount_Of_Error = int()
 Programs_with_available_items = []
-with open("Text_Files/" + "List_Of_Programs.txt", "r", encoding="utf-8") as file_object:
+with open("Text_Files/" + "List_Of_Programs_Older_Than.txt", "r", encoding="utf-8") as file_object:
     # file_object = '["Aktuelt - TV", "/serie/aktuelt-tv", 2015, "Available"]'
     file_object = file_object.readlines()
     # Filesize_Total_Human_Readable = sizeof_fmt(Filesize_Total)
@@ -224,7 +224,7 @@ with open("Text_Files/" + "List_Of_Programs.txt", "r", encoding="utf-8") as file
         if show_type == "Show":
             episode_list = []
             episode_list = func_retrive_episodes(Program_href)
-            if len(episode_list) == 0:  break
+            if len(episode_list) == 0:  continue
             # show_player_url = "https://tv.nrk.no/" + func_Solve_URL(Program_href)      ##############Solve the URL for tv.nrk.no. replace program, programs etc. Done before.
             try:
                 url = "https://tv.nrk.no" + Program_href
@@ -233,7 +233,7 @@ with open("Text_Files/" + "List_Of_Programs.txt", "r", encoding="utf-8") as file
                 func_FileSize("Add", ytdl_file_size)
                 continue #TODO: ytdl sliter med æøå i addressefeltet.
             except:
-                tqdm.write("Error with URL. Noted, and continue loop.")
+                # tqdm.write("Error with URL. Noted, and continue loop.")
                 func_write_error_to_log("URL Error: " + url)
                 continue
 
@@ -250,7 +250,7 @@ with open("Text_Files/" + "List_Of_Programs.txt", "r", encoding="utf-8") as file
                     func_FileSize("Add", ytdl_file_size)
                     continue
                 except:
-                    tqdm.write("Error with URL. Noted, and continue loop.")
+                    # tqdm.write("Error with URL. Noted, and continue loop.")
                     func_write_error_to_log("URL Error: " + url)
                     continue
         else: func_write_error_to_log("Error getting show type: " + show_type)
