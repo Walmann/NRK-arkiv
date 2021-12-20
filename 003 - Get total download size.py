@@ -145,7 +145,7 @@ def func_check_available_episodes(episode_list): #(episode_list, JSON, seriesTyp
 
             if parsed_data[0].value == "available" or parsed_data[0].value == "expires":
                 new_episode_list.append(episodes)
-            with open("Avability.txt", "a") as file:
+            with open("Text_Files/" + "Avability.txt", "a") as file:
                 file.write(parsed_data[0].value + "\n")
         except:
             try:
