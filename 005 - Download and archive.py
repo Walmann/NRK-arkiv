@@ -66,7 +66,8 @@ yt_dlp_options = {
         # 'prefer_ffmpeg': True,
         # "ffmpeg_location": "dep/ffmpeg.exe",
         "external_downloader_args":['-loglevel quiet','-hide_banner'],
-        "extractor_retries": "10",
+        "extractor_retries": 10,
+        "retries": 10,
     }
 
 
