@@ -8,6 +8,12 @@ from yt_dlp import YoutubeDL
 import time
 
 
+#Global Variables: 
+Amount_Of_Runs = 0
+Amount_Of_Error = 0
+
+
+
 def func_write_error_to_log(error_message):
     global Amount_Of_Error
     with open("Text_Files/" + "Error.log", "a") as error_file:
