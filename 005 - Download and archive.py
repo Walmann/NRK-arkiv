@@ -56,7 +56,7 @@ yt_dlp_options = {
         "ignoreerrors": True,
         "no_warnings:": True,
         # "extract_flat": True,
-        "outtmpl": "Download Folder/%(series)s/Season %(season_number)s - %(season)s/%(episode_number)s - %(episode)s.%(ext)s",
+        "outtmpl": "Download Folder/%(series)s/Sessong %(season_number)s - %(season)s/%(episode_number)s - %(episode)s.%(ext)s",
         # 'prefer_ffmpeg': True,
         # "ffmpeg_location": "dep/ffmpeg.exe",
         "external_downloader_args":['-loglevel quiet','-hide_banner'],
@@ -68,27 +68,35 @@ debug_eposide = "https://tv.nrk.no/serie/minibarna/sesong/2/episode/1"
 # yt_dlp_command= 'yt-dlp.exe ' + debug_eposide + ' -o "Download Folder/%(series)s/Season %(season_number)s - %(season)s/%(episode_number)s - %(episode)s.%(ext)s '
 # subprocess.run(yt_dlp_command)
 
-Amount_Of_Error = 0
-with open("Text_Files/" + "Programs_with_available_content.txt", "r", encoding="utf-8") as file_object:
-    file_object = file_object.readlines()
-    file_object_progressbar = tqdm(file_object, total=len(file_object), leave=False, miniters=1)
-    for programs in file_object:
-        # if func_check_if_program_is_already_downloaded(programs):
-        #     continue
-        file_object_progressbar.set_description("Show: " + programs)
-        url_download = "https://tv.nrk.no" + programs
-        try:
-            tqdm.write(YoutubeDL(yt_dlp_options).download(url_download))
-            # func_add_program_to_downloaded(programs)
-        except: func_write_error_to_log("Error downloading: " + programs)
-            
-    # file_object = '["Aktuelt - TV", "/serie/aktuelt-tv", 2015, "Available"]'
-    # file_object = file_object.readlines()
-    # Filesize_Total_Human_Readable = sizeof_fmt(Filesize_Total)
-    # List_Length = len(file_object.readlines())
+def func_download():
+    global Amount_Of_Runs
+    Amount_Of_Runs +=1 
+    Amount_Of_Error = 0
+    with open("Text_Files/" + "Programs_with_available_content.txt", "r", encoding="utf-8") as file_object:
+        file_object = file_object.readlines()
+        file_object_progressbar = tqdm(file_object, total=len(file_object), leave=False, miniters=1)
+        for programs in file_object:
+            # if func_check_if_program_is_already_downloaded(programs):
+            #     continue
+            file_object_progressbar.set_description("Show: " + programs)
+            url_download = "https://tv.nrk.no" + programs
+            try:
+                tqdm.write(YoutubeDL(yt_dlp_options).download(url_download))
+                # func_add_program_to_downloaded(programs)
+            except: func_write_error_to_log("Error downloading: " + programs)
+                
+        # file_object = '["Aktuelt - TV", "/serie/aktuelt-tv", 2015, "Available"]'
+        # file_object = file_object.readlines()
+        # Filesize_Total_Human_Readable = sizeof_fmt(Filesize_Total)
+        # List_Length = len(file_object.readlines())
 
-    # Program_List = tqdm(file_object, total=len(file_object), leave=False, miniters=1)
-    # for Program_Entry in Program_List:
+        # Program_List = tqdm(file_object, total=len(file_object), leave=False, miniters=1)
+        # for Program_Entry in Program_List:
+    # global Amount_Of_Runs
+    # Amount_Of_Runs +=1 
 
-    
-    print("")
+
+Amount_Of_Runs = 0
+while Amount_Of_Runs <= 10:
+    func_download()
+else: tqdm.write("Script is done.")
