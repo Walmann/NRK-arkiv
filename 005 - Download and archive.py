@@ -1,11 +1,11 @@
-import subprocess
-import os.path
-import urllib
+# import subprocess
+# import urllib
+# import json
+# import yt_dlp
 from tqdm import tqdm
-import json
-
-import yt_dlp
+import os.path
 from yt_dlp import YoutubeDL
+import time
 
 
 def func_write_error_to_log(error_message):
@@ -69,8 +69,6 @@ debug_eposide = "https://tv.nrk.no/serie/minibarna/sesong/2/episode/1"
 # subprocess.run(yt_dlp_command)
 
 def func_download():
-    global Amount_Of_Runs
-    Amount_Of_Runs +=1 
     Amount_Of_Error = 0
     with open("Text_Files/" + "Programs_with_available_content.txt", "r", encoding="utf-8") as file_object:
         file_object = file_object.readlines()
@@ -92,11 +90,13 @@ def func_download():
 
         # Program_List = tqdm(file_object, total=len(file_object), leave=False, miniters=1)
         # for Program_Entry in Program_List:
-    # global Amount_Of_Runs
-    # Amount_Of_Runs +=1 
+    global Amount_Of_Runs
+    Amount_Of_Runs +=1 
 
 
 Amount_Of_Runs = 0
 while Amount_Of_Runs <= 10:
+    Amount_Of_Runs = 0
     func_download()
+    time.sleep(600)
 else: tqdm.write("Script is done.")
