@@ -1,10 +1,6 @@
-Temp Files/
-Temp Files/*
-Filesize_Script_Copy/
-Filesize_Script_Copy/*
-Debug Files/
-Debug Files/*
 chromedriver.exe
 yt-dlp.exe
+.vscode/
 Archive/
-Archive/*
+Filesize_Script_Copy/
+Temp_Files/
