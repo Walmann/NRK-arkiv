@@ -11,4 +11,4 @@ with open("List_Of_Programs.txt", "r", encoding="utf-8") as _list:
                 for item in new_List:
                         for thing in range(len(item)):
                                 _New_file.write(str(item[thing]) + "; ")
-                        _New_file.write("\n")
+                        _New_file.write("\n") 

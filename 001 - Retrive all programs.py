@@ -76,7 +76,7 @@ def Get_List_Of_Programs(): #Get list of programs and put them into List_Of_Prog
     # options.add_argument('--disable-extensions')
     # options.add_argument('--disable-gpu')
 
-    #Itterate through links
+    #Itterate through links 
     Last_Link_Used = ""
     for link in letters:
         driver = webdriver.Chrome(chrome_options=options,executable_path=chromedriver_path)

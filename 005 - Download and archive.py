@@ -102,7 +102,7 @@ if __name__ == "__main__":
     with open("Text_Files/" + "Programs_with_available_content.txt", "r", encoding="utf-8") as file_object:
         file_object = file_object.readlines()
         program_list = list(split(file_object, 10))
-        # print(length_per_group)
+        # print(length_per_group) 
         pool = multiprocessing.Pool(10)
         pool.map(func_download_list, program_list)
 

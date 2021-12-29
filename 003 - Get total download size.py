@@ -195,7 +195,7 @@ with open("Text_Files/" + "List_Of_Programs_Older_Than.txt", "r", encoding="utf-
                 # ytdl_JSON = func_YouTubeDL(url)
                 ytdl_file_size = parse('$.filesize_approx').find(func_YouTubeDL(url))[0].value
                 func_FileSize("Add", ytdl_file_size)
-                continue #TODO: ytdl sliter med æøå i addressefeltet.
+                continue #TODO: ytdl sliter med æøå i addressefeltet. 
             except:
                 # tqdm.write("Error with URL. Noted, and continue loop.")
                 func_write_error_to_log("URL Error yt-dlp in main, SHOW section: " + url)

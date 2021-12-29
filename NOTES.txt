@@ -2,7 +2,7 @@
 
 
 Jobber på nå:
-yt-dlp støtter ikke URL med ÆØÅ. Må finne en veg rundt dette.
+yt-dlp støtter ikke URL med ÆØÅ. Må finne en veg rundt dette. 
 Har startet arbeidet på 005. Den kan laste ned ting nå. Eneste som plager meg er at den varsler fra FFMPEG.
 
 

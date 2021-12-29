@@ -1,7 +1,7 @@
 
 import json
 
-# Program_Entry = json.loads(Program_Entry)
+# Program_Entry = json.loads(Program_Entry) 
 new_list = []
 upper_year_limit = int(input("Upper year limit (2015 for NRK removal jan. 2022): "))
 # Exclude_List_Decision = input("Do you want to include extra programs? (Programs that are big, and not getting removed): ")
