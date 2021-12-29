@@ -46,7 +46,7 @@ def func_get_yt_dlp_options(show_type):
     if show_type == "serie":
         output_template = "Download Folder/%(series)s/Season %(season_number)s - %(season)s/%(episode_number)s - %(episode)s.%(ext)s"
     if show_type == "program":
-        output_template = "Download Folder/%(title)s/%(title)s"
+        output_template = "Download Folder/%(title)s/%(title)s.%(ext)s"
 
     yt_dlp_options = {
         # "outtmpl": "%(id)s%(ext)s",
