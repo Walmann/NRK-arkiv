@@ -49,8 +49,12 @@ if not os.path.isfile("./yt-dlp.exe"):
     input("yt-dlp.exe is missing. Go to https://github.com/yt-dlp/yt-dlp to download. (newest version when creating script is 2021.12.01) \n Place the EXE file in root folder of this script.")
 
 
-
-yt_dlp_options = {
+def func_get_yt_dlp_options(show_type):
+    if show_type == "serie":
+        output_template = "Download Folder/%(series)s/Season %(season_number)s - %(season)s/%(episode_number)s - %(episode)s.%(ext)s"
+    # if show_type == "program":
+    
+    yt_dlp_options = {
         # "outtmpl": "%(id)s%(ext)s",
         # "noplaylist": True,
         "quiet": True,
@@ -62,13 +66,14 @@ yt_dlp_options = {
         # "ignoreerrors": True,
         "no_warnings:": True,
         # "extract_flat": True,
-        "outtmpl": "Download Folder/%(series)s/Season %(season_number)s - %(season)s/%(episode_number)s - %(episode)s.%(ext)s",
+        "outtmpl": output_template, 
         # 'prefer_ffmpeg': True,
         # "ffmpeg_location": "dep/ffmpeg.exe",
         "external_downloader_args":['-loglevel quiet','-hide_banner'],
-        "extractor_retries": 10,
-        "retries": 10,
-    }
+        "extractor_retries": 100,
+        "retries": 100,
+        }
+    return yt_dlp_options
 
 
 debug_eposide = "https://tv.nrk.no/serie/minibarna/sesong/2/episode/1"
@@ -81,9 +86,12 @@ def func_download_list(list):
     for programs in list:
         url_download = "https://tv.nrk.no" + programs
         try:
-            YoutubeDL(yt_dlp_options).download(url_download)
-            print("Finnised downloading " + programs)
-            # func_add_program_to_downloaded(programs)
+            if programs.startswith("/serie/"):
+                print(func_get_yt_dlp_options("serie"))
+                YoutubeDL(func_get_yt_dlp_options()).download(url_download)
+                print("Finnised downloading " + programs)
+                # func_add_program_to_downloaded(programs)
+            # if programs.startswith("/program/")
         except: func_write_error_to_log("Error downloading: " + programs)
 
 def split(a, n):
