@@ -12,7 +12,7 @@ from jsonpath_ng import jsonpath, parse
 
 def Write_To_File(Variable):
     print("Writing Error to file: ")
-    with open("Error_Variable.txt", "w", encoding="utf-8") as file_object:
+    with open("Text_Files/" + "Error_Variable.txt", "w", encoding="utf-8") as file_object:
         file_object.write(str(Variable))
 
 
@@ -89,7 +89,7 @@ def Get_List_Of_Programs(): #Get list of programs and put them into List_Of_Prog
 
 
         #Write to file
-        with open("List_Of_Programs.txt", "a", encoding="utf-8") as file_object:
+        with open("Text_Files/" + "List_Of_Programs.txt", "a", encoding="utf-8") as file_object:
             for item in List_In_Memory:
                 Program_href = item["href"]
                 Prod_Year, Available = Program_Prod_Year(Program_href)

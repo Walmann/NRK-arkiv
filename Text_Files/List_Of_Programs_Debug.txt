@@ -1,8 +1,0 @@
-["Askim - gummibyen som ikke gav opp", "/program/FØST70001093", 1993, "Available"]
-["Anita Thallaug synger julesanger", "/program/FTRO00005384", 1984, "Available"]
-["Anne Brown - sanger", "/program/FOLA02006885", 1985, "Available"]
-["De kom som venner", "/program/FTRO16000089", 1989, "Available"]
-["Miljøvern - det nytter", "/program/FØST70001193", 1993, "Available"]
-["Aktuelt - TV", "/serie/aktuelt-tv", 2015, "Available"]
-["\"Rompa her!\"", "/program/FHED02000591", 1991, "Available"]
-["Eg går på", "/serie/eg-gaar-paa", 2020, "Available"]

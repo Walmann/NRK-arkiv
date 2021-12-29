@@ -70,7 +70,7 @@ def func_get_yt_dlp_options(show_type):
     return yt_dlp_options
 
 
-#Check for files needed:
+#Check for files needed: 
 if not os.path.isfile("./yt-dlp.exe"):
     input("yt-dlp.exe is missing. Go to https://github.com/yt-dlp/yt-dlp to download. (newest version when creating script is 2021.12.01) \n Place the EXE file in root folder of this script.")
 
