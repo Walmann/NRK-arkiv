@@ -37,7 +37,7 @@ def my_hook(d):
     if d['status'] == 'finished':
         # filename=d['filename']
         # print("Done downloading " + filename)
-
+        None
     if d['status'] == 'error':
         None
 
@@ -46,7 +46,7 @@ def func_get_yt_dlp_options(show_type):
     if show_type == "serie":
         output_template = "Download Folder/%(series)s/Season %(season_number)s - %(season)s/%(episode_number)s - %(episode)s.%(ext)s"
     if show_type == "program":
-        output_template = "Download Folder/%(title)s/%(title)s"
+        output_template = "Download Folder/%(title)s/%(title)s.%(ext)s"
 
     yt_dlp_options = {
         # "outtmpl": "%(id)s%(ext)s",
@@ -70,7 +70,7 @@ def func_get_yt_dlp_options(show_type):
     return yt_dlp_options
 
 
-#Check for files needed:
+#Check for files needed: 
 if not os.path.isfile("./yt-dlp.exe"):
     input("yt-dlp.exe is missing. Go to https://github.com/yt-dlp/yt-dlp to download. (newest version when creating script is 2021.12.01) \n Place the EXE file in root folder of this script.")
 
@@ -102,7 +102,7 @@ if __name__ == "__main__":
     with open("Text_Files/" + "Programs_with_available_content.txt", "r", encoding="utf-8") as file_object:
         file_object = file_object.readlines()
         program_list = list(split(file_object, 10))
-        # print(length_per_group)
+        # print(length_per_group) 
         pool = multiprocessing.Pool(10)
         pool.map(func_download_list, program_list)
 
