@@ -37,7 +37,7 @@ def my_hook(d):
     if d['status'] == 'finished':
         # filename=d['filename']
         # print("Done downloading " + filename)
-
+        None
     if d['status'] == 'error':
         None
 
