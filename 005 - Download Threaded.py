@@ -49,7 +49,7 @@ def func_get_yt_dlp_options(show_type):
     if show_type == "serie":
         output_template = "Download Folder/%(series)s/Season %(season_number)s - %(season)s/%(episode_number)s - %(episode)s.%(ext)s"
     if show_type == "program":
-        output_template = "Download Folder/%(title)s"
+        output_template = "Download Folder/%(title)s/%(title)s"
 
     yt_dlp_options = {
         # "outtmpl": "%(id)s%(ext)s",
@@ -88,11 +88,11 @@ def func_download_list(list):
         try:
             if programs.startswith("/serie/"):
                 # print(func_get_yt_dlp_options("serie"))
-                YoutubeDL(func_get_yt_dlp_options()).download(url_download)
+                YoutubeDL(func_get_yt_dlp_options("serie")).download(url_download)
                 # print("Finnised downloading " + programs)
                 # func_add_program_to_downloaded(programs)
             if programs.startswith("/program/"):
-                YoutubeDL(func_get_yt_dlp_options()).download(url_download)
+                YoutubeDL(func_get_yt_dlp_options("program")).download(url_download)
         except:
             func_write_error_to_log("Error downloading: " + programs)
             continue
