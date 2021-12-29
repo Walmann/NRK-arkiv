@@ -1,5 +1,3 @@
-# from jsonpath_ng import jsonpath, parse
-# from ctypes import GetLastError
 from jsonpath_ng import parse
 import json
 from tqdm import tqdm
@@ -9,7 +7,6 @@ from urllib.request import urlopen
 from os import system
 from yt_dlp import YoutubeDL
 
-# from Temp_Files import find_all_show_types
 
 def func_export_JSON_to_file(_json, filename):
     with open("Text_Files/" + filename, "w", encoding="utf-8") as file:
@@ -125,8 +122,6 @@ def func_check_available_episodes(episode_list): #(episode_list, JSON, seriesTyp
 
             if parsed_data[0].value == "available" or parsed_data[0].value == "expires":
                 new_episode_list.append(episodes)
-            # with open("Text_Files/" + "Avability.txt", "a") as file:  # No longer needed. But keeping it for later.
-            #     file.write(parsed_data[0].value + "\n")
         except:
             try:
                 func_write_error_to_log("Error with url in Check_available_episodes: " + show_url)
@@ -151,14 +146,6 @@ def func_check_available_programs(Program_href_check_available): #This can be re
 
     return local_program_list
 
-
-#
-# url = "https://tv.nrk.no" + entry[1]
-# url = "https://tv.nrk.no/serie/fleksnes/1995/FKUN89000295"
-# url = "https://tv.nrk.no/serie/fleksnes/"
-
-
-
 clear = lambda: system('cls') #on Windows System
 clear()
 
@@ -181,9 +168,6 @@ Programs_with_available_items = []
 with open("Text_Files/" + "List_Of_Programs_Older_Than.txt", "r", encoding="utf-8") as file_object:
     # file_object = '["Aktuelt - TV", "/serie/aktuelt-tv", 2015, "Available"]'
     file_object = file_object.readlines()
-    # Filesize_Total_Human_Readable = sizeof_fmt(Filesize_Total)
-    # List_Length = len(file_object.readlines())
-
     Program_List = tqdm(file_object, total=len(file_object), leave=False, miniters=1)
     for Program_Entry in Program_List:
 
@@ -230,7 +214,6 @@ with open("Text_Files/" + "List_Of_Programs_Older_Than.txt", "r", encoding="utf-
                     func_FileSize("Add", ytdl_file_size)
                     continue
                 except:
-                    # tqdm.write("Error with URL. Noted, and continue loop.")
                     func_write_error_to_log("URL Error when getting filesize in main, SEASONS: " + url)
                     continue
         else: func_write_error_to_log("Error getting show type: " + show_type + ", Program_href: " + Program_href)

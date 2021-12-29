@@ -1,9 +1,3 @@
-# from bs4.element import Script
-# import requests
-#
-
-# import requests
-# from requests_html import HTMLSession
 from bs4 import BeautifulSoup
 import json
 

@@ -1,5 +1,4 @@
-Check if user have access, not geolocked:
-https://psapi.nrk.no/documentation/redoc/ipcheck/
+
 
 
 Jobber på nå:
@@ -10,6 +9,8 @@ Har startet arbeidet på 005. Den kan laste ned ting nå. Eneste som plager meg 
 Prøv å legg show størrelser inn i array i show lista.
 Importer array -> legg inn størrelse > legg til ny linje > slett den gamle > sorter alfabetisk
 
+Check if user have access, not geolocked:
+https://psapi.nrk.no/documentation/redoc/ipcheck/
 
 https://jsonpath.com/
 https://www.journaldev.com/33265/python-jsonpath-examples
